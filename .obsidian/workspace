@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Test.md",
+            "file": "0-Übersicht Tabelle Klassifikationen.md",
             "mode": "source"
           }
         },
@@ -21,7 +21,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Test.md",
+            "file": "0-Übersicht Tabelle Klassifikationen.md",
             "mode": "preview"
           }
         },
@@ -89,7 +89,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Test.md",
+                "file": "0-Übersicht Tabelle Klassifikationen.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,7 +106,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Test.md",
+                "file": "0-Übersicht Tabelle Klassifikationen.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -129,7 +129,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Test.md"
+                "file": "0-Übersicht Tabelle Klassifikationen.md"
               }
             }
           },
@@ -159,15 +159,15 @@
   },
   "active": "05de3f383c738b06",
   "lastOpenFiles": [
+    "0-Übersicht Tabelle Klassifikationen.md",
+    "000-Home.md",
+    "SampleSNippet-OnlyOutput - Copy.md",
     "Test.md",
+    "TODO.md",
     "Day Planners/Day Planner-20211211.md",
     "Day Planners/Day Planner-20211210.md",
     "Untitled Diagram.svg",
     "Untitled Diagram 1.svg",
-    "ExampleDiagram.svg.md",
-    "Excalidraw/Drawing 2021-12-11 23.20.00.excalidraw.md",
-    "Templates/Lecture.md",
-    "Templates/TestTemplate.md",
-    "ToDel.md"
+    "ExampleDiagram.svg.md"
   ]
 }

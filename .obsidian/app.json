@@ -3,5 +3,6 @@
   "spellcheck": true,
   "foldHeading": true,
   "foldIndent": true,
-  "showLineNumber": true
+  "showLineNumber": true,
+  "attachmentFolderPath": "Resources"
 }
