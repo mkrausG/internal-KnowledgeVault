@@ -9,23 +9,10 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "999-Übersicht Tabelle Klassifikationen.md",
+            "file": "001-Web/001-Web-MOC.md",
             "mode": "source"
           }
-        },
-        "group": "bef710a6a72192c6"
-      },
-      {
-        "id": "ae927f7173990580",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "999-Übersicht Tabelle Klassifikationen.md",
-            "mode": "preview"
-          }
-        },
-        "group": "bef710a6a72192c6"
+        }
       }
     ],
     "direction": "vertical"
@@ -77,8 +64,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -98,7 +84,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "999-Übersicht Tabelle Klassifikationen.md",
+                "file": "001-Web/001-Web-MOC.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +101,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "999-Übersicht Tabelle Klassifikationen.md",
+                "file": "001-Web/001-Web-MOC.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +124,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "999-Übersicht Tabelle Klassifikationen.md"
+                "file": "001-Web/001-Web-MOC.md"
               }
             }
           },
@@ -175,24 +161,23 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
-  "active": "ae927f7173990580",
+  "active": "008173944255ff0d",
   "lastOpenFiles": [
-    "999-Übersicht Tabelle Klassifikationen.md",
+    "001-Web/001-Web-MOC.md",
     "1-Home.md",
     "0-common.md",
+    "999-Übersicht Tabelle Klassifikationen.md",
+    "ChecCssSnippets.md",
     "TODO.md",
+    "Test.md",
     "Resources/Pasted image 20211213113905.png",
     "Resources/Pasted image 20211212185018.png",
-    "Resources/Pasted image 20211210104737.png",
-    "Templates/Test/ToManyTasks 1.md",
-    "ChecCssSnippets.md",
-    "Test.md"
+    "Resources/Pasted image 20211210104737.png"
   ]
 }

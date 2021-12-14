@@ -3,5 +3,4 @@ tag: home
 ---
 # Einleitung
 
-[[006-AspNet MOC]]
-[[999-Übersicht Tabelle Klassifikationen]]
+[[001-Web/001-Web-MOC]]

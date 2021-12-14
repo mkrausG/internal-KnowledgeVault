@@ -49,16 +49,24 @@ cssclass: myClass
 ## Informatik%%4%%
 | Klasse | Inhalt     |
 | ------ | ---------- |
-| 0000   | Asp Net    |
-| 0001   | CSharp     |
-| 0002   | Java       |
-| 0003   | Kotlin     |
-| 0004   | JavaScript |
-| 0005   | SQL        |
+| 000.0   | Asp Net    |
+| 000.1   | CSharp     |
+| 000.2   | Java       |
+| 000.3   | Kotlin     |
+| 000.4   | JavaScript |
+| 000.5   | SQL        |
 
+# Eben Pro Dokument
+Damit sind dann die nachfolgenden Dokumente gedacht. 
+Die werden einfach mit einem Bindestrich und  einer ==fortlaufenden== Nummer und einem Namen separiert erneut mit einem Bindestrich angegeben.
+z.B.
+002.2-\<fortlaufende Nummer\>-Name
 
 # Beispiel
-| Klasse | Inhalt                     |
-| ------ | -------------------------- |
-| 001.2  | Informatik - Spring - Java |
-|        |                            |
+| Klasse                | Inhalt                                   |
+| --------------------- | ---------------------------------------- |
+| 002.2                 | Informatik - Spring - Java               |
+| 002.2-1-Configuration | Beispiel Spring Java Configuration thema | 
+
+
+	
