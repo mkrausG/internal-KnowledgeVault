@@ -15,34 +15,35 @@ cssclass: myClass
 # Erste Ebene
 | Klasse | Inhalt                                       |
 | ------ | -------------------------------------------- |
-| 000    | Informatik, Informationswissenschaft         |
-| 500    | Naturwissenschaften, Mathematik              |
-| 600    | Technik, Medizhin, angewandte Wissenschaften |
-| 800    | Literatur                                    | 
+| 0      | Informatik, Informationswissenschaft         |
+| 5      | Naturwissenschaften, Mathematik              |
+| 6      | Technik, Medizhin, angewandte Wissenschaften |
+| 8      | Literatur                                    |
 
 # Zweite Ebene
 ## Informatik%%2%%
 | Klasse | Inhalt                                                   |
 | ------ | -------------------------------------------------------- |
-| 000    | Informatik, Informationswissenschaften, allgemeine Werke |
-| 010    | Bibliographien                                           |
-| 020    | Bibliotheks- und Informationswissenschaften              |
-| 030    | Sachbücher                                               |
-| 040    | Nicht zugeordnet                                         |
-| 050    | Zeitschriften, Journale, Ebooks                          |
-| 080    | Angebote                                                 |
-| 090    | Manuskripte & seltene Bücher                                                         |
+| 00     | Informatik, Informationswissenschaften, allgemeine Werke |
+| 01     | Bibliographien                                           |
+| 02     | Bibliotheks- und Informationswissenschaften              |
+| 03     | Sachbücher                                               |
+| 04     | Nicht zugeordnet                                         |
+| 05     | Zeitschriften, Journale, Ebooks                          |
+| 08     | Angebote                                                 |
+| 09     | Manuskripte & seltene Bücher                             |
 
 # Dritte Ebene 
 ## Informatik%%3%%
 | Klasse | Inhalt       |
 | ------ | ------------ |
-| 000    | Web          |
-| 001    | Spring       |
-| 002    | Kubernetes   |
-| 003    | Asp Net      |
-| 004    | Asp Net Core |
-| 005    | Asp MVC      |
+| 000    | Admin        | 
+| 001    | Web          |
+| 002    | Spring       |
+| 003    | Kubernetes   |
+| 004    | Asp Net      |
+| 005    | Asp Net Core |
+| 006    | Asp MVC      |
 
 # Vierte Ebene
 ## Informatik%%4%%

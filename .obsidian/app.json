@@ -4,5 +4,6 @@
   "foldHeading": true,
   "foldIndent": true,
   "showLineNumber": true,
-  "attachmentFolderPath": "Resources"
+  "attachmentFolderPath": "Resources",
+  "alwaysUpdateLinks": true
 }
