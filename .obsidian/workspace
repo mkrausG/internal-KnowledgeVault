@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "ChecCssSnippets.md",
+            "file": "TODO.md",
             "mode": "source"
           }
         },
@@ -21,8 +21,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "ChecCssSnippets.md",
-            "mode": "preview"
+            "file": "TODO.md",
+            "mode": "source"
           }
         },
         "group": "01aa8bbf0d5d4df6"
@@ -68,8 +68,17 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "7b3648eabe0e1a0d",
+            "type": "leaf",
+            "state": {
+              "type": "file-tree-view",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -89,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ChecCssSnippets.md",
+                "file": "TODO.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ChecCssSnippets.md",
+                "file": "TODO.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -129,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ChecCssSnippets.md"
+                "file": "TODO.md"
               }
             }
           },
@@ -167,15 +176,15 @@
   },
   "active": "008173944255ff0d",
   "lastOpenFiles": [
-    "ChecCssSnippets.md",
     "TODO.md",
+    "Resources/Pasted image 20211213113905.png",
+    "Resources/Pasted image 20211212185018.png",
+    "Resources/Pasted image 20211210104737.png",
+    "Templates/Test/ToManyTasks 1.md",
+    "ChecCssSnippets.md",
     "Test.md",
     "0-Übersicht Tabelle Klassifikationen.md",
     "000-Home.md",
-    "SampleSNippet-OnlyOutput - Copy.md",
-    "Day Planners/Day Planner-20211211.md",
-    "Day Planners/Day Planner-20211210.md",
-    "Untitled Diagram.svg",
-    "Untitled Diagram 1.svg"
+    "SampleSNippet-OnlyOutput - Copy.md"
   ]
 }
