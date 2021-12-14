@@ -1,5 +1,6 @@
 ---
 tag: toc
+cssclass: myClass
 ---
 - [[#Erste Ebene|Erste Ebene]]
 - [[#Zweite Ebene|Zweite Ebene]]

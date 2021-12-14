@@ -4,28 +4,28 @@
     "type": "split",
     "children": [
       {
-        "id": "05de3f383c738b06",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "0-Übersicht Tabelle Klassifikationen.md",
-            "mode": "source"
-          }
-        },
-        "group": "90fe3c159232af13"
-      },
-      {
         "id": "008173944255ff0d",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "0-Übersicht Tabelle Klassifikationen.md",
+            "file": "ChecCssSnippets.md",
+            "mode": "source"
+          }
+        },
+        "group": "01aa8bbf0d5d4df6"
+      },
+      {
+        "id": "df573dfd167b236d",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "ChecCssSnippets.md",
             "mode": "preview"
           }
         },
-        "group": "90fe3c159232af13"
+        "group": "01aa8bbf0d5d4df6"
       }
     ],
     "direction": "vertical"
@@ -52,7 +52,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#testing/simple",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -89,7 +89,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "0-Übersicht Tabelle Klassifikationen.md",
+                "file": "ChecCssSnippets.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,7 +106,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "0-Übersicht Tabelle Klassifikationen.md",
+                "file": "ChecCssSnippets.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -129,7 +129,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "0-Übersicht Tabelle Klassifikationen.md"
+                "file": "ChecCssSnippets.md"
               }
             }
           },
@@ -148,26 +148,34 @@
               "type": "reminder-list",
               "state": {}
             }
+          },
+          {
+            "id": "746393d54c158b63",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
     "width": 300,
     "collapsed": true
   },
-  "active": "05de3f383c738b06",
+  "active": "008173944255ff0d",
   "lastOpenFiles": [
+    "ChecCssSnippets.md",
+    "TODO.md",
+    "Test.md",
     "0-Übersicht Tabelle Klassifikationen.md",
     "000-Home.md",
     "SampleSNippet-OnlyOutput - Copy.md",
-    "Test.md",
-    "TODO.md",
     "Day Planners/Day Planner-20211211.md",
     "Day Planners/Day Planner-20211210.md",
     "Untitled Diagram.svg",
-    "Untitled Diagram 1.svg",
-    "ExampleDiagram.svg.md"
+    "Untitled Diagram 1.svg"
   ]
 }

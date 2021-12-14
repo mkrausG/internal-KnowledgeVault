@@ -1,5 +1,10 @@
 {
   "baseFontSize": 16,
   "theme": "moonstone",
-  "cssTheme": "Blue Topaz"
+  "cssTheme": "Blue Topaz",
+  "enabledCssSnippets": [
+    "checkbox",
+    "notation-colour-blocks",
+    "realistic-highlight"
+  ]
 }
