@@ -1,0 +1,173 @@
+{
+  "main": {
+    "id": "d1de2baaddac1ef8",
+    "type": "split",
+    "children": [
+      {
+        "id": "05de3f383c738b06",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Test.md",
+            "mode": "source"
+          }
+        },
+        "group": "90fe3c159232af13"
+      },
+      {
+        "id": "008173944255ff0d",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Test.md",
+            "mode": "preview"
+          }
+        },
+        "group": "90fe3c159232af13"
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e47182ab67a3b228",
+    "type": "split",
+    "children": [
+      {
+        "id": "49e4bafe30f9bf1d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "01acea2b32d0f36b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "72e007df4b077755",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#testing/simple",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "6dd95661ac49d5c2",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "ce9610d725b519e7",
+    "type": "split",
+    "children": [
+      {
+        "id": "ef738f8dc354cd60",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a8a01de38c9bc6b0",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Test.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "2ce4553451f829d6",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Test.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "108bf9b0c01da7d5",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "49fcfce2fce0182d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Test.md"
+              }
+            }
+          },
+          {
+            "id": "0f6097b7c5e06acb",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "6a0657f954761d34",
+            "type": "leaf",
+            "state": {
+              "type": "reminder-list",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "05de3f383c738b06",
+  "lastOpenFiles": [
+    "Test.md",
+    "Day Planners/Day Planner-20211211.md",
+    "Day Planners/Day Planner-20211210.md",
+    "Untitled Diagram.svg",
+    "Untitled Diagram 1.svg",
+    "ExampleDiagram.svg.md",
+    "Excalidraw/Drawing 2021-12-11 23.20.00.excalidraw.md",
+    "Templates/Lecture.md",
+    "Templates/TestTemplate.md",
+    "ToDel.md"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "insert-template": [
+    {
+      "modifiers": [
+        "Mod",
+        "Meta"
+      ],
+      "key": "I"
+    }
+  ],
+  "obsidian-icons-plugin:open-icons-plugin-modal": []
+}
