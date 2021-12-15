@@ -1,10 +1,9 @@
 ---
-creation date: <% tp.file.creation_date() %>
-modification date: <% tp.file.last_modified_date("dddd Do MMMM YYYY HH:mm:ss") %>
+Title: <% tp.file.title %>
+Creation date: <% tp.file.creation_date() %>
+Modification date: <% tp.file.last_modified_date("dddd Do MMMM YYYY HH:mm:ss") %>
 tags: DailyNote <% tp.file.title.split('-')[0] %>
 ---
-
-modification date:   tp.file.last_modified_date("dddd Do MMMM YYYY HH:mm:ss")  // This doesn't currently work in front matter, hoping that gets fixed.
 
 # <% tp.file.title %>
 

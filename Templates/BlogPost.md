@@ -1,4 +1,13 @@
-# {{title}}
+---
+Title: <% tp.file.title %>
+Creation date: <% tp.file.creation_date("DD.MM.YYYY HH:mm") %>
+Modification date: <% tp.file.last_modified_date("dddd Do MMMM YYYY HH:mm:ss") %>
+Author: MKraus
+Tags: 🟡, Blog
+Id:
+---
+
+# <% tp.file.title %>
 
 > A blog is just like having a long conversation with people, so it should make sense that things you enjoy talking about will be closely related to your passion.
 
