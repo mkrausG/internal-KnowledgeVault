@@ -10,6 +10,10 @@ language: "de"
 
 << [[2021-12-09]] | [[2021-12-11]] >>
 
+# Reminder
+ToDos:
+- [x] Hier folgen dann die Links zu den Mocs (@2021-12-15 08:48)
+- [ ] Anlegen Snippets / Templates für Header / Mocs u.a.
 # Test
 
 > Effort only ***fully*** **releases** its reward after a person refuses to quit.
