@@ -4,21 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "c59a6e8a030fc4de",
-        "type": "leaf",
-        "state": {
-          "type": "graph",
-          "state": {}
-        }
-      },
-      {
-        "id": "50bef69090b24d8e",
+        "id": "38ed96e8458e42a3",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Templates/DailyNote.md",
-            "mode": "preview"
+            "file": "Inbox/20211215-2-Allgemeines TODO.md",
+            "mode": "source"
           }
         }
       }
@@ -47,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#moc",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -92,13 +84,14 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Inbox/20211215-2-Allgemeines TODO.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               }
             }
           },
@@ -108,8 +101,9 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Inbox/20211215-2-Allgemeines TODO.md",
                 "linksCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               }
             }
           },
@@ -129,7 +123,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Inbox/20211215-2-Allgemeines TODO.md"
+              }
             }
           },
           {
@@ -185,17 +181,17 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "c59a6e8a030fc4de",
+  "active": "38ed96e8458e42a3",
   "lastOpenFiles": [
-    "001-Web/001-Web-MOC.md",
-    "Test.md",
+    "Inbox/20211215-2-Allgemeines TODO.md",
+    "Inbox/20211215-1-Review.md",
     "Templates/DailyNote.md",
-    "Templates/MeetingNotes.md",
-    "Templates/SampleSNippet.md",
-    "Templates/SampleSNippet-OnlyOutput.md",
-    "Templates/StandartNote.md",
-    "Templates/TestTemplate.md",
-    "Templates/ToManyTasks.md",
-    "TODO.md"
+    "0-common.md",
+    "TODO.md",
+    "8-Books/802-1-Spring Configuration.md",
+    "8-Books/801-Books-Moc.md",
+    "1-Home.md",
+    "001-Web/001-Web-MOC.md",
+    "Templates/StandartNote.md"
   ]
 }

@@ -8,7 +8,7 @@ Id:
 ---
 ---
 
-
+[[1-Home]]
 
 # Web Moc
 Hier werden die unterschiedlichen Themen aufgeführt die dieses Web Moc unterstützt.
@@ -22,7 +22,7 @@ ToDos:
 - [ ] Anlegen Snippets / Templates für Header / Mocs u.a.
 
 Links: 
-[[001-Web/001-Web-MOC]]
+
 
 
 # Referenzen

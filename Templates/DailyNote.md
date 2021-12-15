@@ -25,6 +25,13 @@ not done
 due on <% tp.date.now("YYYY-MM-DD") %>
 ```
 
+### Due in the next two weeks
+```tasks
+not done
+due after <% tp.date.now("YYYY-MM-DD") %>
+due before <% tp.date.now("YYYY-MM-DD",14) %>
+```
+
 #### New Today
 - [ ] Some Task
 
