@@ -18,7 +18,7 @@ Ich brauche die folgenden Verzeichniss
 * Css aus dem anderen Vault vom Dev nehmen und alle nicht existierenden dann als rot ?
 * Important: Use Tags with icons for status wie InWork, Review u.a. und #🟢 links \[[xx\]] als Tags [[xx]] links und tags ;-)
 	* auch hier eine Tabelle
-		 ![[Pasted image 20211212185018.png]]
+			 ![[Pasted image 20211212185018.png]]
 	* siehe [Übersicht Tags und Bedeutung](https://github.com/BryanJenksCommunity/FAQ/discussions/12)
 	* siehe auch <iframe width="560" height="315" src="https://www.youtube.com/embed/zIh1S7ra3aI?start=252" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	* und [005.73.01](file:///E:%5CEigene%20Dateien%5CObsidian%5C005.73.01.2021-10-21_template_starter_vault)

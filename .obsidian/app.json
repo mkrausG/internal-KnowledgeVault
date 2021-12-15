@@ -5,5 +5,8 @@
   "foldIndent": true,
   "showLineNumber": true,
   "attachmentFolderPath": "Resources",
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "absolute",
+  "newFileLocation": "folder",
+  "newFileFolderPath": "Inbox"
 }
