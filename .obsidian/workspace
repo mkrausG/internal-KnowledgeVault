@@ -4,15 +4,28 @@
     "type": "split",
     "children": [
       {
-        "id": "38ed96e8458e42a3",
+        "id": "8185efd788046bc0",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Inbox/20211215-2-Allgemeines TODO.md",
+            "file": "Inbox/2021-12-15 Daily Note.md",
             "mode": "source"
           }
-        }
+        },
+        "group": "1afebd5dcd66e6be"
+      },
+      {
+        "id": "e7aa9e2d1f9134f7",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Inbox/2021-12-15 Daily Note.md",
+            "mode": "preview"
+          }
+        },
+        "group": "1afebd5dcd66e6be"
       }
     ],
     "direction": "vertical"
@@ -84,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Inbox/20211215-2-Allgemeines TODO.md",
+                "file": "Inbox/2021-12-15 Daily Note.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Inbox/20211215-2-Allgemeines TODO.md",
+                "file": "Inbox/2021-12-15 Daily Note.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -124,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Inbox/20211215-2-Allgemeines TODO.md"
+                "file": "Inbox/2021-12-15 Daily Note.md"
               }
             }
           },
@@ -181,17 +194,17 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "38ed96e8458e42a3",
+  "active": "8185efd788046bc0",
   "lastOpenFiles": [
-    "Inbox/20211215-2-Allgemeines TODO.md",
+    "Inbox/2021-12-15 Daily Note.md",
+    "Inbox/20211215-2-Football-Tackling.md",
     "Inbox/20211215-1-Review.md",
-    "Templates/DailyNote.md",
-    "0-common.md",
-    "TODO.md",
+    "Inbox/Untitled.md",
     "8-Books/802-1-Spring Configuration.md",
     "8-Books/801-Books-Moc.md",
-    "1-Home.md",
-    "001-Web/001-Web-MOC.md",
-    "Templates/StandartNote.md"
+    "Inbox/20211215-2-Allgemeines TODO.md",
+    "Templates/DailyNote.md",
+    "0-common.md",
+    "TODO.md"
   ]
 }
