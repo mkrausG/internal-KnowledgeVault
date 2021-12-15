@@ -59,14 +59,20 @@ cssclass: myClass
 # Eben Pro Dokument
 Damit sind dann die nachfolgenden Dokumente gedacht. 
 Die werden einfach mit einem Bindestrich und  einer ==fortlaufenden== Nummer und einem Namen separiert erneut mit einem Bindestrich angegeben.
+
+```ad-info
+Es kann nun auch sein, das wir mehr als nur eine Datei für ein Thema erzeugen wollen, daher ist das Schema mit der fortlaufenden Nummer folgendermaßen zu erweitern.
+
+\-x-\<name>  ==> Hauptseite
+\-x-y\<name>  ==> Unterseite der Hauptseite, wobei auch y ein fortlaufender Zähler ist 
+!!! ggf. auf 10.000 stellen gehen wegen Sortierung von Dateien..
+```
 z.B.
 002.2-\<fortlaufende Nummer\>-Name
 
 # Beispiel
-| Klasse                | Inhalt                                   |
-| --------------------- | ---------------------------------------- |
-| 002.2                 | Informatik - Spring - Java               |
-| 002.2-1-Configuration | Beispiel Spring Java Configuration thema | 
-
-
-	
+| Klasse                              | Inhalt                                                      |
+| ----------------------------------- | ----------------------------------------------------------- |
+| 002.2                               | Informatik - Spring - Java                                  |
+| 002.2-1-Configuration               | Beispiel Spring Java Configuration thema                    |
+| 002.2-1-1-Configuration-Validierung | Beispiel einer Unterseite für die Spring Java Configuration | 

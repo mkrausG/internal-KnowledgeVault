@@ -3,7 +3,7 @@ Title: 20211215-2-Football-Tackling
 Creation date: 15.12.2021 19:40
 Modification date: Wednesday 15th December 2021 19:41:38
 Author: MKraus
-Tags: 🟡, football, tackling
+Tags: 🟡/open, football, tackling
 Id:
 ---
 
@@ -12,10 +12,7 @@ Hier wird von USA Football ein Kurs angeboten der nicht so teuer ist, der ist da
 
 Davon hatte ich schon mal gehört. Das scheint sehr interressant zu sein. Das wäre auch was für Lukasz .
 
-- [ ] Lukasz Bescheid geben ⏰ 2021-12-16 14:00  📅 2021-12-16
-
-
-
+- [ ] Lukasz Bescheid geben ⏰ 2021-12-16 14:00  📅 2021-12-16 
 
 
 Links:
@@ -23,3 +20,4 @@ Links:
  
 
 # Referenzen
+
