@@ -22,9 +22,9 @@ ToDos:
 - [ ] Anlegen Snippets / Templates für Header / Mocs u.a.
 
 [[001-Web/001.0-1-WebAnatomy_and_MVC_Explained]]
-[[001.0-2-Vergleich JSF-ASP]]
-[[001.0-3-JSON]]
-[[001.0.4-WebApi]]
+[[001-Web/001.0-2-Vergleich_JSF_ASP]]
+[[001-Web/001.0-3-JSON]]
+[[001-Web/001.0.4-WebApi]]
 
 
 Links: 

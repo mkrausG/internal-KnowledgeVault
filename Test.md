@@ -60,9 +60,29 @@ Output:
  src="https://twitframe.com/show?url=https://twitter.com/ShawnWildermuth/status/1470941146771771395?s=20"></iframe>
  
  
- <blockquote class="twitter-tweet"><p lang="en" dir="ltr">BYOTE: Check out part 1 of this “build your own test engine” series from <a href="https://twitter.com/Oraclejavamag?ref_src=twsrc%5Etfw">@oraclejavamag</a>. <a href="https://t.co/4PbC1PHCtW">https://t.co/4PbC1PHCtW</a> <a href="https://t.co/W6IyNOG5yu">pic.twitter.com/W6IyNOG5yu</a></p>&mdash; Java (@java) <a href="https://twitter.com/java/status/1471125396108283907?ref_src=twsrc%5Etfw">December 15, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
- 
 
+ 
+ dasd
+ 
+ ## Css Coloring
+ Funktioniert so, das in snippets folder dann ein custom css :-) Class = dort abgelegt.
+ 
+ ```note-orange-background
+ dasd
+ ```
+ 
+ <span class="orange-bg">This is a note</span>
+ 
+  <span class="orange">This is a note</span>
+  
+  <mark class="blue">asdawdad</mark>
+
+---
+
+
+ <blockquote class="twitter-tweet"><p lang="en" dir="ltr">BYOTE: Check out part 1 of this “build your own test engine” series from <a href="https://twitter.com/Oraclejavamag?ref_src=twsrc%5Etfw">@oraclejavamag</a>. <a href="https://t.co/4PbC1PHCtW">https://t.co/4PbC1PHCtW</a> <a href="https://t.co/W6IyNOG5yu">pic.twitter.com/W6IyNOG5yu</a></p>&mdash; Java (@java) <a href="https://twitter.com/java/status/1471125396108283907?ref_src=twsrc%5Etfw">December 15, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+   
+   
  
  <iframe border=0 frameborder=0 height=550 width=550  
  src="https://twitframe.com/show?url= https://twitter.com/java/status/1471125396108283907?s=20"></iframe>
