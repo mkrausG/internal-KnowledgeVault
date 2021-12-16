@@ -7,6 +7,11 @@ Tags: 🟡/open, football, tackling
 Id:
 ---
 
+**TOC**
+- [[#20211215-2-Football-Tackling|20211215-2-Football-Tackling]]
+- [[#Referenzen|Referenzen]]
+
+
 # 20211215-2-Football-Tackling
 Hier wird von USA Football ein Kurs angeboten der nicht so teuer ist, der ist dann auch mit Zertifizierung. Das gute daran ist, das es ein System ist das von einem Rugby Spieler / Coach gemacht wurde.
 

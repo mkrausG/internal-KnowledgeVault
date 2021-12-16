@@ -4,28 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "ff0bc6c093744307",
+        "id": "2eebec59f6fd292f",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "999-Übersicht Tabelle Klassifikationen.md",
+            "file": "Templates/DailyNote.md",
+            "mode": "source"
+          }
+        }
+      },
+      {
+        "id": "779d80ff5f5b1a14",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Daily-Notes/202112Todekl.md",
             "mode": "source"
           }
         },
-        "group": "89501f996b43774e"
+        "group": "890f0acb4c658cb0"
       },
       {
-        "id": "59d11817d20e83a1",
+        "id": "05ec899b6ce48454",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "999-Übersicht Tabelle Klassifikationen.md",
+            "file": "Daily-Notes/202112Todekl.md",
             "mode": "preview"
           }
         },
-        "group": "89501f996b43774e"
+        "group": "890f0acb4c658cb0"
       }
     ],
     "direction": "vertical"
@@ -52,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#moc",
+                "query": "tag:#🟡",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -97,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "999-Übersicht Tabelle Klassifikationen.md",
+                "file": "Templates/DailyNote.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "999-Übersicht Tabelle Klassifikationen.md",
+                "file": "Templates/DailyNote.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -137,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "999-Übersicht Tabelle Klassifikationen.md"
+                "file": "Templates/DailyNote.md"
               }
             }
           },
@@ -174,7 +185,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 4
       },
       {
         "id": "d750c9603ef15352",
@@ -192,19 +203,20 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
-  "active": "ff0bc6c093744307",
+  "active": "2eebec59f6fd292f",
   "lastOpenFiles": [
+    "Templates/DailyNote.md",
+    "Daily-Notes/202112Todekl.md",
+    "Templates/Header-Frontmatter Daily.md",
+    "Templates/Header-Frontmatter.md",
     "999-Übersicht Tabelle Klassifikationen.md",
-    "001-Web/001.0-1-WebAnatomy_and_MVC_Explained.md",
-    "001-Web/001-Web-MOC.md",
-    "Inbox/20211215-1-Review.md",
-    "Inbox/20211215-2-Football-Tackling.md",
-    "8-Books/801-Books-Moc.md",
-    "Inbox/2021-12-15 Daily Note.md",
-    "Inbox/Untitled.md",
-    "8-Books/802-1-Spring Configuration.md",
-    "Inbox/20211215-2-Allgemeines TODO.md"
+    "README.md",
+    "Test.md",
+    "Daily-Notes/2021-12-15.md",
+    "Daily-Notes/2021-12-16.md",
+    "Inbox/20211215-2-Football-Tackling.md"
   ]
 }
