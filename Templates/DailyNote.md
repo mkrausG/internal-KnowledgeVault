@@ -18,6 +18,13 @@ This is a normal file !
 - Header muss dann gesetzt sein und dann alt-e :-)
 - Wenn in "type" ist das oder das dann due anzeigen
 - Wenn in tags contains xxx dann daas oder das  
+- d.h. das unten einbauen das wir nur projekt einbauen wenn type x oder tag ?
+
+see [Templater Example](https://silentvoid13.github.io/Templater/docs/commands/execution-command)
+and
+[Task Example Queries](https://schemar.github.io/obsidian-tasks/queries/examples/)
+and
+[Dataview Queries](https://blacksmithgu.github.io/obsidian-dataview/query/queries/)
 %%
 
 #### Over Due
