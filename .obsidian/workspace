@@ -13,10 +13,10 @@
             "mode": "source"
           }
         },
-        "group": "3e72c157b3fac814"
+        "group": "00219671392ed42f"
       },
       {
-        "id": "58e330cfcb2c2d4b",
+        "id": "e92ed396cb441705",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -25,7 +25,7 @@
             "mode": "preview"
           }
         },
-        "group": "3e72c157b3fac814"
+        "group": "00219671392ed42f"
       }
     ],
     "direction": "vertical"
@@ -174,7 +174,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       },
       {
         "id": "d750c9603ef15352",
@@ -192,19 +192,20 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "active": "b7eacd3bb125b4a4",
   "lastOpenFiles": [
     "001-Web/001.0.7-Image_Handling.md",
-    "001-Web/001.0.6-JQuery.md",
     "001-Web/001-Web-MOC.md",
-    "Inbox/20211217-1-Net6-Stuff.md",
-    "Inbox/1-TODO.md",
-    "Inbox/20211215-1-Review.md",
-    "Inbox/20211215-2-Football-Tackling.md",
-    "Inbox/20211216-1-Review.md",
-    "1-Home.md",
-    "100-Bundesdruckerei/100-Bundesdruckerei-MOC.md"
+    "Resources/Pasted image 20211211122411.png",
+    "Resources/PhotoShopImage 20211217165109.png",
+    "Resources/Pasted image 20211210105829.png",
+    "Resources/Pasted image 20211210104737.png",
+    "Resources/Overview_Docker_Container.png",
+    "Resources/Pasted image 20211217164906.png",
+    "Test.md",
+    "Templates/TestTemplate.md"
   ]
 }

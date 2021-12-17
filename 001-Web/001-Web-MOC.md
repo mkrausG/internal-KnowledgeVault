@@ -28,6 +28,12 @@ ToDos:
 [[001-Web/001.0.5-SignalR]]
 [[001-Web/001.0.6-JQuery]]
 [[001-Web/001.0.7-Image_Handling]]
+[[001-Web/001.0.8-Tips]]
+[[001-Web/001.0.9-ASPNet]]
+[[001-Web/001.0.10-MVC-oldway]]
+[[001-Web/001.0.11-MVC-4]]
+[[001-Web/001.0.12-Razor]]
+[[001-Web/001.0.13-NodeJs]]
 
 
 Links: 
