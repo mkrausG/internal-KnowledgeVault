@@ -51,13 +51,14 @@ cssclass: myClass
 ## Informatik%%3%%
 | Klasse | Inhalt       |
 | ------ | ------------ |
-| 000    | Admin        | 
+| 000    | Admin        |
 | 001    | Web          |
 | 002    | Spring       |
 | 003    | Kubernetes   |
 | 004    | Asp Net      |
 | 005    | Asp Net Core |
 | 006    | Asp MVC      |
+| 007    | Datenbank    | 
 
 ## Bundesdruckerei%%3%%
 | Klasse | Inhalt    |

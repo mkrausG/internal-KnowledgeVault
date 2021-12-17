@@ -9,23 +9,23 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "001-Web/001.0.7-Image_Handling.md",
+            "file": "001-Web/001.0.8-Tips.md",
             "mode": "source"
           }
         },
-        "group": "00219671392ed42f"
+        "group": "125dd2fbe31e2b6b"
       },
       {
-        "id": "e92ed396cb441705",
+        "id": "4d531d79c10dfe35",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "001-Web/001.0.7-Image_Handling.md",
+            "file": "001-Web/001.0.8-Tips.md",
             "mode": "preview"
           }
         },
-        "group": "00219671392ed42f"
+        "group": "125dd2fbe31e2b6b"
       }
     ],
     "direction": "vertical"
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "001-Web/001.0.7-Image_Handling.md",
+                "file": "001-Web/001.0.8-Tips.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "001-Web/001.0.7-Image_Handling.md",
+                "file": "001-Web/001.0.8-Tips.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "001-Web/001.0.7-Image_Handling.md"
+                "file": "001-Web/001.0.8-Tips.md"
               }
             }
           },
@@ -174,7 +174,7 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 6
       },
       {
         "id": "d750c9603ef15352",
@@ -192,20 +192,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "active": "b7eacd3bb125b4a4",
   "lastOpenFiles": [
-    "001-Web/001.0.7-Image_Handling.md",
+    "001-Web/001.0.8-Tips.md",
+    "007-Datenbank/007-Datenbank-MOC.md",
     "001-Web/001-Web-MOC.md",
+    "1-Home.md",
+    "999-Übersicht Tabelle Klassifikationen.md",
+    "001-Web/001.0.7-Image_Handling.md",
     "Resources/Pasted image 20211211122411.png",
     "Resources/PhotoShopImage 20211217165109.png",
     "Resources/Pasted image 20211210105829.png",
-    "Resources/Pasted image 20211210104737.png",
-    "Resources/Overview_Docker_Container.png",
-    "Resources/Pasted image 20211217164906.png",
-    "Test.md",
-    "Templates/TestTemplate.md"
+    "Resources/Pasted image 20211210104737.png"
   ]
 }
