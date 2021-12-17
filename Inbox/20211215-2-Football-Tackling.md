@@ -3,7 +3,7 @@ Title: 20211215-2-Football-Tackling
 Creation date: 15.12.2021 19:40
 Modification date: Wednesday 15th December 2021 19:41:38
 Author: MKraus
-Tags: 🟡/open, football, tackling
+Tags: football, tackling, review
 Id:
 ---
 

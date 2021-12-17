@@ -25,6 +25,9 @@ ToDos:
 [[001-Web/001.0-2-Vergleich_JSF_ASP]]
 [[001-Web/001.0-3-JSON]]
 [[001-Web/001.0.4-WebApi]]
+[[001-Web/001.0.5-SignalR]]
+[[001-Web/001.0.6-JQuery]]
+[[001-Web/001.0.7-Image_Handling]]
 
 
 Links: 

@@ -6,7 +6,7 @@ Author: MKraus
 Tags: 🟡, ebook, moc
 Id:
 ---
-[[8-Books/801-Books-Moc]]
+[[800-Books/801-Books-Moc]]
 
 # 802-1-Spring Configuration
 Das Thema wurde aus dem Pluralsight EBook [^1] entnommen.

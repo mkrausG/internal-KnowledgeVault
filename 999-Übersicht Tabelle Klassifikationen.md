@@ -2,20 +2,29 @@
 tag: toc
 cssclass: myClass
 ---
+
+** TOC**
 - [[#Erste Ebene|Erste Ebene]]
 - [[#Zweite Ebene|Zweite Ebene]]
 	- [[#Informatik%%2%%|Informatik]]
+	- [[#Bundesdruckerei%%2%%|Bundesdruckerei]]
 - [[#Dritte Ebene|Dritte Ebene]]
 	- [[#Informatik%%3%%|Informatik]]
+	- [[#Bundesdruckerei%%3%%|Bundesdruckerei]]
 - [[#Vierte Ebene|Vierte Ebene]]
 	- [[#Informatik%%4%%|Informatik]]
+	- [[#Bundesdruckerei%%4%%|Bundesdruckere]]
+- [[#Eben Pro Dokument|Eben Pro Dokument]]
 - [[#Beispiel|Beispiel]]
 
 
+
+#Todo Hier dann die ebenen anders aufbauen.. da wir jeweils andere brauchen
 # Erste Ebene
 | Klasse | Inhalt                                       |
 | ------ | -------------------------------------------- |
 | 0      | Informatik, Informationswissenschaft         |
+| 1      | Bundesdruckerei                              | 
 | 5      | Naturwissenschaften, Mathematik              |
 | 6      | Technik, Medizhin, angewandte Wissenschaften |
 | 8      | Literatur                                    |
@@ -33,6 +42,11 @@ cssclass: myClass
 | 08     | Angebote                                                 |
 | 09     | Manuskripte & seltene Bücher                             |
 
+## Bundesdruckerei%%2%%
+| Klasse | Inhalt    |
+| ------ | --------- |
+| 10     | Allgemein | 
+
 # Dritte Ebene 
 ## Informatik%%3%%
 | Klasse | Inhalt       |
@@ -45,6 +59,11 @@ cssclass: myClass
 | 005    | Asp Net Core |
 | 006    | Asp MVC      |
 
+## Bundesdruckerei%%3%%
+| Klasse | Inhalt    |
+| ------ | --------- |
+| 100    | Allgemein | 
+
 # Vierte Ebene
 ## Informatik%%4%%
 | Klasse | Inhalt     |
@@ -55,6 +74,11 @@ cssclass: myClass
 | 000.3   | Kotlin     |
 | 000.4   | JavaScript |
 | 000.5   | SQL        |
+
+## Bundesdruckerei%%4%%
+| Klasse | Inhalt    |
+| ------ | --------- |
+| 100.0  | Allgemein |
 
 # Eben Pro Dokument
 Damit sind dann die nachfolgenden Dokumente gedacht. 

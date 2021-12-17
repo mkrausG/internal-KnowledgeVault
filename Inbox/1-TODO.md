@@ -3,7 +3,7 @@ Title: 1-TODO
 Creation date: 16.12.2021 07:10
 Modification date: Thursday 16th December 2021 07:10:38
 Author: MKraus
-Tags: 🟡/InProgress, #Todo 
+Tags: #Todo 
 Id: 
 ---
 

@@ -11,6 +11,8 @@ Type:
 
 # <% tp.file.title %>
 
+---
+
 # Links:
  
 # Referenzen
