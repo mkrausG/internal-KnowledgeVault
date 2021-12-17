@@ -13,10 +13,10 @@
             "mode": "source"
           }
         },
-        "group": "125dd2fbe31e2b6b"
+        "group": "fbccf5cb80f69407"
       },
       {
-        "id": "4d531d79c10dfe35",
+        "id": "5bd146a9b36a1788",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -25,7 +25,7 @@
             "mode": "preview"
           }
         },
-        "group": "125dd2fbe31e2b6b"
+        "group": "fbccf5cb80f69407"
       }
     ],
     "direction": "vertical"
@@ -194,17 +194,17 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "b7eacd3bb125b4a4",
+  "active": "5bd146a9b36a1788",
   "lastOpenFiles": [
     "001-Web/001.0.8-Tips.md",
+    "001-Web/001-Web-MOC.md",
+    "001-Web/001.0.7-Image_Handling.md",
+    "001-Web/001.0.6-JQuery.md",
+    "001-Web/001.0.5-SignalR.md",
+    "001-Web/001.0.4-WebApi.md",
+    "001-Web/001.0-3-JSON.md",
     "999-Übersicht Tabelle Klassifikationen.md",
     "007-Datenbank/007-Datenbank-MOC.md",
-    "001-Web/001-Web-MOC.md",
-    "1-Home.md",
-    "001-Web/001.0.7-Image_Handling.md",
-    "Resources/Pasted image 20211211122411.png",
-    "Resources/PhotoShopImage 20211217165109.png",
-    "Resources/Pasted image 20211210105829.png",
-    "Resources/Pasted image 20211210104737.png"
+    "1-Home.md"
   ]
 }
