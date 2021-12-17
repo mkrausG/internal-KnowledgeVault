@@ -13,9 +13,12 @@ cssclass: myClass
 	- [[#Bundesdruckerei%%3%%|Bundesdruckerei]]
 - [[#Vierte Ebene|Vierte Ebene]]
 	- [[#Informatik%%4%%|Informatik]]
-	- [[#Bundesdruckerei%%4%%|Bundesdruckere]]
+	- [[#Bundesdruckerei%%4%%|Bundesdruckerei]]
+- [[#Fünfte Ebene|Fünfte Ebene]]
+	- [[#Informatik%%5%%|Informatik]]
 - [[#Eben Pro Dokument|Eben Pro Dokument]]
 - [[#Beispiel|Beispiel]]
+
 
 
 
@@ -58,7 +61,9 @@ cssclass: myClass
 | 004    | Asp Net      |
 | 005    | Asp Net Core |
 | 006    | Asp MVC      |
-| 007    | Datenbank    | 
+| 007    | Datenbank    |
+| 008    | WinForms     |
+| 009    | WPF          | 
 
 ## Bundesdruckerei%%3%%
 | Klasse | Inhalt    |
@@ -80,6 +85,14 @@ cssclass: myClass
 | Klasse | Inhalt    |
 | ------ | --------- |
 | 100.0  | Allgemein |
+
+# Fünfte Ebene
+## Informatik%%5%%
+Diese Ebene stellt die Firma / Frameworks dar
+| Klasse | Inhalt     |
+| ------ | ---------- |
+| 000.01 | DevExpress |
+| 000.02 | SyncFusion | 
 
 # Eben Pro Dokument
 Damit sind dann die nachfolgenden Dokumente gedacht. 
