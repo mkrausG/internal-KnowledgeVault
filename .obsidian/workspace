@@ -20,7 +20,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "100-Bundesdruckerei/100.0-6-Solid.md",
+            "file": "1-Home.md",
             "mode": "source"
           }
         }
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "100-Bundesdruckerei/100.0-6-Solid.md",
+                "file": "1-Home.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "100-Bundesdruckerei/100.0-6-Solid.md",
+                "file": "1-Home.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "100-Bundesdruckerei/100.0-6-Solid.md"
+                "file": "1-Home.md"
               }
             }
           },
@@ -194,15 +194,15 @@
   },
   "active": "c8f0311f3311703f",
   "lastOpenFiles": [
-    "100-Bundesdruckerei/100.0-6-Solid.md",
-    "100-Bundesdruckerei/100.0-1-Links.md",
-    "100-Bundesdruckerei/100.0-5-Aufstellung Resourcenschonend.md",
-    "100-Bundesdruckerei/100.0-4-Naming und Partitioning.md",
-    "100-Bundesdruckerei/100.0-3-ToRead.md",
-    "100-Bundesdruckerei/100.0-2-ToDo.md",
-    "Inbox/20211215-1-Review.md",
-    "Templates/StandartNote.md",
+    "1-Home.md",
+    "0-common.md",
+    "001-Web/001-Web-MOC.md",
     "100-Bundesdruckerei/100-Bundesdruckerei-MOC.md",
-    "001-Web/001.0.8-Tips.md"
+    "100-Bundesdruckerei/100.0-1-Links.md",
+    "100-Bundesdruckerei/100.0-2-ToDo.md",
+    "100-Bundesdruckerei/100.0-3-ToRead.md",
+    "100-Bundesdruckerei/100.0-4-Naming und Partitioning.md",
+    "100-Bundesdruckerei/100.0-5-Aufstellung Resourcenschonend.md",
+    "100-Bundesdruckerei/100.0-6-Solid.md"
   ]
 }
