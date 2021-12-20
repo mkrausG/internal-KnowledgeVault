@@ -1,31 +1,29 @@
 {
   "main": {
-    "id": "d1de2baaddac1ef8",
+    "id": "347c1fb6ebbc61a4",
     "type": "split",
     "children": [
       {
-        "id": "b7eacd3bb125b4a4",
+        "id": "b01852a95c21b1c4",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "001-Web/001.0.8-Tips.md",
+            "file": "100-Bundesdruckerei/100.0-1-Links.md",
             "mode": "source"
           }
-        },
-        "group": "fbccf5cb80f69407"
+        }
       },
       {
-        "id": "5bd146a9b36a1788",
+        "id": "c8f0311f3311703f",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "001-Web/001.0.8-Tips.md",
-            "mode": "preview"
+            "file": "100-Bundesdruckerei/100.0-6-Solid.md",
+            "mode": "source"
           }
-        },
-        "group": "fbccf5cb80f69407"
+        }
       }
     ],
     "direction": "vertical"
@@ -97,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "001-Web/001.0.8-Tips.md",
+                "file": "100-Bundesdruckerei/100.0-6-Solid.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "001-Web/001.0.8-Tips.md",
+                "file": "100-Bundesdruckerei/100.0-6-Solid.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -137,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "001-Web/001.0.8-Tips.md"
+                "file": "100-Bundesdruckerei/100.0-6-Solid.md"
               }
             }
           },
@@ -194,17 +192,17 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "5bd146a9b36a1788",
+  "active": "c8f0311f3311703f",
   "lastOpenFiles": [
-    "001-Web/001.0.8-Tips.md",
-    "001-Web/001-Web-MOC.md",
-    "001-Web/001.0.7-Image_Handling.md",
-    "001-Web/001.0.6-JQuery.md",
-    "001-Web/001.0.5-SignalR.md",
-    "001-Web/001.0.4-WebApi.md",
-    "001-Web/001.0-3-JSON.md",
-    "999-Übersicht Tabelle Klassifikationen.md",
-    "007-Datenbank/007-Datenbank-MOC.md",
-    "1-Home.md"
+    "100-Bundesdruckerei/100.0-6-Solid.md",
+    "100-Bundesdruckerei/100.0-1-Links.md",
+    "100-Bundesdruckerei/100.0-5-Aufstellung Resourcenschonend.md",
+    "100-Bundesdruckerei/100.0-4-Naming und Partitioning.md",
+    "100-Bundesdruckerei/100.0-3-ToRead.md",
+    "100-Bundesdruckerei/100.0-2-ToDo.md",
+    "Inbox/20211215-1-Review.md",
+    "Templates/StandartNote.md",
+    "100-Bundesdruckerei/100-Bundesdruckerei-MOC.md",
+    "001-Web/001.0.8-Tips.md"
   ]
 }
