@@ -7,7 +7,7 @@ Tags: #Todo
 Id: 
 ---
 
-- [ ] 🔺 C# EF 6 (@2021-12-20 15:52)
+- [x] 🔺 C# EF 6 (@2021-12-20 15:52)
 
  
  <iframe border=0 frameborder=0 height=250 width=550  

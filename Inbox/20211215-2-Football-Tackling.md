@@ -17,7 +17,7 @@ Hier wird von USA Football ein Kurs angeboten der nicht so teuer ist, der ist da
 
 Davon hatte ich schon mal gehört. Das scheint sehr interressant zu sein. Das wäre auch was für Lukasz .
 
-- [ ] Lukasz Bescheid geben ⏰ 2021-12-20 15:52  📅 2021-12-16 
+- [x] Lukasz Bescheid geben ⏰ 2021-12-20 15:52  📅 2021-12-16 ✅ 2021-12-21
 
 
 Links:
