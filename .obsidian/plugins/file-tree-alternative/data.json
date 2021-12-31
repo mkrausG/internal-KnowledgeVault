@@ -6,7 +6,6 @@
   "allSearchOnlyInFocusedFolder": false,
   "showFilesFromSubFoldersButton": true,
   "excludedExtensions": "",
-  "excludedFolders": "",
   "folderIcon": "default",
   "folderCount": true,
   "folderCountOption": "notes",
