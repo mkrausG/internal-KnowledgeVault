@@ -19,7 +19,7 @@ tag: home
 [[007-Datenbank/007-Datenbank-MOC]]
 
 # 100-Bundesdruckerei `fas:Passport`
-[[100-Bundesdruckerei/100-Bundesdruckerei-MOC]]
+[[100-BD/100-Bundesdruckerei-MOC]]
 
 # 800-Books
 [[800-Books/801-Books-Moc]]
