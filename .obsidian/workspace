@@ -9,20 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Inbox/1-TODO.md",
+            "file": "100-BD/100.0-1-Links.md",
             "mode": "source",
-            "source": false
-          }
-        }
-      },
-      {
-        "id": "9a7b2dd409b47305",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Inbox/1-TODO.md",
-            "mode": "preview",
             "source": false
           }
         }
@@ -52,8 +40,8 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
-                "matchingCase": false,
+                "query": "fas:",
+                "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
@@ -97,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Inbox/1-TODO.md",
+                "file": "100-BD/100.0-1-Links.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Inbox/1-TODO.md",
+                "file": "100-BD/100.0-1-Links.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -137,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Inbox/1-TODO.md"
+                "file": "100-BD/100.0-1-Links.md"
               }
             }
           },
@@ -186,17 +174,17 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "9a7b2dd409b47305",
+  "active": "3da42473ecc97fff",
   "lastOpenFiles": [
-    "Inbox/1-TODO.md",
+    "100-BD/100.0-1-Links.md",
+    "1-Home.md",
     "TODO.md",
-    "001-Web/001.0.7-Image_Handling.md",
-    "001-Web/001.0.6-JQuery.md",
-    "001-Web/001.0-AspNetSchulung/001.0-AspNetSchulung-MOC.md",
-    "001-Web/001.0-AspNetSchulung/001.0-1-AspNetFeatures/001.0-1-AspNetFeaturesMoc.md",
-    "001-Web/001.0-AspNetSchulung/001.0-1-AspNetFeatures/001.0-1-1ASP Web Form Features.md",
-    "100-BD/100.0-2-ToDo.md",
-    "100-BD/100-Bundesdruckerei-MOC.md",
-    "Inbox/20211220-ToReview.md"
+    "Test.md",
+    "SampleSNippet-OnlyOutput - Copy.md",
+    "README.md",
+    "001-Web/001.0.4-WebApi.md",
+    "007-Datenbank/007-Datenbank-MOC.md",
+    "001-Web/001-Web-MOC.md",
+    "100-BD/100-Bundesdruckerei-MOC.md"
   ]
 }
