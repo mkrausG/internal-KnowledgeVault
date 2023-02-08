@@ -1,11 +1,12 @@
 {
   "baseFontSize": 16,
   "theme": "moonstone",
-  "cssTheme": "Solarized",
+  "cssTheme": "Blue Topaz",
   "enabledCssSnippets": [
     "checkbox",
     "notation-colour-blocks",
     "realistic-highlight"
   ],
-  "translucency": false
+  "translucency": false,
+  "accentColor": ""
 }

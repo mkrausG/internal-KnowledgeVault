@@ -1,0 +1,223 @@
+{
+  "main": {
+    "id": "347c1fb6ebbc61a4",
+    "type": "split",
+    "children": [
+      {
+        "id": "233cc7a345ad6315",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fc6d8ba53896906f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "100-BD/100.0-4-Naming und Partitioning.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e47182ab67a3b228",
+    "type": "split",
+    "children": [
+      {
+        "id": "49e4bafe30f9bf1d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "72e007df4b077755",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#partitioning",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "6dd95661ac49d5c2",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "aabf2ad0764b4a4b",
+            "type": "leaf",
+            "state": {
+              "type": "file-tree-view",
+              "state": {}
+            }
+          },
+          {
+            "id": "ab8ea44de0581416",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "ce9610d725b519e7",
+    "type": "split",
+    "children": [
+      {
+        "id": "ef738f8dc354cd60",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a8a01de38c9bc6b0",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "100-BD/100.0-4-Naming und Partitioning.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "2ce4553451f829d6",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "100-BD/100.0-4-Naming und Partitioning.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "108bf9b0c01da7d5",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "49fcfce2fce0182d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "100-BD/100.0-4-Naming und Partitioning.md"
+              }
+            }
+          },
+          {
+            "id": "0f6097b7c5e06acb",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "6b1fb38bb4425463",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "bcb2fd328e0847e8",
+            "type": "leaf",
+            "state": {
+              "type": "reminder-list",
+              "state": {}
+            }
+          },
+          {
+            "id": "5fc54ca3750064cb",
+            "type": "leaf",
+            "state": {
+              "type": "FANTASY_CALENDAR",
+              "state": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "d750c9603ef15352",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c0854afeeac33e96",
+            "type": "leaf",
+            "state": {
+              "type": "timeline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "darlal-switcher-plus:Open in Headings Mode": false,
+      "darlal-switcher-plus:Open Symbols for the active editor": false,
+      "templater-obsidian:Templater": false,
+      "file-tree-alternative:File Tree Alternative Plugin": false,
+      "fantasy-calendar:Open Large Fantasy Calendar": false,
+      "card-board:CardBoard": false
+    }
+  },
+  "active": "aabf2ad0764b4a4b",
+  "lastOpenFiles": [
+    "001-Web/001.0-AspNetSchulung/001.0-1-AspNetFeatures/001.0-1-1ASP Web Form Features.md",
+    "001-Web/001.0.7-Image_Handling.md",
+    "Inbox/Untitled.canvas",
+    "Templates/twitter-iframe.md",
+    "Templates/ToManyTasks.md",
+    "Templates/StandartNote.md",
+    "Templates/SampleSNippet-OnlyOutput.md",
+    "Templates/Lecture.md",
+    "Templates/DailyNote.md",
+    "Templates/BookNotes.md"
+  ]
+}

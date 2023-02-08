@@ -10,11 +10,12 @@
   "newFileLocation": "folder",
   "newFileFolderPath": "Inbox",
   "pdfExportSettings": {
-    "pageSize": "Letter",
+    "pageSize": "A4",
     "landscape": false,
     "margin": "0",
     "downscalePercent": 100
   },
   "legacyEditor": false,
-  "livePreview": true
+  "livePreview": true,
+  "promptDelete": false
 }

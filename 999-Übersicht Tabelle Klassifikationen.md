@@ -7,7 +7,7 @@ cssclass: myClass
 - [[#Erste Ebene|Erste Ebene]]
 - [[#Zweite Ebene|Zweite Ebene]]
 	- [[#Informatik%%2%%|Informatik]]
-	- [[#Bundesdruckerei%%2%%|Bundesdruckerei]]
+	- [[#Bundesdruckerei 2]]
 - [[#Dritte Ebene|Dritte Ebene]]
 	- [[#Informatik%%3%%|Informatik]]
 	- [[#Bundesdruckerei%%3%%|Bundesdruckerei]]

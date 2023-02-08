@@ -9,5 +9,6 @@
   "pasteSymbol": "$pst$",
   "useTab": true,
   "useSpace": false,
-  "wordDelimiters": "$()[]{}<>,.!?;:'\"\\/"
+  "wordDelimiters": "$()[]{}<>,.!?;:'\"\\/",
+  "isWYSIWYG": true
 }
