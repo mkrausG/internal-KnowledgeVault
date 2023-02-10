@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"961d6fa992389033","x":-226,"y":-543,"width":250,"height":60,"type":"text","text":"Spring Boot DI"},
+		{"id":"2f1a76728d4ede9b","x":-301,"y":-372,"width":400,"height":109,"type":"file","file":"900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-0-Spring Boot & Spring Framework IoC, DI, Bean-Container-MOC.md"},
+		{"id":"6e9a7f90e92573c5","x":-783,"y":-97,"width":400,"height":108,"type":"file","file":"900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 Container für spring managed Beans.md"}
+	],
+	"edges":[
+		{"id":"9e490beab013e586","fromNode":"961d6fa992389033","fromSide":"bottom","toNode":"2f1a76728d4ede9b","toSide":"top"},
+		{"id":"fa2024ebb3f8616c","fromNode":"2f1a76728d4ede9b","fromSide":"bottom","toNode":"6e9a7f90e92573c5","toSide":"top"}
+	]
+}

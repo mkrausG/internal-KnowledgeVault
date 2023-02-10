@@ -27,10 +27,11 @@ cssclass: myClass
 | Klasse | Inhalt                                       |
 | ------ | -------------------------------------------- |
 | 0      | Informatik, Informationswissenschaft         |
-| 1      | Bundesdruckerei                              | 
+| 1      | Bundesdruckerei                              |
 | 5      | Naturwissenschaften, Mathematik              |
 | 6      | Technik, Medizhin, angewandte Wissenschaften |
 | 8      | Literatur                                    |
+| 9      | Schulungen                                             |
 
 # Zweite Ebene
 ## Informatik%%2%%
@@ -48,7 +49,13 @@ cssclass: myClass
 ## Bundesdruckerei%%2%%
 | Klasse | Inhalt    |
 | ------ | --------- |
-| 10     | Allgemein | 
+| 10     | Allgemein |
+
+## Schulungen
+| Klasse | Inhalt |
+| ------ | ------ |
+| 90     | Udemy  |
+| 91     | Safari | 
 
 # Dritte Ebene 
 ## Informatik%%3%%
@@ -74,12 +81,12 @@ cssclass: myClass
 ## Informatik%%4%%
 | Klasse | Inhalt     |
 | ------ | ---------- |
-| 000.0   | Asp Net    |
-| 000.1   | CSharp     |
-| 000.2   | Java       |
-| 000.3   | Kotlin     |
-| 000.4   | JavaScript |
-| 000.5   | SQL        |
+| xxx.0   | Asp Net    |
+| xxx.1   | CSharp     |
+| xxx.2   | Java       |
+| xxx.3   | Kotlin     |
+| xxx.4   | JavaScript |
+| xxx.5   | SQL        |
 
 ## Bundesdruckerei%%4%%
 | Klasse | Inhalt    |

@@ -15,8 +15,10 @@ Das Thema wurde aus dem Pluralsight EBook [^1] entnommen.
 
 ToDo: #Todo 
 - [ ] Hier dann nur wissenwertes über das Buch
-- [ ] Inhaltlich dann in 001-Web-Moc
+- [ ] Inhaltlich dann in 001-Web-Moc 
 
 Links: 
 
 # Referenzen
+
+

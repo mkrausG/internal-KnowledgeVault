@@ -4,18 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "233cc7a345ad6315",
+        "id": "c76b2977e0e2e39b",
         "type": "tabs",
         "children": [
           {
-            "id": "fc6d8ba53896906f",
+            "id": "c3a8900b0a184c1f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "100-BD/100.0-4-Naming und Partitioning.md",
-                "mode": "source",
-                "source": false
+                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/Spring Boot.canvas",
+                "viewState": {
+                  "x": -342,
+                  "y": -266,
+                  "zoom": 0,
+                  "snapToGrid": false
+                }
               }
             }
           }
@@ -38,7 +42,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#partitioning",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -56,14 +60,6 @@
             }
           },
           {
-            "id": "aabf2ad0764b4a4b",
-            "type": "leaf",
-            "state": {
-              "type": "file-tree-view",
-              "state": {}
-            }
-          },
-          {
             "id": "ab8ea44de0581416",
             "type": "leaf",
             "state": {
@@ -72,13 +68,21 @@
                 "sortOrder": "alphabetical"
               }
             }
+          },
+          {
+            "id": "5c25c08b58a8d487",
+            "type": "leaf",
+            "state": {
+              "type": "file-tree-view",
+              "state": {}
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 253.51103591918945
   },
   "right": {
     "id": "ce9610d725b519e7",
@@ -94,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "100-BD/100.0-4-Naming und Partitioning.md",
+                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/Spring Boot.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "100-BD/100.0-4-Naming und Partitioning.md",
+                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/Spring Boot.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -134,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "100-BD/100.0-4-Naming und Partitioning.md"
+                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/Spring Boot.canvas"
               }
             }
           },
@@ -170,7 +174,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 5
       },
       {
         "id": "d750c9603ef15352",
@@ -199,25 +204,25 @@
       "command-palette:Open command palette": false,
       "markdown-importer:Open format converter": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "templater-obsidian:Templater": false,
+      "fantasy-calendar:Open Large Fantasy Calendar": false,
+      "card-board:CardBoard": false,
       "darlal-switcher-plus:Open in Headings Mode": false,
       "darlal-switcher-plus:Open Symbols for the active editor": false,
-      "templater-obsidian:Templater": false,
-      "file-tree-alternative:File Tree Alternative Plugin": false,
-      "fantasy-calendar:Open Large Fantasy Calendar": false,
-      "card-board:CardBoard": false
+      "file-tree-alternative:File Tree Alternative Plugin": false
     }
   },
-  "active": "aabf2ad0764b4a4b",
+  "active": "c3a8900b0a184c1f",
   "lastOpenFiles": [
-    "001-Web/001.0-AspNetSchulung/001.0-1-AspNetFeatures/001.0-1-1ASP Web Form Features.md",
-    "001-Web/001.0.7-Image_Handling.md",
-    "Inbox/Untitled.canvas",
-    "Templates/twitter-iframe.md",
-    "Templates/ToManyTasks.md",
-    "Templates/StandartNote.md",
-    "Templates/SampleSNippet-OnlyOutput.md",
-    "Templates/Lecture.md",
-    "Templates/DailyNote.md",
-    "Templates/BookNotes.md"
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 Container für spring managed Beans.md",
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-0-Spring Boot & Spring Framework IoC, DI, Bean-Container-MOC.md",
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/Spring Boot.canvas",
+    "assets/images/2023-02-06-22-02-37.png.md",
+    "assets/images/2023-02-06-21-41-38.png.md",
+    "Inbox/Untitled 3.md",
+    "100-BD/100-BD-MOC.md",
+    "1-Home.md",
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-Spring Boot & Spring Framework-MOC.md",
+    "Inbox/Untitled Diagram.svg"
   ]
 }
