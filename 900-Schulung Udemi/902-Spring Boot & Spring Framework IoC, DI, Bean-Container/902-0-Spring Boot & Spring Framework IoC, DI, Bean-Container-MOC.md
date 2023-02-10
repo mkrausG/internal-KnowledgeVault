@@ -3,7 +3,10 @@ Title: Untitled 3
 Creation date: 09.02.2023 18:23
 Modification date: Thursday 9th February 2023 18:23:27
 Author: MKraus
-Tags: #🟡InProgress #spring #schulung 
+Tags:
+- spring 
+- schulung 
+- 🟡InProgress 
 Type:
 ---
 

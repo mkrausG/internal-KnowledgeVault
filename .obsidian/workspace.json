@@ -4,22 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "c76b2977e0e2e39b",
+        "id": "0f05e644df542259",
         "type": "tabs",
         "children": [
           {
-            "id": "c3a8900b0a184c1f",
+            "id": "ae897963a78b40af",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/Spring Boot.canvas",
-                "viewState": {
-                  "x": -342,
-                  "y": -266,
-                  "zoom": 0,
-                  "snapToGrid": false
-                }
+                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 Container für spring managed Beans.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -82,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 253.51103591918945
+    "width": 444.5
   },
   "right": {
     "id": "ce9610d725b519e7",
@@ -98,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/Spring Boot.canvas",
+                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 Container für spring managed Beans.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/Spring Boot.canvas",
+                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 Container für spring managed Beans.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -138,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/Spring Boot.canvas"
+                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 Container für spring managed Beans.md"
               }
             }
           },
@@ -175,7 +171,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       },
       {
         "id": "d750c9603ef15352",
@@ -209,20 +205,23 @@
       "card-board:CardBoard": false,
       "darlal-switcher-plus:Open in Headings Mode": false,
       "darlal-switcher-plus:Open Symbols for the active editor": false,
-      "file-tree-alternative:File Tree Alternative Plugin": false
+      "file-tree-alternative:File Tree Alternative Plugin": false,
+      "audio-recorder:Start/stop recording": false,
+      "daily-notes:Open today's daily note": false,
+      "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "c3a8900b0a184c1f",
+  "active": "49fcfce2fce0182d",
   "lastOpenFiles": [
-    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 Container für spring managed Beans.md",
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-0-Spring Boot & Spring Framework IoC, DI, Bean-Container-MOC.md",
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 Container für spring managed Beans.md",
+    "002-Spring/002-Spring-MOC.md",
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/Spring Boot.canvas",
     "assets/images/2023-02-06-22-02-37.png.md",
     "assets/images/2023-02-06-21-41-38.png.md",
     "Inbox/Untitled 3.md",
     "100-BD/100-BD-MOC.md",
     "1-Home.md",
-    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-Spring Boot & Spring Framework-MOC.md",
-    "Inbox/Untitled Diagram.svg"
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-Spring Boot & Spring Framework-MOC.md"
   ]
 }
