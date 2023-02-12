@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 Container für spring managed Beans.md",
+                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1 Container für spring managed Beans.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 Container für spring managed Beans.md",
+                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1 Container für spring managed Beans.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 Container für spring managed Beans.md",
+                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1 Container für spring managed Beans.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 Container für spring managed Beans.md"
+                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1 Container für spring managed Beans.md"
               }
             }
           },
@@ -170,8 +170,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       },
       {
         "id": "d750c9603ef15352",
@@ -211,17 +210,17 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "49fcfce2fce0182d",
+  "active": "ae897963a78b40af",
   "lastOpenFiles": [
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-0-Spring Boot & Spring Framework IoC, DI, Bean-Container-MOC.md",
-    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 Container für spring managed Beans.md",
-    "002-Spring/002-Spring-MOC.md",
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-2 JShell.md",
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-1 Optionale Abhängigkeiten.md",
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1 Container für spring managed Beans.md",
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/Spring Boot.canvas",
+    "Jshell - Super für commandline apps mit Spring zusammen möglich.md",
+    "002-Spring/002-Spring-MOC.md",
     "assets/images/2023-02-06-22-02-37.png.md",
     "assets/images/2023-02-06-21-41-38.png.md",
-    "Inbox/Untitled 3.md",
-    "100-BD/100-BD-MOC.md",
-    "1-Home.md",
-    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-Spring Boot & Spring Framework-MOC.md"
+    "Inbox/Untitled 3.md"
   ]
 }

@@ -2,10 +2,16 @@
 	"nodes":[
 		{"id":"961d6fa992389033","x":-226,"y":-543,"width":250,"height":60,"type":"text","text":"Spring Boot DI"},
 		{"id":"2f1a76728d4ede9b","x":-301,"y":-372,"width":400,"height":109,"type":"file","file":"900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-0-Spring Boot & Spring Framework IoC, DI, Bean-Container-MOC.md"},
-		{"id":"6e9a7f90e92573c5","x":-783,"y":-97,"width":400,"height":108,"type":"file","file":"900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 Container für spring managed Beans.md"}
+		{"id":"6e9a7f90e92573c5","x":-783,"y":-97,"width":400,"height":108,"type":"file","file":"900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1 Container für spring managed Beans.md"},
+		{"id":"647137170badd9c2","x":-783,"y":-762,"width":250,"height":60,"type":"text","text":"Spring Boot"},
+		{"id":"1d836c4a7d0b837c","x":-301,"y":93,"width":400,"height":77,"type":"file","file":"900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-1 Optionale Abhängigkeiten.md"},
+		{"id":"c8827a5626ae7caf","x":-301,"y":209,"width":400,"height":50,"type":"file","file":"900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-2 JShell.md"}
 	],
 	"edges":[
 		{"id":"9e490beab013e586","fromNode":"961d6fa992389033","fromSide":"bottom","toNode":"2f1a76728d4ede9b","toSide":"top"},
-		{"id":"fa2024ebb3f8616c","fromNode":"2f1a76728d4ede9b","fromSide":"bottom","toNode":"6e9a7f90e92573c5","toSide":"top"}
+		{"id":"fa2024ebb3f8616c","fromNode":"2f1a76728d4ede9b","fromSide":"bottom","toNode":"6e9a7f90e92573c5","toSide":"top"},
+		{"id":"e07dc65d030b5100","fromNode":"647137170badd9c2","fromSide":"bottom","toNode":"961d6fa992389033","toSide":"top"},
+		{"id":"1ac7ad618c460878","fromNode":"6e9a7f90e92573c5","fromSide":"bottom","toNode":"1d836c4a7d0b837c","toSide":"left"},
+		{"id":"14dd35d9171460be","fromNode":"6e9a7f90e92573c5","fromSide":"bottom","toNode":"c8827a5626ae7caf","toSide":"left"}
 	]
 }

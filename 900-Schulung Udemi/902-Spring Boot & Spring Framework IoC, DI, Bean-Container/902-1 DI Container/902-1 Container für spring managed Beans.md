@@ -31,15 +31,7 @@ Id:
 	- [[#Exit / Beenden von Programmen#ApplicationPID[FileWriter]|ApplicationPID[FileWriter]]]
 - [[#Spring Shell|Spring Shell]]
 	- [[#Spring Shell#Konfiguration|Konfiguration]]
-- [[#Optionale Abhängigkeiten|Optionale Abhängigkeiten]]
-	- [[#Optionale Abhängigkeiten#Option 1: Annotationsattribut|Option 1: Annotationsattribut]]
-	- [[#Optionale Abhängigkeiten#Option 2:  @Nullable (aus einem beliebigen Paket)|Option 2:  @Nullable (aus einem beliebigen Paket)]]
-	- [[#Optionale Abhängigkeiten#Option 3: Einsatz von Optional|Option 3: Einsatz von Optional]]
-	- [[#Optionale Abhängigkeiten#Option 4. Object Provider|Option 4. Object Provider]]
-- [[#Zyklische Abhängigkeiten|Zyklische Abhängigkeiten]]
-- [[#Andere Dinge injizieren|Andere Dinge injizieren]]
-
-
+- [[#Optionale Tätigkeiten|Optionale Tätigkeiten]]
 
 ### Questions/Cues
 - Item
@@ -181,65 +173,7 @@ System.exit(SpringApplication.exit(ctx, () -> 2)); // return 2 as exitCode
 ![[Resources/Udemy/springDIIco/2023-02-06-22-17-53.png]]
 
 ### Spring Shell
-Jshell :-) Super für commandline apps mit Spring zusammen möglich
+[[900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-2 JShell|JShell]]
 
-#### Konfiguration
-- `spring.shell.interactive.enabled=false` # Disabled
-- `spring.shell.history.enabled=false` # default ist true.d.h log Datei erzeugen
-- `spring.shell.history.name=xxxx` # wenn nicht gesetzt dann `spring.application.nam`e, ansonsten `spring-shell.log`
-
-### Optionale Abhängigkeiten
-* Spring-managed Beans können fehlen, und dann soll der Container keine Injierung durchführen. Das muss allerdings expliziert ausgewiesen werden.
-
-#### Option 1: Annotationsattribut
-
-```java
-@Autowired(required=false)
-Thumbnail maybeThumbnail
-```
-
-#### Option 2:  @Nullable (aus einem beliebigen Paket)
-z.B. aus `javax.annotation.Nullable` oder `org.springframework.lang.Nullable`
-
-```java
-@Autowired @Nullable Thumbnail maybeThumbnail;
-```
-
-#### Option 3: Einsatz von Optional
-
-```java
-@Autowired Optional<Thumbnail> maybeThumbnail;
-```
-
-#### Option 4. Object Provider
-
-```java
-@Autowired ObjectProvider<Thumbnail> maybeThumbnail;
-```
-
-Für optionale Abhängigkeiten eignen sich "Setter" gut.
-
-### Zyklische Abhängigkeiten
-
-Ab Spring Boot 2.6 sind diese nicht Zulässig.
-d.h. 
-```java
-@Component class A { @Autowired B b;}
-@Component class B { @Autowired A a;}
-```
-
-Das kann aber ausgesetzt werden mit:
-1. `spring.main.allow-circular-references=true`
-2. Setter nutzen
-3. `@Lazy`-Annotation bei `@Autowired` einsetzen
-
-### Andere Dinge injizieren
-
-Im Grunde kann alles was im DI Container vorhanden ist auch eingebunden werden.
-Darunter fallen auch:
-* Bean Factory
-* ApplicationContext
-* Environment
-* ResourceLoader
-* ApplicationEventPublisher
-* MessageSource bzw. deren konkreten Untertypen (ConfigurableApplicationContext)
+### Optionale Tätigkeiten 
+[[900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-1 Optionale Abhängigkeiten|  Optionale Abhängigkeiten]]

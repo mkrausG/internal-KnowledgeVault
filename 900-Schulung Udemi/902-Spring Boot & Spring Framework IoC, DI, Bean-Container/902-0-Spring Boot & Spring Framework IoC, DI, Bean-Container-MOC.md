@@ -15,7 +15,7 @@ Type:
 # Spring Boot & Spring Framework IoC, DI, Bean-Container-MOC
 Schulung Udemy
 
-[[900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 Container für spring managed Beans]]
+[[900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1 Container für spring managed Beans|Spring DI Container]]
 
 ---
 
