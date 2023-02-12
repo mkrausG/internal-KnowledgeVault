@@ -20,18 +20,12 @@ Id:
 - [[#Spring Container Managed Beans|Spring Container Managed Beans]]
 	- [[#Spring Container Managed Beans#Application|Application]]
 - [[#`@ComponentScan` mit basePackages|`@ComponentScan` mit basePackages]]
-	- [[#`@ComponentScan` mit basePackages#includeFilters|includeFilters]]
-	- [[#`@ComponentScan` mit basePackages#exceludeFilters|exceludeFilters]]
-	- [[#`@ComponentScan` mit basePackages#@ComponentScan.Filter|@ComponentScan.Filter]]
 - [[#Runner|Runner]]
 	- [[#Runner#Commandlinerunner / Applicationrunner|Commandlinerunner / Applicationrunner]]
 - [[#Exit / Beenden von Programmen|Exit / Beenden von Programmen]]
-	- [[#Exit / Beenden von Programmen#Exception-Klassen implementieren.|Exception-Klassen implementieren.]]
-	- [[#Exit / Beenden von Programmen#ExitCodeExceptionMapper|ExitCodeExceptionMapper]]
-	- [[#Exit / Beenden von Programmen#ApplicationPID[FileWriter]|ApplicationPID[FileWriter]]]
 - [[#Spring Shell|Spring Shell]]
-	- [[#Spring Shell#Konfiguration|Konfiguration]]
 - [[#Optionale Tätigkeiten|Optionale Tätigkeiten]]
+
 
 ### Questions/Cues
 - Item
@@ -79,7 +73,7 @@ String[] getBeanDefinitionNames()
 
 ### `@ComponentScan` mit basePackages
 
-[[900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-3 ComponentScan mit base packages| ComponentScan mit base packages]]
+[[900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-3 ComponentScan mit base packages| ComponentScan mit base packages]]
 
 ### Runner
 Drei übliche Wege zum Starten eigener Anwendungen sind:
@@ -95,33 +89,7 @@ Drei übliche Wege zum Starten eigener Anwendungen sind:
   
 ### Exit / Beenden von Programmen
 
-Exit Code => steht für EXIT_SUCCESSS, alle anderen Wertei für Fehler.
-Unter Dos heißt der ExitCode auch `errorLevel`.
-
-```java
-System.exit(-1);
-```
-
-ABER für Spring sollte man SpringApplication exit() nutzen da:
-- controlled shutdown
-- Context wird geschlossen
-  
-```java
-@Autowired
-private ApplicationContext ctx;
-...
-System.exit(SpringApplication.exit(ctx, () -> 2)); // return 2 as exitCode
-```
-
-#### Exception-Klassen implementieren.
-
-![[Resources/Udemy/springDIIco/2023-02-06-22-16-20.png]]
-
-#### ExitCodeExceptionMapper
-![[Resources/Udemy/springDIIco/2023-02-06-22-16-44.png]]
-
-#### ApplicationPID[FileWriter]
-![[Resources/Udemy/springDIIco/2023-02-06-22-17-53.png]]
+[[900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-4 Exit von Programmen|Exit von Programmen]]
 
 ### Spring Shell
 [[900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-2 JShell|JShell]]
