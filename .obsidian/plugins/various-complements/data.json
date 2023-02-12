@@ -94,6 +94,54 @@
           "lastUpdated": 1676151019041
         }
       }
+    },
+    "excludeFilter": {
+      "excludeFilter": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676221367425
+        }
+      }
+    },
+    "ANNOTATION": {
+      "ANNOTATION": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1676221559278
+        }
+      }
+    },
+    "FilterType": {
+      "FilterType": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676224661010
+        }
+      }
+    },
+    "useDefaultFilters": {
+      "useDefaultFilters": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676224867059
+        }
+      }
+    },
+    "includeFilters": {
+      "includeFilters": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676224875739
+        }
+      }
+    },
+    "09.02.2023 18:22": {
+      "09.02.2023 18:22": {
+        "frontMatter": {
+          "count": 1,
+          "lastUpdated": 1676225015111
+        }
+      }
     }
   }
 }

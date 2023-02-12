@@ -1,3 +1,17 @@
+---
+Topic: Optionale Abhängigkeiten
+Creation date: 2023-02-12 19:03
+Modification date: Thursday 9th February 2023 18:29:08
+Course: Udemy
+Class:
+Author: MKraus
+Tags: 
+- spring
+- moc 
+- schulung 
+- dependencies
+Id:
+---
 
 [[900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1 Container für spring managed Beans|<<]]
 [[900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1 Container für spring managed Beans|]]

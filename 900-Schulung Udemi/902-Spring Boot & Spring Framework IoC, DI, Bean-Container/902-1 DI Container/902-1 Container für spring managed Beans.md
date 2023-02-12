@@ -79,56 +79,7 @@ String[] getBeanDefinitionNames()
 
 ### `@ComponentScan` mit basePackages
 
-
-- Über `basePackages` lassen sich Wurzelverzeichnisse für das Classpath-Scanning setzen.
-
-  - Fehlt die Angabe, bildet das Packet von der `@ComponentScan` annotierten Klasse die Wurzel
-
-- Folgende Schreibweisen sind gleichbedeutend.
-  
-```java
-@Configuration
-@ComponentScan(basePackages = {"com.tutego.date4u.core",
-"com.tutego.date4u.interfaces"})
-
-// Besser ist aber
-@ComponentScan(basePackageClass = {A.class, B.class})
-...
-
-@Configuration
-@ComponentScan ({"com.tutego.date4u.core",
-"com.tutego.date4u.interfaces"})
-...
-@Configuration
-@ComponentScan("com.tutego.date4u.core","com.tutego.date4u.interfaces")
-```
-  
-#### includeFilters
-
-= includeFilters = einschließen Typen
-
-#### exceludeFilters
-
-- Ausschließen von Typen
-
-#### @ComponentScan.Filter
-- includeFilter und excludeFilter sind vom Typ ComponentScan.Filter[]
-- Der Filter enthält einen FilterTypen nach z.B. Basistypen, RegExAusrücken
-- Der Standard ist FilterType.ANNOTATION
-
-**Beispiele:**
-
-**Annotation:**
-
-![[Resources/Udemy/springDIIco/2023-02-06-22-02-37.png]]
-
-**RegEx:**
-  
-![[Resources/Udemy/springDIIco/2023-02-06-22-03-42.png]]
-
-**Custom:**
-  
-![[Resources/Udemy/springDIIco/2023-02-06-22-04-34.png]]
+[[900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-3 ComponentScan mit base packages| ComponentScan mit base packages]]
 
 ### Runner
 Drei übliche Wege zum Starten eigener Anwendungen sind:
