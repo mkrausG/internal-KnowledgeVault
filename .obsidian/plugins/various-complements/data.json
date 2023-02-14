@@ -66,8 +66,8 @@
     "schulung": {
       "schulung": {
         "frontMatter": {
-          "count": 3,
-          "lastUpdated": 1676227524024
+          "count": 4,
+          "lastUpdated": 1676409815358
         }
       }
     },
@@ -140,6 +140,62 @@
         "frontMatter": {
           "count": 1,
           "lastUpdated": 1676225015111
+        }
+      }
+    },
+    "TODO": {
+      "TODO": {
+        "internalLink": {
+          "count": 1,
+          "lastUpdated": 1676354880361
+        }
+      }
+    },
+    "Links": {
+      "Links": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676354884548
+        }
+      }
+    },
+    "Fabrikmethoden": {
+      "Fabrikmethoden": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676395974678
+        }
+      }
+    },
+    "@Configuration": {
+      "@Configuration": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676396113176
+        }
+      }
+    },
+    "knowledge": {
+      "knowledge": {
+        "frontMatter": {
+          "count": 1,
+          "lastUpdated": 1676409823291
+        }
+      }
+    },
+    "Autoconfiguration": {
+      "Autoconfiguration": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676409838394
+        }
+      }
+    },
+    "autoconfiguration": {
+      "autoconfiguration": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676409872339
         }
       }
     }

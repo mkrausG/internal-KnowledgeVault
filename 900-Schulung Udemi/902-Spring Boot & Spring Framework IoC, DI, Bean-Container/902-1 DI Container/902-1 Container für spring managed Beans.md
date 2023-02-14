@@ -25,6 +25,7 @@ Id:
 - [[#Exit / Beenden von Programmen|Exit / Beenden von Programmen]]
 - [[#Spring Shell|Spring Shell]]
 - [[#Optionale Tätigkeiten|Optionale Tätigkeiten]]
+- [[#Konfigurationsklassen und Fabrikmethoden|Konfigurationsklassen und Fabrikmethoden]]
 
 
 ### Questions/Cues
@@ -96,3 +97,7 @@ Drei übliche Wege zum Starten eigener Anwendungen sind:
 
 ### Optionale Tätigkeiten 
 [[900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-1 Optionale Abhängigkeiten|  Optionale Abhängigkeiten]]
+
+### Konfigurationsklassen und Fabrikmethoden
+
+[[900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-5 Konfiguration und Fabrikmethoden|  Konfiguration und Fabrikmethoden]]
