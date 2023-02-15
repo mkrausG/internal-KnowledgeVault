@@ -1,14 +1,6 @@
 {
   "scanned": true,
-  "reminders": {
-    "Inbox/20211220-ToReview.md": [
-      {
-        "title": "`fas:ExclamationTriangle` Review machen und ggf sammlung von solchen Tips:",
-        "time": "2023-02-15",
-        "rowNumber": 11
-      }
-    ]
-  },
+  "reminders": {},
   "debug": false,
   "settings": {
     "reminderTime": "09:00",

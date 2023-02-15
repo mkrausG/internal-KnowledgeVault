@@ -19,6 +19,8 @@ Type:
 
 - [[#Was '@Component' nicht kann|Was '@Component' nicht kann]]
 	- [[#Was '@Component' nicht kann#Lösung|Lösung]]
+- [[#'@Configuration' and '@Bean'|'@Configuration' and '@Bean']]
+- [[#Diverse Typen als Bean erlaubt|Diverse Typen als Bean erlaubt]]
 
 
 ## Was '@Component' nicht kann
@@ -45,3 +47,39 @@ public class MyOwnBeanFactory {
 > 
 > '@SpringBootApplication' ist eine '@Configuration'
 
+## Diverse Typen als Bean erlaubt
+Es sind nicht nur komplexe Objekte (Klassen) die verwaltet, bzw. in den Context gebracht werden können-
+
+> [!tip]
+> 
+Naming von Beans beachten...
+und natürlich '@Lazy'
+
+Hier ein Beispiel wie man Strings, Arrays, und Listen bereitstellen kann.
+
+```java
+ @Bean String name() {
+	 return "Fillmore";
+ }
+
+@Bean String[] names() {
+	return new String[] {"Fillmore","juicyLucy"};
+}
+
+@Bean List<String> namesList() {
+	return List.op("fillmore","juicyLucy");
+}
+
+@Bean UUID appUUid() {
+	UUID uuid = UUID.randomUUID();
+	log.info("uuid -> {}", uuid);
+	return uuid;
+}
+
+// Instanziieren
+
+@Autowired String name;
+@Autowired String[] names;
+@Autowired List<String> namesList;
+@Autowired UUID appUUId;
+```
