@@ -21,6 +21,14 @@ Type:
 	- [[#Was '@Component' nicht kann#Lösung|Lösung]]
 - [[#'@Configuration' and '@Bean'|'@Configuration' and '@Bean']]
 - [[#Diverse Typen als Bean erlaubt|Diverse Typen als Bean erlaubt]]
+- [[#InjectionPoint|InjectionPoint]]
+	- [[#InjectionPoint#Beispiel "Random" für CryptoAnnotation sicher bereitstellen|Beispiel "Random" für CryptoAnnotation sicher bereitstellen]]
+		- [[#Beispiel "Random" für CryptoAnnotation sicher bereitstellen#Eine eigene Annotation CryptographicallyStrong bereitstellen|Eine eigene Annotation CryptographicallyStrong bereitstellen]]
+		- [[#Beispiel "Random" für CryptoAnnotation sicher bereitstellen#Injezierungstellen|Injezierungstellen]]
+			- [[#Injezierungstellen#Vor einer Variable|Vor einer Variable]]
+			- [[#Injezierungstellen#Über einer Methode|Über einer Methode]]
+			- [[#Injezierungstellen#Vor einem Parameter|Vor einem Parameter]]
+		- [[#Beispiel "Random" für CryptoAnnotation sicher bereitstellen#Beispiel wie nun InjectionPoint genutzt wird|Beispiel wie nun InjectionPoint genutzt wird]]
 
 
 ## Was '@Component' nicht kann
@@ -83,3 +91,109 @@ Hier ein Beispiel wie man Strings, Arrays, und Listen bereitstellen kann.
 @Autowired List<String> namesList;
 @Autowired UUID appUUId;
 ```
+
+## InjectionPoint
+
+Das ist ein Typ den man als Parameter (z.B. Constructor  in einer @Bean factory method) übergeben kann. Über den `InjectionPoint` kann dann die Factory Methode erfahren wer, also welcher `InjectionPoint` jetzt vorhanden ist und kann dann entscheiden wie die Bean ggf aufgebaut / initialisiert werden.
+
+> [!caution]
+> 
+Das bedeutet das wir `Reflection` informationen über den Aufrufer bekommen
+
+![[Resources/InjectionPoint PackageOverview.png]]
+
+### Beispiel "Random" für CryptoAnnotation sicher bereitstellen 
+Hinweis: Wir wollen eine Bean "Random" bereitstellen die für die Annotation `CryptographicallyStrong` ein besonderen Random Typ `CryptoStrongRandom` bereitstellen .
+
+1. [[#Eine eigene Annotation CryptographicallyStrong bereitstellen]]
+2. Überlegen, welche Injezierungstellen wir unterstützen 
+	1. [[#Injezierungstellen#Vor einer Variable]]
+	2. [[#Injezierungstellen#Über einer Methode]]
+	3. [[#Injezierungstellen#Vor einem Parameter]]
+3. [[#Beispiel wie nun InjectionPoint genutzt wird]]
+
+#### Eine eigene Annotation CryptographicallyStrong bereitstellen 
+
+```java
+@Retention (RetentionPolicy.RUNTIME)
+@interface CryptographicallyStrong {}
+```
+
+#### Injezierungstellen 
+
+##### Vor einer Variable 
+
+```java
+@Autowired 
+CryptographicallyStrong Random random;
+```
+
+##### Über einer Methode
+
+```java
+@Autowired
+@CryptographicallyStrong
+void setRnd(Random random) {...}
+```
+
+##### Vor einem Parameter 
+
+```java
+@Autowired 
+void setRnd(@CryptographicallyStrong Random random)
+```
+
+
+
+#### Beispiel wie nun InjectionPoint genutzt wird
+Hier ein Beispiel wie man nnu den InjectionPoint nutzt um die Annotation zu analysieren und ggf einen speziellen Random Typ erzeugen 
+
+```java
+@Bean @Scope (ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+public Random random (InjectionPoint injectionPoint ) {
+  return nonNull(injectionPoint.getAnnotation(CryptographicallyStrong.class))
+      || (InjectionPoint.getMember() instanceOf AnnotatedElement member 
+	      && member.isAnnotationPresent(CryptographicallyStrong.class))
+	      ? new SecureRandom()
+	      : new Random();
+}
+```
+
+> [!tip]
+> 
+Die Prüfung kann noch besser geschrieben werden. 
+So was wie `boolean isCryptoAnnotationNull = nonNull(InjectionPoint.getAnn....` 
+
+## Import , Import-Selektor
+
+Mit `@Import` kann man andere Konfigurationen wie `@Configurationen` oder `@Component` einbinden.
+
+> [!note]
+> 
+Import muss nicht in Spring benötigt, da ClassPathScanning das automatisch bereitstellt.
+ABER
+Wenn die Beans in anderen Paketen / Namespaces als in dem eigenen Namespace liegen muss entweder `@Import` oder `ClassPathScanning` angepasst werden :-)
+
+### ImportSelector
+
+Mit einem `ImportSelector` kann man eine Möglichkeit zur Verfügung stellen, das unterschieden wird welche Bean dann bereitgestellt wird.
+D.h. wir haben ein interface das 2 unterschiedliche Implementierungen bereitstellen.
+Mit dem ImportSelector wird dann unterschieden welche Implementierung bereitgestellt wird.
+
+```java
+static class CoffeeBeansImportSelcetor implements ImportSelector {
+  @Override
+  public String[] selectImports (AnnotationsMetadata __) {
+	  if (Math.random() > 0.5)
+		  return new String[] {JavaCoffeeBeansConfig.class.getName()};
+	  else
+		  return new String[] {BrazilianCoffeeBeansConfig.class.getName()};
+  }
+}
+
+// Dann
+@Configuration 
+@Import(CoffeeBeansImportSelector.class)
+static class CoffeeDrinker {}
+```
+

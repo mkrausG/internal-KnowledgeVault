@@ -20,7 +20,7 @@
             }
           },
           {
-            "id": "84a8e5752dd5618f",
+            "id": "e562f5f2a3d153a3",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -91,7 +91,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 386.5
+    "width": 386.5,
+    "collapsed": true
   },
   "right": {
     "id": "ce9610d725b519e7",
@@ -183,7 +184,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 5
       },
       {
         "id": "d750c9603ef15352",
@@ -224,16 +226,16 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "84a8e5752dd5618f",
+  "active": "e562f5f2a3d153a3",
   "lastOpenFiles": [
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1 Container für spring managed Beans.md",
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-5 Konfiguration und Fabrikmethoden.md",
     "002-Spring/002-1 Links and TODO.md",
     "002-Spring/002-Spring-MOC.md",
     "002-Spring/002-2 Autoconfiguration.md",
     "TODO.md",
     "Test.md",
     "0-common.md",
-    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-5 Konfiguration und Fabrikmethoden.md",
-    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1 Container für spring managed Beans.md",
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-1 Optionale Abhängigkeiten.md",
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-2 JShell.md"
   ]
