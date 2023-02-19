@@ -29,7 +29,12 @@ Type:
 			- [[#Injezierungstellen#Über einer Methode|Über einer Methode]]
 			- [[#Injezierungstellen#Vor einem Parameter|Vor einem Parameter]]
 		- [[#Beispiel "Random" für CryptoAnnotation sicher bereitstellen#Beispiel wie nun InjectionPoint genutzt wird|Beispiel wie nun InjectionPoint genutzt wird]]
-
+- [[#Import , Import-Selektor|Import , Import-Selektor]]
+	- [[#Import , Import-Selektor#ImportSelector|ImportSelector]]
+- [[#Abstraktion / Qualifizierung / Namen|Abstraktion / Qualifizierung / Namen]]
+	- [[#Abstraktion / Qualifizierung / Namen#Injizierung auf Basis des Typs|Injizierung auf Basis des Typs]]
+		- [[#Injizierung auf Basis des Typs#Lösung wenn mehrere Beans mit einem Interface bereitgestellt werden.|Lösung wenn mehrere Beans mit einem Interface bereitgestellt werden.]]
+- [[#`@Resources`|`@Resources`]]
 
 ## Was '@Component' nicht kann
 
@@ -177,8 +182,12 @@ Wenn die Beans in anderen Paketen / Namespaces als in dem eigenen Namespace lieg
 ### ImportSelector
 
 Mit einem `ImportSelector` kann man eine Möglichkeit zur Verfügung stellen, das unterschieden wird welche Bean dann bereitgestellt wird.
-D.h. wir haben ein interface das 2 unterschiedliche Implementierungen bereitstellen.
+D.h. wir haben ein interface das 2 **unterschiedliche** Implementierungen bereitstellen.
 Mit dem ImportSelector wird dann unterschieden welche Implementierung bereitgestellt wird.
+
+> [!tip]
+> 
+Es wird immer ein `String[]` , also "Name" der Klasse zurück gegeben.
 
 ```java
 static class CoffeeBeansImportSelcetor implements ImportSelector {
@@ -197,3 +206,137 @@ static class CoffeeBeansImportSelcetor implements ImportSelector {
 static class CoffeeDrinker {}
 ```
 
+## Abstraktion / Qualifizierung / Namen
+
+Jede Bean hat einen Namen und einen weiteren optionalen Namen (**Alias**) 
+
+Hier die Regeln für die Namensgebung:
+
+| Regel             | Namensgebung                                                            |
+| ----------------- | ----------------------------------------------------------------------- |
+| ohne Namensgebung | kleingeschriebender **ComponentName** oder Name der @Bean-Fabrikmethode |
+|                   |                                                                         |
+
+> [!important]
+> 
+Bei `@Component` gibt es einen Parameter 'value' mit Standart "". Wird ein Value angegeben wird das als `@Bean` Name genutzt.
+
+Beispiel wie man mit DI Container und Naming vorgehen sollte:
+
+> [!important]+ Important YAGNI beachten
+> Dabei aber YAGNI beachten. Es kann auch eine Direkte Implementierung (also ohne Interface) verwendet werden, wenn nur eine Implementierung dafür geplant ist :-) Aber besser wäre es mit Interfaces zu arbeiten, da ein Austauschen einfacher wäre.
+> 
+
+![[900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/Name Steps Diagram.svg]]
+
+### Injizierung auf Basis des Typs
+
+Es ist auch möglich generische `@Beans` in einer Factorymethode bereit zu stellen.
+
+```Java
+// Bereitstellung von Beans
+@Configuration
+class SupplierConfiguration() {
+	@Bean Supplier<FileSystem> fileSytem() {...
+}
+
+...
+
+@Component
+class PhotoServiceSupplier implements Supplier<PhotoService>{
+	@Override
+	public PhotoService get() {...}
+}
+
+// Bereitstellung von Beans Done...
+
+...
+
+// Injizierung
+@Autowired Supplier<FileSystem> fs;
+```
+
+#### Lösung wenn mehrere Beans mit einem Interface bereitgestellt werden.
+
+1. `@Autowired @Qualifier` nutzen .d.h. Namen bereitstellen mit `@Service(value ="dd")` und dan
+2. Eigene Annotationstypen bereitstellen
+3. `@Primary` bereitstellen
+4. Alle Beans in einer Datenstruktur
+5. Nach Namen gehen (d.h. variable so benennen wie Komponenten Namen nur starting lowercase) (! ist aber nicht so sauber)
+
+Beispiel Code `Eigene AnnotationsTypen bereitstellen`:
+
+```Java
+// 1. Neuer Annotationstype mit Kriterium
+@Target( {ElementType.FIELD, ElementType.METHOD, ElementType.TYPE,
+		  ElementType.PARAMETER, ElementType.ANNOTATION_TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Qualifier
+public interface ThumbnailRendering {
+	enum RenderingQuality  {FAST, QUALITY}
+	RenderingQuality value(); // Parameter
+}
+
+// 2. Markieren der Komponenten d.h die Implementierung markieren
+// d.h. welchen `Typ` stellt diese Komponente dar .. !!
+// d.h. in unserem Fall gäbe es 2 Komponenten ..
+@Service
+@ThumbnailRendering(ThumbnailRendering.RenderingQuality.FAST)
+class AwtNearestNeighborThumbnail implements Thumbnail
+
+// 3. Auswählen, also welche Implmentierung wird hier erwartet.
+@Autowired
+@ThumbnailRendering( ThumbnailRendering.RenderingQuality.FAST)
+Thumbnail thumbnail;
+```
+
+Beispiel Code `Alle Beans in einer Datenstruktur`:
+
+```Java
+	// 1.ter Service
+	@Service
+	class AwtBicubicThumbnail implements Thumbnail 
+	
+	// 2.ter Service
+	@Service
+	class AwtNearestNeighborThumbnail  implements Thumbnail 
+
+	// Verwendung
+	@Service
+	class WhatEver {
+
+		@Autowired
+		// !! @Qualifier möglich 
+		List<Thumbnail> thumbnails // !!!!! Hier wären dann beide o.g. Services bereitgestellt.
+		// kann auch Set<Thumbnail> oder Thumbnail[]
+		// ❗ mit Map<String, Thumbnail> thumbnails werden komponenten namen mit eingebunden
+	}
+```
+
+Beispiel `Nach Namen gehen`
+
+```Java
+	// 1.ter Service
+	@Service
+	class AwtBicubicThumbnail implements Thumbnail 
+	
+	// 2.ter Service
+	@Service
+	class AwtNearestNeighborThumbnail  implements Thumbnail 
+
+	// Verwendung
+	@Autowired Thumbnail awtBicubicThumbnail; // Name der Komponente
+
+```
+
+### `@Resources`
+
+Diese Kennzeichnung ist wie @Autowired die eine Resource bereitstellt ABER  `@Resource` stellt bewusst einen `Namen` höher bewertet. d.h.`@Resource(name = "xx")`
+
+```ad-warning
+Diese Annotation kann nicht bei Ctor wiring eingesetzt werden, nur bei Settern mit einem Parameter
+```
+
+### `ObjectProvider`
+
+ObjectProvider wird ähnlich wie `Optional` verwendet.

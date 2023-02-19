@@ -210,8 +210,8 @@
     "bereitstellen": {
       "bereitstellen": {
         "currentFile": {
-          "count": 4,
-          "lastUpdated": 1676577612952
+          "count": 5,
+          "lastUpdated": 1676802642873
         }
       }
     },
@@ -266,8 +266,8 @@
     "Parameter": {
       "Parameter": {
         "currentFile": {
-          "count": 1,
-          "lastUpdated": 1676578660969
+          "count": 2,
+          "lastUpdated": 1676799785891
         }
       }
     },
@@ -300,6 +300,94 @@
         "currentFile": {
           "count": 1,
           "lastUpdated": 1676579467416
+        }
+      }
+    },
+    "Namensgebung": {
+      "Namensgebung": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676799563942
+        }
+      }
+    },
+    "beachten": {
+      "beachten": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676801554995
+        }
+      }
+    },
+    "PhotoService": {
+      "PhotoService": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676801823863
+        }
+      }
+    },
+    "Komponenten": {
+      "Komponenten": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676802595951
+        }
+      }
+    },
+    "bereitstellen#Eine": {
+      "bereitstellen#Eine": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676802697610
+        }
+      }
+    },
+    "Thumbnail": {
+      "Thumbnail": {
+        "currentFile": {
+          "count": 6,
+          "lastUpdated": 1676803105390
+        }
+      }
+    },
+    "AwtNearestNeighborThumbnail": {
+      "AwtNearestNeighborThumbnail": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676802788855
+        }
+      }
+    },
+    "möglich": {
+      "möglich": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676802847037
+        }
+      }
+    },
+    "thumbnails": {
+      "thumbnails": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676802974584
+        }
+      }
+    },
+    "AwtBicubicThumbnail": {
+      "AwtBicubicThumbnail": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676803111187
+        }
+      }
+    },
+    "ObjectProvider": {
+      "ObjectProvider": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1676803548794
         }
       }
     }

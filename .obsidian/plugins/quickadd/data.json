@@ -1,5 +1,67 @@
 {
-  "choices": [],
+  "choices": [
+    {
+      "id": "612b5c40-3872-41aa-927b-864c4c5906b5",
+      "name": "Add journal entry",
+      "type": "Capture",
+      "command": false,
+      "appendLink": false,
+      "captureTo": "bins/daily/{{DATE:gggg-MM-DD - ddd MMM D}}.md",
+      "captureToActiveFile": false,
+      "createFileIfItDoesntExist": {
+        "enabled": true,
+        "createWithTemplate": false,
+        "template": ""
+      },
+      "format": {
+        "enabled": true,
+        "format": "- {{DATE:HH:mm}} {{VALUE}}\\n"
+      },
+      "insertAfter": {
+        "enabled": false,
+        "after": "## What did I do today",
+        "insertAtEnd": false,
+        "createIfNotFound": false,
+        "createIfNotFoundLocation": "top"
+      },
+      "prepend": false,
+      "task": false,
+      "openFileInNewTab": {
+        "enabled": false,
+        "direction": "vertical",
+        "focus": true
+      },
+      "openFile": false,
+      "openFileInMode": "default"
+    },
+    {
+      "id": "37d67772-c5c0-423b-8ad2-c84e530b12de",
+      "name": "Customers",
+      "type": "Template",
+      "command": false,
+      "templatePath": "",
+      "fileNameFormat": {
+        "enabled": false,
+        "format": ""
+      },
+      "folder": {
+        "enabled": false,
+        "folders": [],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "incrementFileName": false,
+      "openFileInNewTab": {
+        "enabled": false,
+        "direction": "vertical",
+        "focus": true
+      },
+      "openFile": false,
+      "openFileInMode": "default"
+    }
+  ],
   "macros": [],
   "inputPrompt": "single-line",
   "devMode": false
