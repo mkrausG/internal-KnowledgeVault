@@ -5429,7 +5429,6 @@ var TemplateChoice = class extends Choice {
       chooseFromSubfolders: false
     };
     this.appendLink = false;
-    this.incrementFileName = false;
     this.openFileInNewTab = {
       enabled: false,
       direction: "vertical" /* vertical */,
@@ -5437,6 +5436,8 @@ var TemplateChoice = class extends Choice {
     };
     this.openFile = false;
     this.openFileInMode = "default";
+    this.fileExistsMode = "Increment the file name";
+    this.setFileExistsBehavior = false;
   }
   static Load(choice) {
     return choice;
@@ -7355,6 +7356,7 @@ var MATH_VALUE_SYNTAX_SUGGEST_REGEX = new RegExp(
 var TITLE_SYNTAX_SUGGEST_REGEX = new RegExp(
   /{{[T]?[I]?[T]?[L]?[E]?[}]?[}]?/i
 );
+var fileExistsIncrement = "Increment the file name";
 var fileExistsAppendToBottom = "Append to the bottom of the file";
 var fileExistsAppendToTop = "Append to the top of the file";
 var fileExistsOverwriteFile = "Overwrite the file";
@@ -7363,6 +7365,7 @@ var fileExistsChoices = [
   fileExistsAppendToBottom,
   fileExistsAppendToTop,
   fileExistsOverwriteFile,
+  fileExistsIncrement,
   fileExistsDoNothing
 ];
 var WIKI_LINK_REGEX = new RegExp(/\[\[([^\]]*)\]\]/);
@@ -9339,36 +9342,6 @@ async function templaterParseTemplate(app2, templateContent, targetFile) {
     templateContent
   );
 }
-function getCoreTemplatesPath(app2) {
-  const internalTemplatePlugin = app2.internalPlugins.plugins.templates;
-  if (internalTemplatePlugin) {
-    const templateFolderPath = internalTemplatePlugin.instance.options.folder;
-    if (templateFolderPath)
-      return templateFolderPath;
-  }
-}
-function getTemplaterTemplatesPath(app2) {
-  const templater = getTemplater(app2);
-  if (templater) {
-    const templateFolderPath = templater.settings["template_folder"];
-    if (templateFolderPath)
-      return templateFolderPath;
-  }
-}
-function getTemplateFiles(app2) {
-  let templateFiles = /* @__PURE__ */ new Set();
-  const markdownFiles = app2.vault.getMarkdownFiles();
-  const coreTemplatesPath = getCoreTemplatesPath(app2);
-  const templaterTemplatesPath = getTemplaterTemplatesPath(app2);
-  markdownFiles.forEach((file) => {
-    if (file.path.contains(coreTemplatesPath) || file.path.contains(templaterTemplatesPath))
-      templateFiles.add(file);
-  });
-  return [...templateFiles];
-}
-function getTemplatePaths(app2) {
-  return getTemplateFiles(app2).map((file) => file.path);
-}
 function getNaturalLanguageDates(app2) {
   return app2.plugins.plugins["nldates-obsidian"];
 }
@@ -9737,7 +9710,7 @@ var FormatSyntaxSuggester = class extends TextInputSuggest {
     this.macroNames = this.plugin.settings.macros.map(
       (macro) => macro.name
     );
-    this.templatePaths = getTemplatePaths(this.app);
+    this.templatePaths = this.plugin.getTemplateFiles().map((file) => file.path);
   }
   getSuggestions(inputStr) {
     const cursorPosition = this.inputEl.selectionStart;
@@ -9900,14 +9873,14 @@ var TemplateChoiceBuilder = class extends ChoiceBuilder {
     this.addFileNameFormatSetting();
     this.addFolderSetting();
     this.addAppendLinkSetting();
-    this.addIncrementFileNameSetting();
+    this.addFileAlreadyExistsSetting();
     this.addOpenFileSetting();
     if (this.choice.openFile)
       this.addOpenFileInNewTabSetting();
   }
   addTemplatePathSetting() {
     const templatePathSetting = new import_obsidian7.Setting(this.contentEl).setName("Template Path").setDesc("Path to the Template.").addSearch((search2) => {
-      const templates = getTemplatePaths(this.app);
+      const templates = this.plugin.getTemplateFiles().map((f) => f.path);
       search2.setValue(this.choice.templatePath);
       search2.setPlaceholder("Template path");
       new GenericTextSuggester(this.app, search2.inputEl, templates);
@@ -9980,7 +9953,9 @@ var TemplateChoiceBuilder = class extends ChoiceBuilder {
       }
       const chooseFolderFromSubfolderContainer = this.contentEl.createDiv("chooseFolderFromSubfolderContainer");
       const stn = new import_obsidian7.Setting(chooseFolderFromSubfolderContainer);
-      stn.setName("Include subfolders").setDesc("Get prompted to choose from both the selected folders and their subfolders when creating the note.").addToggle(
+      stn.setName("Include subfolders").setDesc(
+        "Get prompted to choose from both the selected folders and their subfolders when creating the note."
+      ).addToggle(
         (toggle) => {
           var _a2;
           return toggle.setValue((_a2 = this.choice.folder) == null ? void 0 : _a2.chooseFromSubfolders).onChange((value) => {
@@ -10065,12 +10040,22 @@ var TemplateChoiceBuilder = class extends ChoiceBuilder {
       toggle.onChange((value) => this.choice.appendLink = value);
     });
   }
-  addIncrementFileNameSetting() {
-    const incrementFileNameSetting = new import_obsidian7.Setting(this.contentEl);
-    incrementFileNameSetting.setName("Increment file name").setDesc("If the file already exists, increment the file name.").addToggle((toggle) => {
-      toggle.setValue(this.choice.incrementFileName);
-      toggle.onChange(
-        (value) => this.choice.incrementFileName = value
+  addFileAlreadyExistsSetting() {
+    const fileAlreadyExistsSetting = new import_obsidian7.Setting(this.contentEl);
+    fileAlreadyExistsSetting.setName("Set default behavior if file already exists").setDesc("Set default behavior rather then prompting user on what to do if a file already exists.").addToggle((toggle) => {
+      toggle.setValue(this.choice.setFileExistsBehavior);
+      toggle.onChange((value) => {
+        this.choice.setFileExistsBehavior = value;
+      });
+    }).addDropdown((dropdown) => {
+      dropdown.selectEl.style.marginLeft = "10px";
+      if (!this.choice.fileExistsMode)
+        this.choice.fileExistsMode = fileExistsDoNothing;
+      dropdown.addOption(
+        fileExistsAppendToBottom,
+        fileExistsAppendToBottom
+      ).addOption(fileExistsAppendToTop, fileExistsAppendToTop).addOption(fileExistsIncrement, fileExistsIncrement).addOption(fileExistsOverwriteFile, fileExistsOverwriteFile).addOption(fileExistsDoNothing, fileExistsDoNothing).setValue(this.choice.fileExistsMode).onChange(
+        (value) => this.choice.fileExistsMode = value
       );
     });
   }
@@ -12019,7 +12004,9 @@ var TemplateEngine = class extends QuickAddEngine {
       return createdFile;
     } catch (e) {
       log.logError(
-        `Could not create file with template. Maybe '${templatePath}' is an invalid template path?`
+        `Could not create file with template: 
+
+${e.message}`
       );
       return null;
     }
@@ -12062,7 +12049,9 @@ ${formattedTemplateContent}`;
       correctTemplatePath += ".md";
     const templateFile = this.app.vault.getAbstractFileByPath(correctTemplatePath);
     if (!(templateFile instanceof import_obsidian17.TFile))
-      throw new Error("Template file not found.");
+      throw new Error(
+        `Template file not found at path "${correctTemplatePath}".`
+      );
     return await this.app.vault.cachedRead(templateFile);
   }
 };
@@ -12230,7 +12219,13 @@ var CaptureChoiceBuilder = class extends ChoiceBuilder {
       `Put value at the bottom of the file - otherwise at the ${((_a = this.choice) == null ? void 0 : _a.captureToActiveFile) ? "active cursor location" : "top"}.`
     ).addToggle((toggle) => {
       toggle.setValue(this.choice.prepend);
-      toggle.onChange((value) => this.choice.prepend = value);
+      toggle.onChange((value) => {
+        this.choice.prepend = value;
+        if (this.choice.prepend && this.choice.insertAfter.enabled) {
+          this.choice.insertAfter.enabled = false;
+          this.reload();
+        }
+      });
     });
   }
   addTaskSetting() {
@@ -12259,6 +12254,9 @@ var CaptureChoiceBuilder = class extends ChoiceBuilder {
       toggle.onChange((value) => {
         this.choice.insertAfter.enabled = value;
         insertAfterInput.setDisabled(!value);
+        if (this.choice.insertAfter.enabled && this.choice.prepend) {
+          this.choice.prepend = false;
+        }
         this.reload();
       });
     });
@@ -12377,11 +12375,11 @@ var CaptureChoiceBuilder = class extends ChoiceBuilder {
     );
     templateSelector.inputEl.style.width = "100%";
     templateSelector.inputEl.style.marginBottom = "8px";
-    const markdownFiles = getTemplatePaths(this.app);
+    const templateFilePaths = this.plugin.getTemplateFiles().map((f) => f.path);
     new GenericTextSuggester(
       this.app,
       templateSelector.inputEl,
-      markdownFiles
+      templateFilePaths
     );
     templateSelector.onChange((value) => {
       this.choice.createFileIfItDoesntExist.template = value;
@@ -14146,7 +14144,6 @@ var MacroBuilder = class extends import_obsidian22.Modal {
   }
   addCommandList() {
     const commandList = this.contentEl.createDiv("commandList");
-    console.log(this.macro.commands);
     this.commandListEl = new CommandList_default({
       target: commandList,
       props: {
@@ -14532,6 +14529,8 @@ function instance17($$self, $$props, $$invalidate) {
       if (!updatedChoice)
         return;
       $$invalidate(0, choices = choices.map((choice) => updateChoiceHelper(choice, updatedChoice)));
+      plugin.removeCommandForChoice(oldChoice);
+      plugin.addCommandForChoice(updatedChoice);
       saveChoices(choices);
     });
   }
@@ -14675,7 +14674,14 @@ var DEFAULT_SETTINGS = {
   choices: [],
   macros: [],
   inputPrompt: "single-line",
-  devMode: false
+  devMode: false,
+  templateFolderPath: "",
+  migrations: {
+    migrateToMacroIDFromEmbeddedMacro: false,
+    useQuickAddTemplateFolder: false,
+    incrementFileNameSettingMoveToDefaultBehavior: false,
+    mutualExclusionInsertAfterAndWriteToBottomOfFile: false
+  }
 };
 var QuickAddSettingsTab = class extends import_obsidian25.PluginSettingTab {
   constructor(app2, plugin) {
@@ -14687,18 +14693,8 @@ var QuickAddSettingsTab = class extends import_obsidian25.PluginSettingTab {
     containerEl.empty();
     containerEl.createEl("h2", { text: "QuickAdd Settings" });
     this.addChoicesSetting();
-    new import_obsidian25.Setting(this.containerEl).setName("Use Multi-line Input Prompt").setDesc(
-      "Use multi-line input prompt instead of single-line input prompt"
-    ).addToggle(
-      (toggle) => toggle.setValue(this.plugin.settings.inputPrompt === "multi-line").setTooltip("Use multi-line input prompt").onChange((value) => {
-        if (value) {
-          this.plugin.settings.inputPrompt = "multi-line";
-        } else {
-          this.plugin.settings.inputPrompt = "single-line";
-        }
-        this.plugin.saveSettings();
-      })
-    );
+    this.addUseMultiLineInputPromptSetting();
+    this.addTemplateFolderPathSetting();
   }
   hide() {
     if (this.choiceView)
@@ -14724,6 +14720,40 @@ var QuickAddSettingsTab = class extends import_obsidian25.PluginSettingTab {
           await this.plugin.saveSettings();
         }
       }
+    });
+  }
+  addUseMultiLineInputPromptSetting() {
+    new import_obsidian25.Setting(this.containerEl).setName("Use Multi-line Input Prompt").setDesc(
+      "Use multi-line input prompt instead of single-line input prompt"
+    ).addToggle(
+      (toggle) => toggle.setValue(this.plugin.settings.inputPrompt === "multi-line").setTooltip("Use multi-line input prompt").onChange((value) => {
+        if (value) {
+          this.plugin.settings.inputPrompt = "multi-line";
+        } else {
+          this.plugin.settings.inputPrompt = "single-line";
+        }
+        this.plugin.saveSettings();
+      })
+    );
+  }
+  addTemplateFolderPathSetting() {
+    const setting = new import_obsidian25.Setting(this.containerEl);
+    setting.setName("Template Folder Path");
+    setting.setDesc(
+      "Path to the folder where templates are stored. Used to suggest template files when configuring QuickAdd."
+    );
+    setting.addText((text2) => {
+      text2.setPlaceholder(
+        "templates/"
+      ).setValue(this.plugin.settings.templateFolderPath).onChange(async (value) => {
+        this.plugin.settings.templateFolderPath = value;
+        await this.plugin.saveSettings();
+      });
+      new GenericTextSuggester(
+        app,
+        text2.inputEl,
+        app.vault.getAllLoadedFiles().filter((f) => f instanceof import_obsidian25.TFolder && f.path !== "/").map((f) => f.path)
+      );
     });
   }
 };
@@ -14773,7 +14803,7 @@ var GuiLogger = class extends QuickAddLogger {
   }
   logError(msg) {
     const error = this.getQuickAddError(msg, "ERROR" /* Error */);
-    new import_obsidian26.Notice(this.formatOutputString(error));
+    new import_obsidian26.Notice(this.formatOutputString(error), 15e3);
   }
   logWarning(msg) {
     const warning = this.getQuickAddError(msg, "WARNING" /* Warning */);
@@ -14823,7 +14853,7 @@ var TemplateChoiceEngine = class extends TemplateEngine {
         this.choice.name
       );
     }
-    if (this.choice.incrementFileName)
+    if (this.choice.fileExistsMode === fileExistsIncrement)
       filePath = await this.incrementFileName(filePath);
     let createdFile;
     if (await this.app.vault.adapter.exists(filePath)) {
@@ -14835,11 +14865,14 @@ var TemplateChoiceEngine = class extends TemplateEngine {
         return;
       }
       await this.app.workspace.getLeaf("tab").openFile(file);
-      const userChoice = await GenericSuggester.Suggest(
-        this.app,
-        fileExistsChoices,
-        fileExistsChoices
-      );
+      let userChoice = this.choice.fileExistsMode;
+      if (!this.choice.setFileExistsBehavior) {
+        userChoice = await GenericSuggester.Suggest(
+          this.app,
+          [...fileExistsChoices],
+          [...fileExistsChoices]
+        );
+      }
       switch (userChoice) {
         case fileExistsAppendToTop:
           createdFile = await this.appendToFileWithTemplate(
@@ -15340,6 +15373,207 @@ var ChoiceExecutor = class {
   }
 };
 
+// src/migrations/migrateToMacroIDFromEmbeddedMacro.ts
+var migrateToMacroIDFromEmbeddedMacro_default = {
+  description: "Migrate to macro ID from embedded macro in macro choices.",
+  migrate: async (plugin) => {
+    function convertMacroChoiceMacroToIdHelper(choice) {
+      if (choice.type === "Multi" /* Multi */) {
+        let multiChoice = choice;
+        const multiChoices = multiChoice.choices.map(
+          convertMacroChoiceMacroToIdHelper
+        );
+        multiChoice = { ...multiChoice, choices: multiChoices };
+        return multiChoice;
+      }
+      if (choice.type !== "Macro" /* Macro */)
+        return choice;
+      const macroChoice = choice;
+      if (macroChoice.macro) {
+        macroChoice.macroId = macroChoice.macro.id;
+        delete macroChoice.macro;
+      }
+      return macroChoice;
+    }
+    plugin.settings.choices = plugin.settings.choices.map(
+      convertMacroChoiceMacroToIdHelper
+    );
+    await plugin.saveSettings();
+  }
+};
+
+// src/migrations/useQuickAddTemplateFolder.ts
+var useQuickAddTemplateFolder_default = {
+  description: "Use QuickAdd template folder instead of Obsidian templates plugin folder / Templater templates folder.",
+  migrate: async (plugin) => {
+    try {
+      const templaterPlugin = app.plugins.plugins["templater"];
+      const obsidianTemplatesPlugin = app.internalPlugins.plugins["templates"];
+      if (!templaterPlugin && !obsidianTemplatesPlugin) {
+        log.logMessage("No template plugin found. Skipping migration.");
+        return;
+      }
+      if (obsidianTemplatesPlugin) {
+        const obsidianTemplatesSettings = obsidianTemplatesPlugin.instance.options;
+        if (obsidianTemplatesSettings["folder"]) {
+          plugin.settings.templateFolderPath = obsidianTemplatesSettings["folder"];
+          log.logMessage("Migrated template folder path to Obsidian Templates' setting.");
+        }
+      }
+      if (templaterPlugin) {
+        const templaterSettings = templaterPlugin.settings;
+        if (templaterSettings["template_folder"]) {
+          plugin.settings.templateFolderPath = templaterSettings["template_folder"];
+          log.logMessage("Migrated template folder path to Templaters setting.");
+        }
+      }
+    } catch (error) {
+      log.logError("Failed to migrate template folder path.");
+      throw error;
+    }
+  }
+};
+
+// src/migrations/incrementFileNameSettingMoveToDefaultBehavior.ts
+function isOldTemplateChoice(choice) {
+  for (const key in choice) {
+    if (key === "incrementFileName") {
+      return true;
+    }
+  }
+  return false;
+}
+function isMultiChoice(choice) {
+  return choice.type === "Multi" /* Multi */ && choice.choices !== void 0;
+}
+function recursiveRemoveIncrementFileName(choices) {
+  for (const choice of choices) {
+    if (isMultiChoice(choice)) {
+      choice.choices = recursiveRemoveIncrementFileName(choice.choices);
+    }
+    if (isOldTemplateChoice(choice)) {
+      choice.setFileExistsBehavior = true;
+      choice.fileExistsMode = "Increment the file name";
+      delete choice.incrementFileName;
+    }
+  }
+  return choices;
+}
+function isNestedChoiceCommand(command) {
+  return command.choice !== void 0;
+}
+function removeIncrementFileName(macros) {
+  for (const macro of macros) {
+    for (const command of macro.commands) {
+      if (isNestedChoiceCommand(command) && isOldTemplateChoice(command.choice)) {
+        command.choice.setFileExistsBehavior = true;
+        command.choice.fileExistsMode = "Increment the file name";
+        delete command.choice.incrementFileName;
+      }
+    }
+  }
+  return macros;
+}
+var incrementFileNameSettingMoveToDefaultBehavior = {
+  description: "'Increment file name' setting moved to 'Set default behavior if file already exists' setting",
+  migrate: async (plugin) => {
+    const choicesCopy = structuredClone(plugin.settings.choices);
+    const choices = recursiveRemoveIncrementFileName(choicesCopy);
+    const macrosCopy = structuredClone(plugin.settings.macros);
+    const macros = removeIncrementFileName(macrosCopy);
+    plugin.settings.choices = structuredClone(choices);
+    plugin.settings.macros = structuredClone(macros);
+  }
+};
+var incrementFileNameSettingMoveToDefaultBehavior_default = incrementFileNameSettingMoveToDefaultBehavior;
+
+// src/migrations/mutualExclusionInsertAfterAndWriteToBottomOfFile.ts
+function isCaptureChoice(choice) {
+  return choice.type === "Capture" /* Capture */;
+}
+function isMultiChoice2(choice) {
+  return choice.type === "Multi" /* Multi */ && choice.choices !== void 0;
+}
+function recursiveMigrateSettingInChoices(choices) {
+  for (const choice of choices) {
+    if (isMultiChoice2(choice)) {
+      choice.choices = recursiveMigrateSettingInChoices(choice.choices);
+    }
+    if (isCaptureChoice(choice)) {
+      if (choice.insertAfter.enabled && choice.prepend) {
+        choice.prepend = false;
+      }
+    }
+  }
+  return choices;
+}
+function isNestedChoiceCommand2(command) {
+  return command.choice !== void 0;
+}
+function migrateSettingsInMacros(macros) {
+  for (const macro of macros) {
+    for (const command of macro.commands) {
+      if (isNestedChoiceCommand2(command) && isCaptureChoice(command.choice)) {
+        if (command.choice.insertAfter.enabled && command.choice.prepend) {
+          command.choice.prepend = false;
+        }
+      }
+    }
+  }
+  return macros;
+}
+var mutualExclusionInsertAfterAndWriteToBottomOfFile = {
+  description: "Mutual exclusion of insertAfter and writeToBottomOfFile settings. If insertAfter is enabled, writeToBottomOfFile is disabled. To support changes in settings UI.",
+  migrate: async (plugin) => {
+    const choicesCopy = structuredClone(plugin.settings.choices);
+    const choices = recursiveMigrateSettingInChoices(choicesCopy);
+    const macrosCopy = structuredClone(plugin.settings.macros);
+    const macros = migrateSettingsInMacros(macrosCopy);
+    plugin.settings.choices = choices;
+    plugin.settings.macros = macros;
+  }
+};
+var mutualExclusionInsertAfterAndWriteToBottomOfFile_default = mutualExclusionInsertAfterAndWriteToBottomOfFile;
+
+// src/migrations/migrate.ts
+var migrations = {
+  migrateToMacroIDFromEmbeddedMacro: migrateToMacroIDFromEmbeddedMacro_default,
+  useQuickAddTemplateFolder: useQuickAddTemplateFolder_default,
+  incrementFileNameSettingMoveToDefaultBehavior: incrementFileNameSettingMoveToDefaultBehavior_default,
+  mutualExclusionInsertAfterAndWriteToBottomOfFile: mutualExclusionInsertAfterAndWriteToBottomOfFile_default
+};
+async function migrate(plugin) {
+  const migrationsToRun = Object.keys(migrations).filter(
+    (migration) => !plugin.settings.migrations[migration]
+  );
+  if (migrationsToRun.length === 0) {
+    log.logMessage("No migrations to run.");
+    return;
+  }
+  for (const migration of migrationsToRun) {
+    log.logMessage(
+      `Running migration ${migration}: ${migrations[migration].description}`
+    );
+    const backup = structuredClone(plugin.settings);
+    try {
+      await migrations[migration].migrate(plugin);
+      plugin.settings.migrations[migration] = true;
+      log.logMessage(`Migration ${migration} successful.`);
+    } catch (error) {
+      log.logError(
+        `Migration '${migration}' was unsuccessful. Please create an issue with the following error message: 
+
+${error}
+
+QuickAdd will now revert to backup.`
+      );
+      plugin.settings = backup;
+    }
+  }
+  plugin.saveSettings();
+}
+var migrate_default = migrate;
+
 // src/main.ts
 var QuickAdd = class extends import_obsidian29.Plugin {
   get api() {
@@ -15398,7 +15632,7 @@ var QuickAdd = class extends import_obsidian29.Plugin {
       ).run()
     );
     this.addCommandsForChoices(this.settings.choices);
-    await this.convertMacroChoicesMacroToId();
+    migrate_default(this);
   }
   onunload() {
     console.log("Unloading QuickAdd");
@@ -15457,28 +15691,11 @@ var QuickAdd = class extends import_obsidian29.Plugin {
   removeCommandForChoice(choice) {
     deleteObsidianCommand(this.app, `quickadd:choice:${choice.id}`);
   }
-  async convertMacroChoicesMacroToId() {
-    function convertMacroChoiceMacroToIdHelper(choice) {
-      if (choice.type === "Multi" /* Multi */) {
-        let multiChoice = choice;
-        const multiChoices = multiChoice.choices.map(
-          convertMacroChoiceMacroToIdHelper
-        );
-        multiChoice = { ...multiChoice, choices: multiChoices };
-        return multiChoice;
-      }
-      if (choice.type !== "Macro" /* Macro */)
-        return choice;
-      const macroChoice = choice;
-      if (macroChoice.macro) {
-        macroChoice.macroId = macroChoice.macro.id;
-        delete macroChoice.macro;
-      }
-      return macroChoice;
-    }
-    this.settings.choices = this.settings.choices.map(
-      convertMacroChoiceMacroToIdHelper
+  getTemplateFiles() {
+    if (!String.isString(this.settings.templateFolderPath))
+      return [];
+    return this.app.vault.getFiles().filter(
+      (file) => file.path.startsWith(this.settings.templateFolderPath)
     );
-    await this.saveSettings();
   }
 };

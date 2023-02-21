@@ -99,7 +99,8 @@ Hier ein Beispiel wie man Strings, Arrays, und Listen bereitstellen kann.
 
 ## InjectionPoint
 
-Das ist ein Typ den man als Parameter (z.B. Constructor  in einer @Bean factory method) übergeben kann. Über den `InjectionPoint` kann dann die Factory Methode erfahren wer, also welcher `InjectionPoint` jetzt vorhanden ist und kann dann entscheiden wie die Bean ggf aufgebaut / initialisiert werden.
+Das ist ein Typ den man als Parameter (z.B. Constructor  in einer @Bean factory method) übergeben kann. 
+Über den `InjectionPoint` kann dann die Factory Methode erfahren wer, also welcher `InjectionPoint` jetzt vorhanden ist und kann dann entscheiden wie die Bean ggf aufgebaut / initialisiert werden.
 
 > [!caution]
 > 
@@ -331,7 +332,8 @@ Beispiel `Nach Namen gehen`
 
 ### `@Resources`
 
-Diese Kennzeichnung ist wie @Autowired die eine Resource bereitstellt ABER  `@Resource` stellt bewusst einen `Namen` höher bewertet. d.h.`@Resource(name = "xx")`
+Diese Kennzeichnung ist wie @Autowired eine Resource, die eine Resource bereitstellt.
+ABER  `@Resource` stellt bewusst einen `Namen` höher bewertet. d.h.`@Resource(name = "xx")`
 
 ```ad-warning
 Diese Annotation kann nicht bei Ctor wiring eingesetzt werden, nur bei Settern mit einem Parameter

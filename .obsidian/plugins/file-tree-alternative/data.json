@@ -15,6 +15,7 @@
   "filePreviewOnHover": false,
   "iconBeforeFileName": true,
   "sortFilesBy": "name",
+  "sortReverse": false,
   "sortFoldersBy": "name",
   "fixedHeaderInFileList": false,
   "createdYaml": false,
