@@ -86,8 +86,10 @@ Drei übliche Wege zum Starten eigener Anwendungen sind:
 - Implementieren SPring-Managed-Beans die Schnittstellen `ApplicationRunner` oder `COmmandlineRunner` führt der Container sie automatisch nach dem Hochfahren aus.
 - Das ist praktisch für eigene Kommandozeilenprogramme.
 - Es können mehrere *Runner vorhanden sein, die Programcode am Anfang starten. Die Reihenfolge kann mit `@Order` bestimmen.
-- 💥 Vorteil an `ApplicationRunner` ist, dass man Methoden hat um die Argumente zu bearbeiten / lesen
+- 💥 Vorteil an `ApplicationRunner` ist, dass man Methoden hat um die Argumente zu bearbeiten / lesen 
   
+> Tip: Debug Spring app = application.yml -> `debug=true`
+
 ### Exit / Beenden von Programmen
 
 [[900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-4 Exit von Programmen|Exit von Programmen]]

@@ -20,5 +20,15 @@ Schulung Udemy
 ---
 
 # Links:
- 
+
+https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/support/DefaultListableBeanFactory.html
+
+https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/config/BeanPostProcessor.html
+
+https://github.com/spring-projects/spring-framework/blob/main/spring-context/src/main/java/org/springframework/context/support/ApplicationContextAwareProcessor.java
+
+https://docs.spring.io/spring-boot/docs/current/api/index.html?overview-summary.html
+
+https://docs.spring.io/spring-boot/docs/current/api/
+
 # Referenzen

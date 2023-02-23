@@ -34,7 +34,16 @@ Type:
 - [[#Abstraktion / Qualifizierung / Namen|Abstraktion / Qualifizierung / Namen]]
 	- [[#Abstraktion / Qualifizierung / Namen#Injizierung auf Basis des Typs|Injizierung auf Basis des Typs]]
 		- [[#Injizierung auf Basis des Typs#Lösung wenn mehrere Beans mit einem Interface bereitgestellt werden.|Lösung wenn mehrere Beans mit einem Interface bereitgestellt werden.]]
-- [[#`@Resources`|`@Resources`]]
+	- [[#Abstraktion / Qualifizierung / Namen#`@Resources`|`@Resources`]]
+	- [[#Abstraktion / Qualifizierung / Namen#`ObjectProvider`|`ObjectProvider`]]
+	- [[#Abstraktion / Qualifizierung / Namen#@Order / @AutoconfigurationOrder|@Order / @AutoconfigurationOrder]]
+	- [[#Abstraktion / Qualifizierung / Namen#@Bean Methoden|@Bean Methoden]]
+	- [[#Abstraktion / Qualifizierung / Namen#Annotation @Inherited|Annotation @Inherited]]
+- [[#Lebenszyklus der Beans|Lebenszyklus der Beans]]
+	- [[#Lebenszyklus der Beans#Annotations im Lebenszyklus|Annotations im Lebenszyklus]]
+	- [[#Lebenszyklus der Beans#Callback Methoden alternative (BeanPostProcessor )|Callback Methoden alternative (BeanPostProcessor )]]
+- [[#Autokonfiguration (Magic :-))|Autokonfiguration (Magic :-))]]
+	- [[#Autokonfiguration (Magic :-))#Interfaces|Interfaces]]
 
 ## Was '@Component' nicht kann
 
@@ -176,15 +185,15 @@ Mit `@Import` kann man andere Konfigurationen wie `@Configurationen` oder `@Comp
 
 > [!note]
 > 
-Import muss nicht in Spring benötigt, da ClassPathScanning das automatisch bereitstellt.
+Import wird eigentlich nicht in Spring benötigt, da ClassPathScanning das automatisch bereitstellt. Eine Außnahme wäre Test / Sliced Tests
 ABER
 Wenn die Beans in anderen Paketen / Namespaces als in dem eigenen Namespace liegen muss entweder `@Import` oder `ClassPathScanning` angepasst werden :-)
 
 ### ImportSelector
 
-Mit einem `ImportSelector` kann man eine Möglichkeit zur Verfügung stellen, das unterschieden wird welche Bean dann bereitgestellt wird.
+Mit einem `ImportSelector` kann man eine Möglichkeit zur Verfügung stellen, das **unterschieden** wird welche Bean dann bereitgestellt wird.
 D.h. wir haben ein interface das 2 **unterschiedliche** Implementierungen bereitstellen.
-Mit dem ImportSelector wird dann unterschieden welche Implementierung bereitgestellt wird.
+Mit dem `ImportSelector` wird dann unterschieden welche Implementierung bereitgestellt wird.
 
 > [!tip]
 > 
@@ -225,7 +234,7 @@ Bei `@Component` gibt es einen Parameter 'value' mit Standart "". Wird ein Value
 Beispiel wie man mit DI Container und Naming vorgehen sollte:
 
 > [!important]+ Important YAGNI beachten
-> Dabei aber YAGNI beachten. Es kann auch eine Direkte Implementierung (also ohne Interface) verwendet werden, wenn nur eine Implementierung dafür geplant ist :-) Aber besser wäre es mit Interfaces zu arbeiten, da ein Austauschen einfacher wäre.
+> Dabei aber YAGNI beachten. Es kann auch eine Direkte Implementierung (also ohne Interface) verwendet werden, wenn nur eine Implementierung dafür geplant ist :-) Aber besser wäre es mit Interfaces zu arbeiten, da ein Austauschen einfacher wäre. == Inversion of Control
 > 
 
 ![[900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/Name Steps Diagram.svg]]
@@ -263,7 +272,7 @@ class PhotoServiceSupplier implements Supplier<PhotoService>{
 2. Eigene Annotationstypen bereitstellen
 3. `@Primary` bereitstellen
 4. Alle Beans in einer Datenstruktur
-5. Nach Namen gehen (d.h. variable so benennen wie Komponenten Namen nur starting lowercase) (! ist aber nicht so sauber)
+5. Nach Namen gehen (d.h. variable so benennen wie Komponenten Namen nur starting lowercase) (! ist aber nicht so sauber und schwer zu erkennen im Code) 
 
 Beispiel Code `Eigene AnnotationsTypen bereitstellen`:
 
@@ -332,8 +341,12 @@ Beispiel `Nach Namen gehen`
 
 ### `@Resources`
 
-Diese Kennzeichnung ist wie @Autowired eine Resource, die eine Resource bereitstellt.
-ABER  `@Resource` stellt bewusst einen `Namen` höher bewertet. d.h.`@Resource(name = "xx")`
+Diese Kennzeichnung ist wie `@Autowired` eine Resource, die eine Resource bereitstellt.
+ABER  `@Resource` bezieht sich immer auf den Namen und daher wird  `Namen` höher bewertet. d.h.`@Resource(name = "xx")`
+
+Das bedeutet aber auch im Umkehrschluss, dass `@Resource` immer ein Objekt mit dem Namen auflöst
+
+`@Resource setAA(Object profile)` würde mit Resource dann die Klasse `@Component Profile..` einbinden ABER 💢`@Autowired` würde dann **irgendein** `Object` einbinden, was keinen wirklichen Sinn macht. 
 
 ```ad-warning
 Diese Annotation kann nicht bei Ctor wiring eingesetzt werden, nur bei Settern mit einem Parameter
@@ -342,3 +355,191 @@ Diese Annotation kann nicht bei Ctor wiring eingesetzt werden, nur bei Settern m
 ### `ObjectProvider`
 
 ObjectProvider wird ähnlich wie `Optional` verwendet.
+
+```java
+@Autowired
+ObjectProvider<Thumbnail> maybeThumbnail; // Kann null oder Bean sein
+
+---- // Später
+maybeThumbnail.getIfAvailable() // null oder Bean
+maybeThumbnail.getIfAvailable(NoopThumbnail::new) // Erzeugt Default Instanz wenn null
+```
+
+> [!info] Info: Zu Beachten
+> 
+ObjectProvider wird entweder **injiziert** oder mit `getBeanProvider` aus einem Applicationcontext geladen.
+
+```java
+// Beispiel 
+	ObjectProvider<Thumbnail> maybeThumbnail = ctx.getBeanProvider(Thumbnail.class);
+```
+
+> [!danger]
+> 
+Gibt es bei der Bean Erzeugung Fehler, lösen bis auf `iterator()` und `stream()/orderedStream()` die Methoden eine `BeansException` aus
+
+### @Order / @AutoconfigurationOrder
+
+Spring berücksichtig bei gewissen Operationen die Priorität von Objekten bei @Autowired
+
+* @Order (reguläre Komponenten) => `@Component @Order(123)`
+	* Je niedriger der Wert, desto höher die Priorität 
+* @AutoConfigurationOrder (Konfigurationsklassen) 
+
+### @Bean Methoden
+Oberklassen können `@Bean` Methoden bestitzen
+
+```java
+abstract class Thing {
+  @Bean UUID uuid() {
+	  return UUI.randomUUID();
+  }
+}
+```
+
+### Annotation @Inherited
+
+Prinzipiell können Annotation auf Unterklassen vererbt werden.
+ABER nur wenn der Annitationstyp `@java.lang.annotation.Inherited` ist 
+
+## Lebenszyklus der Beans 
+
+Wie ermittelt Spring DI den Baum der Objekte die in welcher Reihenfolge gebaut werden müssen ?
+
+Dadurch das Annotationen und Ctor's gescannt und analysiert werden.
+
+Um manuell Beans bereitstellen einfach `@Component` im Ctor dann `DefaultListableBeanFactory beanFactory` injekten lassen.
+
+[[TODO]]: Beispiel aus Video dann auch implementieren.
+
+### Annotations im Lebenszyklus 
+* `@PostConstruct` => wird nach Dependency-Injection aufgerufen, kann auch mehrmals gesetzt werden :-)
+* `@PreDestroy` => wird aufgerufen bevor Componente vom Container entfernt werden.
+	* 👿Es können auch`JVM Shutdown-Hooks` verwendet werden
+* Es gehen hier auch Interfaces die man implementiert, sollte aber nicht mehr genutzt werden 
+	* InitializingBean
+	* DisposableBean
+	* Aware Schnittstellen
+		* ApplicationContextAware.setApplicationContexst()
+		* BeanNameAware:setEnvironment()
+		* BeanClassLoaderAware:setBeanClassLoader
+		* ... insgesamt **300** Schnittstellen
+		* **BeanPostProcessor**
+* `@Bean` => hier `initMethod` und `destroyMethod`
+* `@DependsOn`
+* `Lazy`
+	* Globale settings:
+		* Property: `spring.main.lazy-initialization=true`
+		* Code: `SpringApplication.setLazyInitialiszation(true);`
+* `SPEL`
+
+Beispiel Vererbung der Lebenszyklus-Methoden:
+
+```java
+class IOResource {
+	@PostContruct
+	void init() {}
+}
+
+interface Closeable {
+	@PreDestroy
+	default void close() {}
+}
+
+...
+
+@Service
+class FileSytem extends IOResource implements Closeable {
+
+}
+```
+
+
+
+### Callback Methoden alternative (BeanPostProcessor )
+
+Eine Alternative für die Callback Methoden (PostConstruct, Predestroy) ist der `BeanPostProcessor`
+
+Damit können:
+* Realisierung von Injezierungen
+* Aufrufen von bestimmten Methoden mit werten
+* Proxies um Objekte zu bauen
+* Starten von Hintergrundoperationen
+
+BeanPostProcessor stellt **Post** und **Pre** Methoden "Initialization" bereit.
+
+## Autokonfiguration (Magic :-))
+
+*Spring Boot* stellt eine Menge von Autokonfiguration bereit.
+Dann einfach mal nach **AutoConfigure** in Intellij suchen ;-)
+
+> [!important] Important: Location Autoconfiguration class list (imports)
+> 
+In dem (jar) Verzeichnis META-INF gibt es ein Unterverzeichnis **spring** mit einer Datei *org.springframework.boot.autoconfigure.AutonConfiguration.imports*
+Darin befindet sich eine Aufstellung der Autokonfiguration 
+
+Es ist möglich ein wenig Magic im Hintergund bei `@Configuration` zu vermeiden. Dazu dann `@Configuration(proxyBeanMethods=false)` nutzen. Das geht aber nur wenn keine Methode in der Klasse sich selbst aufrufen ;-)
+
+
+### Interfaces 
+
+Hiermit kann gesteuert werden wann welche Bean erzeugt /  genommen wird.
+
+* @Conditional(xxx.class)
+	* Hier kann auch eine eigene Klasse vererbt von Condition bereitgestellt werden. Die in @Conditional genutzt wird.
+	* Dazu dann noch eine eigene Annotation und dann wird es schön einfach, da wir diese an eine Klasse setzen können.
+* @ConditionalOnxxxx
+
+### Autokonfiguration ausschließen
+
+Über Annotation:
+`@EnableAutoConfiguration (exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})`
+
+Über z.B. Application.yaml (oder Env :-))
+
+```yaml
+spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, DataSourceTransactionManagerAutoConfiguration.class,...
+```
+
+
+### Ausschalten Konfiguration 
+
+Ersetzen von @SpringBootApplication durch
+- @SpringBootConfiguration
+- @ComponentScan
+- weglassen von @EnableAutoConfigurarion
+
+bleiben nur ein paar wenige vorhanden
+
+> Tip: Startzeit reduzieren !!!
+
+
+### Individuelle Konfiguration 
+
+`@Import({PropertyPlaceholderAutoConfiguration.class,...})`
+
+
+## Spring Startzeiten reduzieren 
+
+1. Property `spring.main.lazy-initialization=true` <== Nicht in Produktion
+2. Component Index erstellen !!
+3. Functional bean Definitions !! 
+4. EnablAutoConfiguration ausschalten und mit @import arbeiten
+
+### Component Index 
+
+Eine Datei die die Komponenten aufzählt die benötgt werden.
+
+*META-INF/spring.components* mit voll qualifizierten Klassennamen
+Spring erkennt diese Datei und erstellt dann kein Classpath scan !!
+
+Mit `spring.index.ignore` kann das ausgeschaltet werden .
+
+Aber wenn das Ein-/Ausgabesystem fix ist, gibt es keinen Unterschied,
+
+### Functional Bean Definition
+
+Alle managed Beans per Hand registieren.
+
+d.h. aus Spring Application eine @Configuration machen (damit kein Scann gemacht wird)
+und dann mit ctx.Register... registrieren

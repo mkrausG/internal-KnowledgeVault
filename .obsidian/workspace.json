@@ -15,6 +15,18 @@
               "state": {
                 "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-5 Konfiguration und Fabrikmethoden.md",
                 "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "26e9e859a081c6f6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-5 Konfiguration und Fabrikmethoden.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -38,7 +50,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "ObjectProvide",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -66,17 +78,7 @@
             }
           },
           {
-            "id": "5c25c08b58a8d487",
-            "type": "leaf",
-            "state": {
-              "type": "diagram-edit",
-              "state": {
-                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/Name Steps Diagram.svg"
-              }
-            }
-          },
-          {
-            "id": "bb04607032639794",
+            "id": "e9d55dcee8c0d775",
             "type": "leaf",
             "state": {
               "type": "file-tree-view",
@@ -84,11 +86,12 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 457.51103591918945
+    "width": 386.5,
+    "collapsed": true
   },
   "right": {
     "id": "ce9610d725b519e7",
@@ -173,7 +176,7 @@
             }
           },
           {
-            "id": "5fc54ca3750064cb",
+            "id": "a51af0472b339a57",
             "type": "leaf",
             "state": {
               "type": "FANTASY_CALENDAR",
@@ -181,7 +184,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 7
       },
       {
         "id": "d750c9603ef15352",
@@ -212,27 +215,31 @@
       "markdown-importer:Open format converter": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "templater-obsidian:Templater": false,
-      "fantasy-calendar:Open Large Fantasy Calendar": false,
       "card-board:CardBoard": false,
       "darlal-switcher-plus:Open in Headings Mode": false,
       "darlal-switcher-plus:Open Symbols for the active editor": false,
       "audio-recorder:Start/stop recording": false,
       "daily-notes:Open today's daily note": false,
       "workspaces:Manage workspace layouts": false,
-      "file-tree-alternative:File Tree Alternative Plugin": false
+      "file-tree-alternative:File Tree Alternative Plugin": false,
+      "fantasy-calendar:Open Large Fantasy Calendar": false
     }
   },
   "active": "818ee52718bf0014",
   "lastOpenFiles": [
-    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/Name Steps Diagram.svg",
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1 Container für spring managed Beans.md",
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-0-Spring Boot & Spring Framework IoC, DI, Bean-Container-MOC.md",
-    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-5 Konfiguration und Fabrikmethoden.md",
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-1 Optionale Abhängigkeiten.md",
-    "bins/daily/2023-02-17 - Fri Feb 17.md",
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-2 JShell.md",
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-5 Konfiguration und Fabrikmethoden.md",
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/Name Steps Diagram.svg",
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/Spring Boot.canvas",
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-4 Exit von Programmen.md",
     "002-Spring/002-1 Links and TODO.md",
     "002-Spring/002-Spring-MOC.md",
     "002-Spring/002-2 Autoconfiguration.md",
-    "TODO.md"
+    "TODO.md",
+    "Test.md",
+    "0-common.md"
   ]
 }
