@@ -486,6 +486,22 @@
           "lastUpdated": 1677220294058
         }
       }
+    },
+    "Konfigurationen": {
+      "Konfigurationen": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677245085169
+        }
+      }
+    },
+    "Propertyresolver": {
+      "Propertyresolver": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677246237810
+        }
+      }
     }
   }
 }

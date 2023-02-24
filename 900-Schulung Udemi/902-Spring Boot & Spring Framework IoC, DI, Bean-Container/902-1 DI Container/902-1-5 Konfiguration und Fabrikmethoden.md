@@ -51,6 +51,10 @@ Type:
 - [[#Spring Startzeiten reduzieren|Spring Startzeiten reduzieren]]
 	- [[#Spring Startzeiten reduzieren#Component Index|Component Index]]
 	- [[#Spring Startzeiten reduzieren#Functional Bean Definition|Functional Bean Definition]]
+- [[#Externe Konfigurationen  / Application Properties / Property Sources|Externe Konfigurationen  / Application Properties / Property Sources]]
+	- [[#Externe Konfigurationen  / Application Properties / Property Sources#PropertyResolver|PropertyResolver]]
+	- [[#Externe Konfigurationen  / Application Properties / Property Sources#Statische Werte über @Value injizieren|Statische Werte über @Value injizieren]]
+
 
 
 ## Was '@Component' nicht kann
@@ -553,5 +557,37 @@ Aber wenn das Ein-/Ausgabesystem fix ist, gibt es keinen Unterschied,
 
 Alle managed Beans per Hand registieren.
 
-d.h. aus Spring Application eine @Configuration machen (damit kein Scann gemacht wird)
+d.h. aus Spring Application eine @Configuration machen (damit kein Scan gemacht wird)
 und dann mit ctx.Register... registrieren
+
+## Externe Konfigurationen  / Application Properties / Property Sources
+
+Damit sind Application.properties / .yaml gemeint == Environment
+
+> [!note]
+> 
+💡 Kommt ein Schlüssel mehrfach vor, gewinnt die letzte Zuweisung.
+
+### PropertyResolver
+
+Mit dem PropertyResolver können wir auf die Properties zugreifen.
+
+```java
+env.containsProperty("user.home");
+env.getProperty("user.home");
+env.getProperty("com.tutego.number-of-seminars",Integer.class);
+```
+
+### Statische Werte über @Value injizieren
+
+- Typkonvertierung
+- Default Values
+- SpEL
+
+Hinweis: kann auch an private Felder gesetzt werden und es können auch werte aus dem Environment ausgelesen werden die nicht in der Applikation.properties vorhanden ist ;-)
+
+Einfache Syntax = `@Value("${xxx}");`
+Mit Default Values = `@Value("${xxx:pmOO}");`
+String or Default Null =`@Value("${xxx:#{null}}");` 
+
+Wenn Java > 11 verwendet wird ist es möglich an einem "Record" ein DefaultValue zu setzen = `@DefaultValue`

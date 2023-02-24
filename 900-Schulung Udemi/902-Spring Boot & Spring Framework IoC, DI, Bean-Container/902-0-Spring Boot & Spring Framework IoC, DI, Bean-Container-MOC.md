@@ -31,4 +31,6 @@ https://docs.spring.io/spring-boot/docs/current/api/index.html?overview-summary.
 
 https://docs.spring.io/spring-boot/docs/current/api/
 
+https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html
+
 # Referenzen
