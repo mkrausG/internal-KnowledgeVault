@@ -43,7 +43,15 @@ Type:
 	- [[#Lebenszyklus der Beans#Annotations im Lebenszyklus|Annotations im Lebenszyklus]]
 	- [[#Lebenszyklus der Beans#Callback Methoden alternative (BeanPostProcessor )|Callback Methoden alternative (BeanPostProcessor )]]
 - [[#Autokonfiguration (Magic :-))|Autokonfiguration (Magic :-))]]
+	- [[#Autokonfiguration (Magic :-))#ProxyBeanMethods|ProxyBeanMethods]]
 	- [[#Autokonfiguration (Magic :-))#Interfaces|Interfaces]]
+	- [[#Autokonfiguration (Magic :-))#Autokonfiguration ausschließen|Autokonfiguration ausschließen]]
+	- [[#Autokonfiguration (Magic :-))#Ausschalten Konfiguration|Ausschalten Konfiguration]]
+	- [[#Autokonfiguration (Magic :-))#Individuelle Konfiguration|Individuelle Konfiguration]]
+- [[#Spring Startzeiten reduzieren|Spring Startzeiten reduzieren]]
+	- [[#Spring Startzeiten reduzieren#Component Index|Component Index]]
+	- [[#Spring Startzeiten reduzieren#Functional Bean Definition|Functional Bean Definition]]
+
 
 ## Was '@Component' nicht kann
 
@@ -478,8 +486,12 @@ Dann einfach mal nach **AutoConfigure** in Intellij suchen ;-)
 In dem (jar) Verzeichnis META-INF gibt es ein Unterverzeichnis **spring** mit einer Datei *org.springframework.boot.autoconfigure.AutonConfiguration.imports*
 Darin befindet sich eine Aufstellung der Autokonfiguration 
 
+
+### ProxyBeanMethods 
+
 Es ist möglich ein wenig Magic im Hintergund bei `@Configuration` zu vermeiden. Dazu dann `@Configuration(proxyBeanMethods=false)` nutzen. Das geht aber nur wenn keine Methode in der Klasse sich selbst aufrufen ;-)
 
+siehe [When to use proxy methods](https://stackoverflow.com/questions/61266792/when-to-set-proxybeanmethods-to-false-in-springs-configuration)
 
 ### Interfaces 
 
