@@ -146,8 +146,8 @@
     "TODO": {
       "TODO": {
         "internalLink": {
-          "count": 2,
-          "lastUpdated": 1677182101674
+          "count": 3,
+          "lastUpdated": 1677408717840
         }
       }
     },
@@ -500,6 +500,54 @@
         "currentFile": {
           "count": 1,
           "lastUpdated": 1677246237810
+        }
+      }
+    },
+    "Upgrade": {
+      "Upgrade": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1677408980809
+        }
+      }
+    },
+    "removed": {
+      "removed": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677410305831
+        }
+      }
+    },
+    "Spring": {
+      "Spring": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677410371992
+        }
+      }
+    },
+    "Observability": {
+      "Observability": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1677410598828
+        }
+      }
+    },
+    "Cloud": {
+      "Cloud": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677410541504
+        }
+      }
+    },
+    "Framework": {
+      "Framework": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1677410551162
         }
       }
     }
