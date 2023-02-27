@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "818ee52718bf0014",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/ToDele Migrate to Spring Boot 3.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "26e9e859a081c6f6",
             "type": "leaf",
             "state": {
@@ -78,7 +66,7 @@
             }
           },
           {
-            "id": "e9d55dcee8c0d775",
+            "id": "6e8a6d039712e37d",
             "type": "leaf",
             "state": {
               "type": "file-tree-view",
@@ -90,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 386.5
+    "width": 386.5,
+    "collapsed": true
   },
   "right": {
     "id": "ce9610d725b519e7",
@@ -106,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/ToDele Migrate to Spring Boot 3.md",
+                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-5 Konfiguration und Fabrikmethoden.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/ToDele Migrate to Spring Boot 3.md",
+                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-5 Konfiguration und Fabrikmethoden.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -146,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/ToDele Migrate to Spring Boot 3.md"
+                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-5 Konfiguration und Fabrikmethoden.md"
               }
             }
           },
@@ -175,7 +164,7 @@
             }
           },
           {
-            "id": "a51af0472b339a57",
+            "id": "c56530d213171aec",
             "type": "leaf",
             "state": {
               "type": "FANTASY_CALENDAR",
@@ -224,10 +213,10 @@
       "fantasy-calendar:Open Large Fantasy Calendar": false
     }
   },
-  "active": "818ee52718bf0014",
+  "active": "26e9e859a081c6f6",
   "lastOpenFiles": [
-    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-5 Konfiguration und Fabrikmethoden.md",
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/ToDele Migrate to Spring Boot 3.md",
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-5 Konfiguration und Fabrikmethoden.md",
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-0-Spring Boot & Spring Framework IoC, DI, Bean-Container-MOC.md",
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1 Container für spring managed Beans.md",
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-1 Optionale Abhängigkeiten.md",

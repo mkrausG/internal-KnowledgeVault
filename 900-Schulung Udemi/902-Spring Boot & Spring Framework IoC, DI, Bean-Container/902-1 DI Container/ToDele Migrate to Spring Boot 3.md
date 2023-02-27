@@ -81,6 +81,9 @@ Code:
 // Beispiel Observability 
 ```
 
+### Problem Details (RFC 7807)
+To use it use  `spring.mvc.problemdetails.enabled=true` in application.properties
+
 ### Changes Spring Web MVC
 
 - HttpMethods are no longer an enum, now use `HttpMethod lock = HttoMethod.valueOf("LOCK")`

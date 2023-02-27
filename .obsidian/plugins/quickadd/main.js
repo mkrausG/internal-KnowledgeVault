@@ -6975,15 +6975,15 @@ function popperGenerator(generatorOptions) {
   if (generatorOptions === void 0) {
     generatorOptions = {};
   }
-  var _generatorOptions = generatorOptions, _generatorOptions$def = _generatorOptions.defaultModifiers, defaultModifiers2 = _generatorOptions$def === void 0 ? [] : _generatorOptions$def, _generatorOptions$def2 = _generatorOptions.defaultOptions, defaultOptions = _generatorOptions$def2 === void 0 ? DEFAULT_OPTIONS : _generatorOptions$def2;
+  var _generatorOptions = generatorOptions, _generatorOptions$def = _generatorOptions.defaultModifiers, defaultModifiers2 = _generatorOptions$def === void 0 ? [] : _generatorOptions$def, _generatorOptions$def2 = _generatorOptions.defaultOptions, defaultOptions2 = _generatorOptions$def2 === void 0 ? DEFAULT_OPTIONS : _generatorOptions$def2;
   return function createPopper2(reference2, popper2, options) {
     if (options === void 0) {
-      options = defaultOptions;
+      options = defaultOptions2;
     }
     var state = {
       placement: "bottom",
       orderedModifiers: [],
-      options: Object.assign({}, DEFAULT_OPTIONS, defaultOptions),
+      options: Object.assign({}, DEFAULT_OPTIONS, defaultOptions2),
       modifiersData: {},
       elements: {
         reference: reference2,
@@ -6999,7 +6999,7 @@ function popperGenerator(generatorOptions) {
       setOptions: function setOptions(setOptionsAction) {
         var options2 = typeof setOptionsAction === "function" ? setOptionsAction(state.options) : setOptionsAction;
         cleanupModifierEffects();
-        state.options = Object.assign({}, defaultOptions, state.options, options2);
+        state.options = Object.assign({}, defaultOptions2, state.options, options2);
         state.scrollParents = {
           reference: isElement(reference2) ? listScrollParents(reference2) : reference2.contextElement ? listScrollParents(reference2.contextElement) : [],
           popper: listScrollParents(popper2)
@@ -10115,7 +10115,7 @@ var QuickAddEngine = class {
       await this.app.vault.createFolder(folder);
     }
   }
-  formatFilePath(folderPath, fileName) {
+  normalizeMarkdownFilePath(folderPath, fileName) {
     const actualFolderPath = folderPath ? `${folderPath}/` : "";
     const formattedFileName = fileName.replace(
       MARKDOWN_FILE_EXTENSION_REGEX,
@@ -11968,7 +11968,7 @@ var TemplateEngine = class extends QuickAddEngine {
       format3,
       promptHeader
     );
-    return this.formatFilePath(folderPath, formattedName);
+    return this.normalizeMarkdownFilePath(folderPath, formattedName);
   }
   async incrementFileName(fileName) {
     const numStr = FILE_NUMBER_REGEX.exec(fileName)[1];
@@ -14829,99 +14829,116 @@ var StartupMacroEngine = class extends MacroChoiceEngine {
 
 // src/engine/TemplateChoiceEngine.ts
 var import_obsidian27 = require("obsidian");
+
+// src/utils/invariant.ts
+function invariant(condition, message) {
+  if (!condition) {
+    throw new Error(typeof message === "function" ? message() : message);
+  }
+  return;
+}
+
+// src/engine/TemplateChoiceEngine.ts
 var TemplateChoiceEngine = class extends TemplateEngine {
   constructor(app2, plugin, choice, choiceExecutor) {
     super(app2, plugin, choiceExecutor);
     this.choice = choice;
   }
   async run() {
-    let folderPath = "";
-    if (this.choice.folder.enabled) {
-      folderPath = await this.getFolderPath();
-    }
-    let filePath;
-    if (this.choice.fileNameFormat.enabled) {
-      filePath = await this.getFormattedFilePath(
-        folderPath,
-        this.choice.fileNameFormat.format,
-        this.choice.name
-      );
-    } else {
-      filePath = await this.getFormattedFilePath(
-        folderPath,
-        VALUE_SYNTAX,
-        this.choice.name
-      );
-    }
-    if (this.choice.fileExistsMode === fileExistsIncrement)
-      filePath = await this.incrementFileName(filePath);
-    let createdFile;
-    if (await this.app.vault.adapter.exists(filePath)) {
-      const file = this.app.vault.getAbstractFileByPath(filePath);
-      if (!(file instanceof import_obsidian27.TFile) || file.extension !== "md") {
-        log.logError(
-          `'${filePath}' already exists and is not a valid markdown file.`
-        );
-        return;
-      }
-      await this.app.workspace.getLeaf("tab").openFile(file);
-      let userChoice = this.choice.fileExistsMode;
-      if (!this.choice.setFileExistsBehavior) {
-        userChoice = await GenericSuggester.Suggest(
-          this.app,
-          [...fileExistsChoices],
-          [...fileExistsChoices]
-        );
-      }
-      switch (userChoice) {
-        case fileExistsAppendToTop:
-          createdFile = await this.appendToFileWithTemplate(
-            file,
-            this.choice.templatePath,
-            "top"
-          );
-          break;
-        case fileExistsAppendToBottom:
-          createdFile = await this.appendToFileWithTemplate(
-            file,
-            this.choice.templatePath,
-            "bottom"
-          );
-          break;
-        case fileExistsOverwriteFile:
-          createdFile = await this.overwriteFileWithTemplate(
-            file,
-            this.choice.templatePath
-          );
-          break;
-        case fileExistsDoNothing:
-        default:
-          log.logWarning("File not written to.");
-          return;
-      }
-    } else {
-      createdFile = await this.createFileWithTemplate(
-        filePath,
-        this.choice.templatePath
-      );
-      if (!createdFile) {
-        log.logWarning(`Could not create file '${filePath}'.`);
-        return;
-      }
-    }
-    if (this.choice.appendLink) {
-      appendToCurrentLine(
-        this.app.fileManager.generateMarkdownLink(createdFile, ""),
-        this.app
-      );
-    }
-    if (this.choice.openFile) {
-      await openFile(this.app, createdFile, {
-        openInNewTab: this.choice.openFileInNewTab.enabled,
-        direction: this.choice.openFileInNewTab.direction,
-        focus: this.choice.openFileInNewTab.focus,
-        mode: this.choice.openFileInMode
+    try {
+      invariant(this.choice.templatePath, () => {
+        return `Invalid template path for ${this.choice.name}. ${this.choice.templatePath.length === 0 ? "Template path is empty." : `Template path is not valid: ${this.choice.templatePath}`}`;
       });
+      let folderPath = "";
+      if (this.choice.folder.enabled) {
+        folderPath = await this.getFolderPath();
+      }
+      let filePath;
+      if (this.choice.fileNameFormat.enabled) {
+        filePath = await this.getFormattedFilePath(
+          folderPath,
+          this.choice.fileNameFormat.format,
+          this.choice.name
+        );
+      } else {
+        filePath = await this.getFormattedFilePath(
+          folderPath,
+          VALUE_SYNTAX,
+          this.choice.name
+        );
+      }
+      if (this.choice.fileExistsMode === fileExistsIncrement)
+        filePath = await this.incrementFileName(filePath);
+      let createdFile;
+      if (await this.app.vault.adapter.exists(filePath)) {
+        const file = this.app.vault.getAbstractFileByPath(filePath);
+        if (!(file instanceof import_obsidian27.TFile) || file.extension !== "md") {
+          log.logError(
+            `'${filePath}' already exists and is not a valid markdown file.`
+          );
+          return;
+        }
+        await this.app.workspace.getLeaf("tab").openFile(file);
+        let userChoice = this.choice.fileExistsMode;
+        if (!this.choice.setFileExistsBehavior) {
+          userChoice = await GenericSuggester.Suggest(
+            this.app,
+            [...fileExistsChoices],
+            [...fileExistsChoices]
+          );
+        }
+        switch (userChoice) {
+          case fileExistsAppendToTop:
+            createdFile = await this.appendToFileWithTemplate(
+              file,
+              this.choice.templatePath,
+              "top"
+            );
+            break;
+          case fileExistsAppendToBottom:
+            createdFile = await this.appendToFileWithTemplate(
+              file,
+              this.choice.templatePath,
+              "bottom"
+            );
+            break;
+          case fileExistsOverwriteFile:
+            createdFile = await this.overwriteFileWithTemplate(
+              file,
+              this.choice.templatePath
+            );
+            break;
+          case fileExistsDoNothing:
+          default:
+            log.logWarning("File not written to.");
+            return;
+        }
+      } else {
+        createdFile = await this.createFileWithTemplate(
+          filePath,
+          this.choice.templatePath
+        );
+        if (!createdFile) {
+          log.logWarning(`Could not create file '${filePath}'.`);
+          return;
+        }
+      }
+      if (this.choice.appendLink) {
+        appendToCurrentLine(
+          this.app.fileManager.generateMarkdownLink(createdFile, ""),
+          this.app
+        );
+      }
+      if (this.choice.openFile) {
+        await openFile(this.app, createdFile, {
+          openInNewTab: this.choice.openFileInNewTab.enabled,
+          direction: this.choice.openFileInNewTab.direction,
+          focus: this.choice.openFileInNewTab.focus,
+          mode: this.choice.openFileInMode
+        });
+      }
+    } catch (error) {
+      log.logError(error);
     }
   }
   async formatFolderPaths(folders) {
@@ -15016,6 +15033,14 @@ var CaptureChoiceFormatter = class extends CompleteFormatter {
       this.fileContent,
       frontmatterEndPosition
     );
+  }
+  async formatContentOnly(input) {
+    let formatted = await super.formatFileContent(input);
+    formatted = this.replaceLinebreakInString(formatted);
+    const formattedContentIsEmpty = formatted.trim() === "";
+    if (formattedContentIsEmpty)
+      return this.fileContent;
+    return formatted;
   }
   async insertAfterHandler(formatted) {
     var _a, _b;
@@ -15114,6 +15139,643 @@ ${text2}${post}`;
   }
 };
 
+// node_modules/.pnpm/three-way-merge@0.1.0/node_modules/three-way-merge/dist/modules/src/outcomes.js
+var Outcome = class {
+  isResolved() {
+    return !this.hasConflicts;
+  }
+  isConflicted() {
+    return this.hasConflicts;
+  }
+};
+var Conflicted = class extends Outcome {
+  constructor(left2, base, right2) {
+    super();
+    this.left = left2;
+    this.base = base;
+    this.right = right2;
+    this.hasConflicts = true;
+  }
+  static create(opts) {
+    return new Conflicted(opts.left, opts.base, opts.right);
+  }
+  apply(fun) {
+    return Conflicted.create({
+      left: fun(this.left),
+      base: fun(this.base),
+      right: fun(this.right)
+    });
+  }
+};
+var Resolved = class extends Outcome {
+  constructor(result) {
+    super();
+    this.hasConflicts = false;
+    this.result = result;
+  }
+  combine(other) {
+    this.result = this.result.concat(other.result);
+  }
+  apply(fun) {
+    return new Resolved(fun(this.result));
+  }
+};
+
+// node_modules/.pnpm/three-way-merge@0.1.0/node_modules/three-way-merge/dist/modules/src/heckel-diff.js
+var HeckelDiff = class {
+  constructor(left2, right2) {
+    this.left = left2;
+    this.right = right2;
+  }
+  static executeDiff(oldTextArray, newTextArray) {
+    if (!oldTextArray.push) {
+      throw new Error("Argument is not an array");
+    }
+    const diffResult = HeckelDiff.diff(oldTextArray, newTextArray);
+    return new HeckelDiffWrapper(oldTextArray, newTextArray, diffResult).convertToTypedOutput();
+  }
+  static diff(left2, right2) {
+    const differ = new HeckelDiff(left2, right2);
+    return differ.performDiff();
+  }
+  performDiff() {
+    let uniquePositions = this.identifyUniquePositions();
+    uniquePositions.sort((a, b) => b[0] - a[0]);
+    const [leftChangePos, rightChangePos] = this.findNextChange();
+    let initChanges = new ChangeData(leftChangePos, rightChangePos, []);
+    uniquePositions.forEach((pos) => {
+      initChanges = this.getDifferences(initChanges, pos);
+    });
+    return initChanges.changeRanges;
+  }
+  getDifferences(changeData, uniquePositions) {
+    const [leftPos, rightPos] = [
+      changeData.leftChangePos,
+      changeData.rightChangePos
+    ];
+    const [leftUniqPos, rightUniqPos] = uniquePositions;
+    if (leftUniqPos < leftPos || rightUniqPos < rightPos) {
+      return changeData;
+    } else {
+      const [leftLo, leftHi, rightLo, rightHi] = this.findPrevChange(leftPos, rightPos, leftUniqPos - 1, rightUniqPos - 1);
+      const [nextLeftPos, nextRightPos] = this.findNextChange(leftUniqPos + 1, rightUniqPos + 1);
+      const updatedRanges = this.appendChangeRange(changeData.changeRanges, leftLo, leftHi, rightLo, rightHi);
+      return new ChangeData(nextLeftPos, nextRightPos, updatedRanges);
+    }
+  }
+  findNextChange(leftStartPos = 0, rightStartPos = 0) {
+    const lArr = this.left.slice(leftStartPos) || [];
+    const rArr = this.right.slice(rightStartPos) || [];
+    const offset2 = this.mismatchOffset(lArr, rArr);
+    return [leftStartPos + offset2, rightStartPos + offset2];
+  }
+  findPrevChange(leftLo, rightLo, leftHi, rightHi) {
+    if (leftLo > leftHi || rightLo > rightHi) {
+      return [leftLo, leftHi, rightLo, rightHi];
+    } else {
+      const lArr = this.left.slice(leftLo, leftHi + 1).reverse() || [];
+      const rArr = this.right.slice(rightLo, rightHi + 1).reverse() || [];
+      const offset2 = this.mismatchOffset(lArr, rArr);
+      return [leftLo, leftHi - offset2, rightLo, rightHi - offset2];
+    }
+  }
+  mismatchOffset(lArr, rArr) {
+    const max2 = Math.max(lArr.length, rArr.length);
+    for (let i = 0; i < max2; i++) {
+      if (lArr[i] !== rArr[i]) {
+        return i;
+      }
+    }
+    return Math.min(lArr.length, rArr.length);
+  }
+  identifyUniquePositions() {
+    const leftUniques = this.findUnique(this.left);
+    const rightUniques = this.findUnique(this.right);
+    const leftKeys = new Set(...leftUniques.keys());
+    const rightKeys = new Set(...rightUniques.keys());
+    const sharedKeys = new Set([...leftKeys].filter((k) => rightKeys.has(k)));
+    const uniqRanges = [...sharedKeys].map((k) => {
+      return [
+        leftUniques.get(k),
+        rightUniques.get(k)
+      ];
+    });
+    uniqRanges.unshift([this.left.length, this.right.length]);
+    return uniqRanges;
+  }
+  findUnique(array) {
+    const flaggedUniques = /* @__PURE__ */ new Map();
+    array.forEach((item, pos) => {
+      flaggedUniques.set(item, new UniqueItem(pos, !flaggedUniques.has(item)));
+    });
+    const uniques = /* @__PURE__ */ new Map();
+    for (let [key, value] of flaggedUniques.entries()) {
+      if (value.unique) {
+        uniques.set(key, value.pos);
+      }
+    }
+    return uniques;
+  }
+  appendChangeRange(changesRanges, leftLo, leftHi, rightLo, rightHi) {
+    if (leftLo <= leftHi && rightLo <= rightHi) {
+      changesRanges.push(new ChangeRange(Action.change, leftLo + 1, leftHi + 1, rightLo + 1, rightHi + 1));
+    } else if (leftLo <= leftHi) {
+      changesRanges.push(new ChangeRange(Action.remove, leftLo + 1, leftHi + 1, rightLo + 1, rightLo));
+    } else if (rightLo <= rightHi) {
+      changesRanges.push(new ChangeRange(Action.add, leftLo + 1, leftLo, rightLo + 1, rightHi + 1));
+    }
+    return changesRanges;
+  }
+};
+var UniqueItem = class {
+  constructor(pos, unique) {
+    this.pos = pos;
+    this.unique = unique;
+  }
+};
+var TextNode = class {
+  constructor(text2, low) {
+    this.text = text2;
+    this.low = low;
+  }
+};
+var HeckelDiffWrapper = class {
+  constructor(oldTextArray, newTextArray, chunks) {
+    this.oldTextArray = oldTextArray;
+    this.newTextArray = newTextArray;
+    this.chunks = chunks;
+    this.oldText = [];
+    this.newText = [];
+  }
+  convertToTypedOutput() {
+    let finalIndexes = new IndexTracker(0, 0);
+    this.chunks.forEach((chunk) => {
+      const [oldIteration, newIteration] = this.setTextNodeIndexes(chunk, finalIndexes.oldIndex, finalIndexes.newIndex);
+      const [oldIndex, newIndex] = this.appendChanges(chunk, finalIndexes.oldIndex + oldIteration, finalIndexes.newIndex + newIteration);
+      finalIndexes.oldIndex = oldIndex;
+      finalIndexes.newIndex = newIndex;
+    });
+    this.setTheRemainingTextNodeIndexes(finalIndexes.oldIndex, finalIndexes.newIndex);
+    return {
+      oldText: this.oldText,
+      newText: this.newText
+    };
+  }
+  setTextNodeIndexes(chunk, oldIndex, newIndex) {
+    let oldIteration = 0;
+    while (oldIndex + oldIteration < chunk.leftLo - 1) {
+      this.oldText.push(new TextNode(this.oldTextArray[oldIndex + oldIteration], newIndex + oldIteration));
+      oldIteration += 1;
+    }
+    let newIteration = 0;
+    while (newIndex + newIteration < chunk.rightLo - 1) {
+      this.newText.push(new TextNode(this.newTextArray[newIndex + newIteration], oldIndex + newIteration));
+      newIteration += 1;
+    }
+    return [oldIteration, newIteration];
+  }
+  appendChanges(chunk, oldIndex, newIndex) {
+    while (oldIndex <= chunk.leftHi - 1) {
+      this.oldText.push(this.oldTextArray[oldIndex]);
+      oldIndex += 1;
+    }
+    while (newIndex <= chunk.rightHi - 1) {
+      this.newText.push(this.newTextArray[newIndex]);
+      newIndex += 1;
+    }
+    return [oldIndex, newIndex];
+  }
+  setTheRemainingTextNodeIndexes(oldIndex, newIndex) {
+    let iteration = 0;
+    while (oldIndex + iteration < this.oldTextArray.length) {
+      this.oldText.push(new TextNode(this.oldTextArray[oldIndex + iteration], newIndex + iteration));
+      iteration += 1;
+    }
+    while (newIndex + iteration < this.newTextArray.length) {
+      this.newText.push(new TextNode(this.newTextArray[newIndex + iteration], oldIndex + iteration));
+      iteration += 1;
+    }
+  }
+};
+var IndexTracker = class {
+  constructor(oldIndex, newIndex) {
+    this.oldIndex = oldIndex;
+    this.newIndex = newIndex;
+  }
+};
+var Action;
+(function(Action2) {
+  Action2["change"] = "change";
+  Action2["add"] = "add";
+  Action2["remove"] = "remove";
+})(Action || (Action = {}));
+var ChangeRange = class {
+  constructor(action, leftLo, leftHi, rightLo, rightHi) {
+    this.action = action;
+    this.leftLo = leftLo;
+    this.leftHi = leftHi;
+    this.rightLo = rightLo;
+    this.rightHi = rightHi;
+  }
+};
+var ChangeData = class {
+  constructor(leftChangePos, rightChangePos, changeRanges) {
+    this.leftChangePos = leftChangePos;
+    this.rightChangePos = rightChangePos;
+    this.changeRanges = changeRanges;
+  }
+};
+
+// node_modules/.pnpm/three-way-merge@0.1.0/node_modules/three-way-merge/dist/modules/src/diff3.js
+var Diff2Command = class {
+  constructor(code, baseLo, baseHi, sideLo, sideHi) {
+    this.code = code;
+    this.baseLo = baseLo;
+    this.baseHi = baseHi;
+    this.sideLo = sideLo;
+    this.sideHi = sideHi;
+  }
+  static fromChangeRange(changeRange) {
+    return new Diff2Command(changeRange.action, changeRange.leftLo, changeRange.leftHi, changeRange.rightLo, changeRange.rightHi);
+  }
+};
+var Diff3 = class {
+  constructor(left2, base, right2) {
+    this.left = left2;
+    this.base = base;
+    this.right = right2;
+  }
+  static executeDiff(left2, base, right2) {
+    return new Diff3(left2, base, right2).getDifferences();
+  }
+  getDifferences() {
+    const leftDiff = HeckelDiff.diff(this.base, this.left).map((d) => {
+      return Diff2Command.fromChangeRange(d);
+    });
+    const rightDiff = HeckelDiff.diff(this.base, this.right).map((d) => {
+      return Diff2Command.fromChangeRange(d);
+    });
+    return this.collapseDifferences(new DiffDoubleQueue(leftDiff, rightDiff));
+  }
+  collapseDifferences(diffsQueue, differences = []) {
+    if (diffsQueue.isFinished()) {
+      return differences;
+    } else {
+      const resultQueue = new DiffDoubleQueue();
+      const initSide = diffsQueue.chooseSide();
+      const topDiff = diffsQueue.dequeue();
+      resultQueue.enqueue(initSide, topDiff);
+      diffsQueue.switchSides();
+      this.buildResultQueue(diffsQueue, topDiff.baseHi, resultQueue);
+      differences.push(this.determineDifference(resultQueue, initSide, diffsQueue.switchSides()));
+      return this.collapseDifferences(diffsQueue, differences);
+    }
+  }
+  buildResultQueue(diffsQueue, prevBaseHi, resultQueue) {
+    if (this.queueIsFinished(diffsQueue.peek(), prevBaseHi)) {
+      return resultQueue;
+    } else {
+      const topDiff = diffsQueue.dequeue();
+      resultQueue.enqueue(diffsQueue.currentSide, topDiff);
+      if (prevBaseHi < topDiff.baseHi) {
+        diffsQueue.switchSides();
+        return this.buildResultQueue(diffsQueue, topDiff.baseHi, resultQueue);
+      } else {
+        return this.buildResultQueue(diffsQueue, prevBaseHi, resultQueue);
+      }
+    }
+  }
+  queueIsFinished(queue, prevBaseHi) {
+    return queue.length === 0 || queue[0].baseLo > prevBaseHi + 1;
+  }
+  determineDifference(diffDiffsQueue, initSide, finalSide) {
+    const baseLo = diffDiffsQueue.get(initSide)[0].baseLo;
+    const finalQueue = diffDiffsQueue.get(finalSide);
+    const baseHi = finalQueue[finalQueue.length - 1].baseHi;
+    const [leftLo, leftHi] = this.diffableEndpoints(diffDiffsQueue.get(Side.left), baseLo, baseHi);
+    const [rightLo, rightHi] = this.diffableEndpoints(diffDiffsQueue.get(Side.right), baseLo, baseHi);
+    const leftSubset = this.left.slice(leftLo - 1, leftHi);
+    const rightSubset = this.right.slice(rightLo - 1, rightHi);
+    const changeType = this.decideAction(diffDiffsQueue, leftSubset, rightSubset);
+    return new Difference(changeType, leftLo, leftHi, rightLo, rightHi, baseLo, baseHi);
+  }
+  diffableEndpoints(commands2, baseLo, baseHi) {
+    if (commands2.length) {
+      const firstCommand = commands2[0];
+      const lastCommand = commands2[commands2.length - 1];
+      const lo = firstCommand.sideLo - firstCommand.baseLo + baseLo;
+      const hi = lastCommand.sideHi - lastCommand.baseHi + baseHi;
+      return [lo, hi];
+    } else {
+      return [baseLo, baseHi];
+    }
+  }
+  decideAction(diffDiffsQueue, leftSubset, rightSubset) {
+    if (diffDiffsQueue.isEmpty(Side.left)) {
+      return ChangeType.chooseRight;
+    } else if (diffDiffsQueue.isEmpty(Side.right)) {
+      return ChangeType.chooseLeft;
+    } else {
+      if (!leftSubset.every((x, i) => rightSubset[i] === x)) {
+        return ChangeType.possibleConflict;
+      } else {
+        return ChangeType.noConflictFound;
+      }
+    }
+  }
+};
+var Difference = class {
+  constructor(changeType, leftLo, leftHi, rightLo, rightHi, baseLo, baseHi) {
+    this.changeType = changeType;
+    this.leftLo = leftLo;
+    this.leftHi = leftHi;
+    this.rightLo = rightLo;
+    this.rightHi = rightHi;
+    this.baseLo = baseLo;
+    this.baseHi = baseHi;
+  }
+};
+var ChangeType;
+(function(ChangeType2) {
+  ChangeType2["chooseRight"] = "choose_right";
+  ChangeType2["chooseLeft"] = "choose_left";
+  ChangeType2["possibleConflict"] = "possible_conflict";
+  ChangeType2["noConflictFound"] = "no_conflict_found";
+})(ChangeType || (ChangeType = {}));
+var Side;
+(function(Side2) {
+  Side2["left"] = "left";
+  Side2["right"] = "right";
+})(Side || (Side = {}));
+var DiffDoubleQueue = class {
+  constructor(left2 = [], right2 = []) {
+    this.diffs = { left: left2, right: right2 };
+  }
+  dequeue(side = this.currentSide) {
+    return this.diffs[side].shift();
+  }
+  peek(side = this.currentSide) {
+    return this.diffs[side];
+  }
+  isFinished() {
+    return this.isEmpty(Side.left) && this.isEmpty(Side.right);
+  }
+  enqueue(side = this.currentSide, val) {
+    return this.diffs[side].push(val);
+  }
+  get(side = this.currentSide) {
+    return this.diffs[side];
+  }
+  isEmpty(side = this.currentSide) {
+    return this.diffs[side].length === 0;
+  }
+  switchSides(side = this.currentSide) {
+    return this.currentSide = side === Side.left ? Side.right : Side.left;
+  }
+  chooseSide() {
+    if (this.isEmpty(Side.left)) {
+      this.currentSide = Side.right;
+    } else if (this.isEmpty(Side.right)) {
+      this.currentSide = Side.left;
+    } else {
+      this.currentSide = this.get(Side.left)[0].baseLo <= this.get(Side.right)[0].baseLo ? Side.left : Side.right;
+    }
+    return this.currentSide;
+  }
+};
+
+// node_modules/.pnpm/three-way-merge@0.1.0/node_modules/three-way-merge/dist/modules/src/merger.js
+var Merger = class {
+  static merge(left2, base, right2) {
+    const merger = new Merger(left2, base, right2);
+    merger.executeThreeWayMerge();
+    return merger.result;
+  }
+  constructor(left2, base, right2) {
+    this.result = [];
+    this.text3 = new Text3(left2, right2, base);
+  }
+  executeThreeWayMerge() {
+    const differences = Diff3.executeDiff(this.text3.left, this.text3.base, this.text3.right);
+    let index = 1;
+    differences.forEach((difference) => {
+      let initialText = [];
+      for (let lineno = index; lineno < difference.baseLo; lineno++) {
+        initialText.push(this.text3.base[lineno - 1]);
+      }
+      if (initialText.length) {
+        this.result.push(new Resolved(initialText));
+      }
+      this.interpretChunk(difference);
+      index = difference.baseHi + 1;
+    });
+    const endingText = this.accumulateLines(index, this.text3.base.length, this.text3.base);
+    if (endingText.length) {
+      this.result.push(new Resolved(endingText));
+    }
+  }
+  setConflict(difference) {
+    const conflict = Conflicted.create({
+      left: this.accumulateLines(difference.leftLo, difference.leftHi, this.text3.left),
+      base: this.accumulateLines(difference.baseLo, difference.baseHi, this.text3.base),
+      right: this.accumulateLines(difference.rightLo, difference.rightHi, this.text3.right)
+    });
+    this.result.push(conflict);
+  }
+  determineConflict(d, left2, right2) {
+    let ia = 1;
+    d.forEach((changeRange) => {
+      for (let lineno = ia; lineno <= changeRange.leftLo; lineno++) {
+        this.result.push(new Resolved(this.accumulateLines(ia, lineno, right2)));
+      }
+      const outcome = this.determineOutcome(changeRange, left2, right2);
+      ia = changeRange.rightHi + 1;
+      if (outcome) {
+        this.result.push(outcome);
+      }
+    });
+    let finalText = this.accumulateLines(ia, right2.length + 1, right2);
+    if (finalText.length) {
+      this.result.push(new Resolved(finalText));
+    }
+  }
+  determineOutcome(changeRange, left2, right2) {
+    if (changeRange.action === Action.change) {
+      return Conflicted.create({
+        left: this.accumulateLines(changeRange.rightLo, changeRange.rightHi, left2),
+        right: this.accumulateLines(changeRange.leftLo, changeRange.leftHi, right2),
+        base: []
+      });
+    } else if (changeRange.action === Action.add) {
+      return new Resolved(this.accumulateLines(changeRange.rightLo, changeRange.rightHi, left2));
+    } else {
+      return null;
+    }
+  }
+  setText(origText, lo, hi) {
+    let text2 = [];
+    for (let i = lo; i <= hi; i++) {
+      text2.push(origText[i - 1]);
+    }
+    return text2;
+  }
+  _conflictRange(difference) {
+    const right2 = this.setText(this.text3.right, difference.rightLo, difference.rightHi);
+    const left2 = this.setText(this.text3.left, difference.leftLo, difference.leftHi);
+    const d = HeckelDiff.diff(right2, left2);
+    if ((this._assocRange(d, Action.change) || this._assocRange(d, Action.remove)) && difference.baseLo <= difference.baseHi) {
+      this.setConflict(difference);
+    } else {
+      this.determineConflict(d, left2, right2);
+    }
+  }
+  interpretChunk(difference) {
+    if (difference.changeType == ChangeType.chooseLeft) {
+      const tempText = this.accumulateLines(difference.leftLo, difference.leftHi, this.text3.left);
+      if (tempText.length) {
+        this.result.push(new Resolved(tempText));
+      }
+    } else if (difference.changeType !== ChangeType.possibleConflict) {
+      const tempText = this.accumulateLines(difference.rightLo, difference.rightHi, this.text3.right);
+      if (tempText.length) {
+        this.result.push(new Resolved(tempText));
+      }
+    } else {
+      this._conflictRange(difference);
+    }
+  }
+  _assocRange(diff, action) {
+    for (let i = 0; i < diff.length; i++) {
+      let d = diff[i];
+      if (d.action === action) {
+        return d;
+      }
+    }
+    return null;
+  }
+  accumulateLines(lo, hi, text2) {
+    let lines = [];
+    for (let lineno = lo; lineno <= hi; lineno++) {
+      if (text2[lineno - 1]) {
+        lines.push(text2[lineno - 1]);
+      }
+    }
+    return lines;
+  }
+};
+var Text3 = class {
+  constructor(left2, right2, base) {
+    this.left = left2;
+    this.right = right2;
+    this.base = base;
+  }
+};
+
+// node_modules/.pnpm/three-way-merge@0.1.0/node_modules/three-way-merge/dist/modules/src/merge-result.js
+var MergeResult = class {
+  constructor(results, joinFunction, options = {}) {
+    this.results = results;
+    this.joinFunction = joinFunction;
+    this.conflictHandler = options.conflictHandler;
+    this.conflict = options.conflict || false;
+  }
+  isSuccess() {
+    return !this.conflict;
+  }
+  isConflict() {
+    return !!this.conflict;
+  }
+  joinedResults() {
+    if (this.isConflict()) {
+      if (this.conflictHandler) {
+        return this.conflictHandler(this.results);
+      } else {
+        return this.results;
+      }
+    } else {
+      const [first, rest] = [this.results[0], this.results.slice(1)];
+      let rs = first;
+      rest.forEach((r) => rs.combine(r));
+      return rs.apply(this.joinFunction).result;
+    }
+  }
+};
+
+// node_modules/.pnpm/three-way-merge@0.1.0/node_modules/three-way-merge/dist/modules/src/collater.js
+var Collater = class {
+  static collateMerge(mergeResult, joinFunction, conflictHandler) {
+    if (!mergeResult.length) {
+      return new MergeResult([new Resolved([])], joinFunction);
+    } else {
+      mergeResult = Collater.combineNonConflicts(mergeResult);
+      if (mergeResult.length === 1 && mergeResult[0].isResolved()) {
+        return new MergeResult(mergeResult, joinFunction);
+      } else {
+        return new MergeResult(mergeResult, joinFunction, {
+          conflict: true,
+          conflictHandler
+        });
+      }
+    }
+  }
+  static combineNonConflicts(results) {
+    let rs = [];
+    results.forEach((r) => {
+      if (rs.length && rs[rs.length - 1].isResolved() && r.isResolved()) {
+        const last = rs[rs.length - 1];
+        last.combine(r);
+      } else {
+        rs.push(r);
+      }
+    });
+    return rs;
+  }
+};
+
+// node_modules/.pnpm/three-way-merge@0.1.0/node_modules/three-way-merge/dist/modules/src/resolver.js
+function resolver_default(leftLabel, baseLabel, rightLabel, joinFunction) {
+  return function resolveConflicts(results) {
+    return results.map((result) => {
+      if (result.isResolved()) {
+        const joined = result.apply(joinFunction);
+        return joined.result;
+      } else {
+        const joined = result.apply(joinFunction);
+        const { left: left2, right: right2 } = joined;
+        return [
+          leftLabel,
+          left2,
+          baseLabel,
+          right2,
+          rightLabel
+        ].join("\n");
+      }
+    }).join("\n");
+  };
+}
+
+// node_modules/.pnpm/three-way-merge@0.1.0/node_modules/three-way-merge/dist/modules/src/three-way-merge.js
+var defaultJoinFunction = (a) => a.join("");
+var defaultSplitFunction = (s) => s.split(/\b/);
+var defaultConflictFunction = resolver_default("<<<<<<< YOUR CHANGES", "=======", ">>>>>>> APP AUTHORS CHANGES", defaultJoinFunction);
+var defaultOptions = {
+  splitFunction: defaultSplitFunction,
+  joinFunction: defaultJoinFunction,
+  conflictFunction: defaultConflictFunction
+};
+function merge(left2, base, right2, options = {}) {
+  options = Object.assign({}, defaultOptions, options);
+  const [splitLeft, splitBase, splitRight] = [left2, base, right2].map((t) => {
+    return options.splitFunction.call(options, t);
+  });
+  const mergeResult = Merger.merge(splitLeft, splitBase, splitRight);
+  const collatedMergeResults = Collater.collateMerge(mergeResult, options.joinFunction, options.conflictFunction);
+  return collatedMergeResults;
+}
+
+// node_modules/.pnpm/three-way-merge@0.1.0/node_modules/three-way-merge/dist/modules/src/index.js
+var src_default = merge;
+
 // src/engine/CaptureChoiceEngine.ts
 var CaptureChoiceEngine = class extends QuickAddChoiceEngine {
   constructor(app2, plugin, choice, choiceExecutor) {
@@ -15135,11 +15797,10 @@ var CaptureChoiceEngine = class extends QuickAddChoiceEngine {
         return;
       }
       const captureTo = this.choice.captureTo;
-      if (!captureTo) {
-        log.logError(`Invalid capture to for ${this.choice.name}`);
-        return;
-      }
-      const filePath = await this.getFilePath(captureTo);
+      invariant(captureTo, () => {
+        return `Invalid capture to for ${this.choice.name}. ${captureTo.length === 0 ? "Capture path is empty." : `Capture path is not valid: ${captureTo}`}`;
+      });
+      const filePath = await this.formatFilePath(captureTo);
       const content = await this.getCaptureContent();
       let getFileAndAddContentFn;
       if (await this.fileExists(filePath)) {
@@ -15153,6 +15814,7 @@ var CaptureChoiceEngine = class extends QuickAddChoiceEngine {
         return;
       }
       const { file, content: newFileContent } = await getFileAndAddContentFn.bind(this)(filePath, content);
+      await this.app.vault.modify(file, newFileContent);
       if (this.choice.appendLink) {
         const markdownLink = this.app.fileManager.generateMarkdownLink(
           file,
@@ -15168,9 +15830,8 @@ var CaptureChoiceEngine = class extends QuickAddChoiceEngine {
           mode: this.choice.openFileInMode
         });
       }
-      await this.app.vault.modify(file, newFileContent);
     } catch (e) {
-      log.logMessage(e);
+      log.logError(e);
     }
   }
   async getCaptureContent() {
@@ -15188,13 +15849,30 @@ var CaptureChoiceEngine = class extends QuickAddChoiceEngine {
     const file = await this.getFileByPath(filePath);
     if (!file)
       throw new Error("File not found");
+    const formatted = await this.formatter.formatContentOnly(content);
     const fileContent = await this.app.vault.read(file);
-    const newFileContent = await this.formatter.formatContentWithFile(
-      content,
+    const formattedFileContent = await this.formatter.formatContentWithFile(
+      formatted,
       this.choice,
       fileContent,
       file
     );
+    const secondReadFileContent = await this.app.vault.read(file);
+    let newFileContent = formattedFileContent;
+    if (secondReadFileContent !== fileContent) {
+      const res = src_default(
+        secondReadFileContent,
+        fileContent,
+        formattedFileContent
+      );
+      invariant(
+        !res.isSuccess,
+        () => `The file ${filePath} has been modified since the last read.
+QuickAdd could not merge the versions two without conflicts, and will not modify the file.
+This is in order to prevent data loss.`
+      );
+      newFileContent = res.joinedResults();
+    }
     return { file, content: newFileContent };
   }
   async onCreateFileIfItDoesntExist(filePath, content) {
@@ -15224,12 +15902,12 @@ var CaptureChoiceEngine = class extends QuickAddChoiceEngine {
     );
     return { file, content: newFileContent };
   }
-  async getFilePath(captureTo) {
+  async formatFilePath(captureTo) {
     const formattedCaptureTo = await this.formatter.formatFileName(
       captureTo,
       this.choice.name
     );
-    return this.formatFilePath("", formattedCaptureTo);
+    return this.normalizeMarkdownFilePath("", formattedCaptureTo);
   }
   async captureToActiveFile() {
     const activeFile = this.app.workspace.getActiveFile();
@@ -15327,12 +16005,6 @@ var ChoiceExecutor = class {
     }
   }
   async onChooseTemplateType(templateChoice) {
-    if (!templateChoice.templatePath) {
-      log.logError(
-        `please provide a template path for ${templateChoice.name}`
-      );
-      return;
-    }
     await new TemplateChoiceEngine(
       this.app,
       this.plugin,
@@ -15341,12 +16013,6 @@ var ChoiceExecutor = class {
     ).run();
   }
   async onChooseCaptureType(captureChoice) {
-    if (!captureChoice.captureTo && !(captureChoice == null ? void 0 : captureChoice.captureToActiveFile)) {
-      log.logError(
-        `please provide a capture path for ${captureChoice.name}`
-      );
-      return;
-    }
     await new CaptureChoiceEngine(
       this.app,
       this.plugin,
@@ -15665,10 +16331,18 @@ var QuickAdd = class extends import_obsidian29.Plugin {
     }
   }
   getChoiceById(choiceId) {
-    return this.getChoice("id", choiceId);
+    const choice = this.getChoice("id", choiceId);
+    if (!choice) {
+      throw new Error(`Choice ${choiceId} not found`);
+    }
+    return choice;
   }
   getChoiceByName(choiceName) {
-    return this.getChoice("name", choiceName);
+    const choice = this.getChoice("name", choiceName);
+    if (!choice) {
+      throw new Error(`Choice ${choiceName} not found`);
+    }
+    return choice;
   }
   getChoice(by, targetPropertyValue, choices = this.settings.choices) {
     for (const choice of choices) {
@@ -15686,7 +16360,7 @@ var QuickAdd = class extends import_obsidian29.Plugin {
         }
       }
     }
-    throw new Error("Choice not found");
+    return null;
   }
   removeCommandForChoice(choice) {
     deleteObsidianCommand(this.app, `quickadd:choice:${choice.id}`);
