@@ -54,6 +54,8 @@ Type:
 - [[#Externe Konfigurationen  / Application Properties / Property Sources|Externe Konfigurationen  / Application Properties / Property Sources]]
 	- [[#Externe Konfigurationen  / Application Properties / Property Sources#PropertyResolver|PropertyResolver]]
 	- [[#Externe Konfigurationen  / Application Properties / Property Sources#Statische Werte über @Value injizieren|Statische Werte über @Value injizieren]]
+	- [[#Externe Konfigurationen  / Application Properties / Property Sources#Dynamische Werte über @Value injizieren|Dynamische Werte über @Value injizieren]]
+
 
 
 
@@ -580,14 +582,18 @@ env.getProperty("com.tutego.number-of-seminars",Integer.class);
 
 ### Statische Werte über @Value injizieren
 
+Einfache Syntax = `@Value("10");`
+
+### Dynamische Werte über @Value injizieren
 - Typkonvertierung
 - Default Values
-- SpEL
+- SpEL = # {}
 
 Hinweis: kann auch an private Felder gesetzt werden und es können auch werte aus dem Environment ausgelesen werden die nicht in der Applikation.properties vorhanden ist ;-)
 
 Einfache Syntax = `@Value("${xxx}");`
 Mit Default Values = `@Value("${xxx:pmOO}");`
 String or Default Null =`@Value("${xxx:#{null}}");` 
+SpEL = `#{SpEL}`
 
 Wenn Java > 11 verwendet wird ist es möglich an einem "Record" ein DefaultValue zu setzen = `@DefaultValue`
