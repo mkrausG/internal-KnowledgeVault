@@ -26,6 +26,10 @@ Id:
 - [[#Spring Shell|Spring Shell]]
 - [[#Optionale Tätigkeiten|Optionale Tätigkeiten]]
 - [[#Konfigurationsklassen und Fabrikmethoden|Konfigurationsklassen und Fabrikmethoden]]
+- [[#Tips und Tricks|Tips und Tricks]]
+	- [[#Tips und Tricks#[[Test]]|[[Test]]]]
+		- [[#[[Test]]#Start von 2 ApplicationContext|Start von 2 ApplicationContext]]
+
 
 
 ### Questions/Cues
@@ -103,3 +107,10 @@ Drei übliche Wege zum Starten eigener Anwendungen sind:
 ### Konfigurationsklassen und Fabrikmethoden
 
 [[900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-5 Konfiguration und Fabrikmethoden|  Konfiguration und Fabrikmethoden]]
+
+### Tips und Tricks
+
+#### [[Test]] 
+
+##### Start von 2 ApplicationContext
+Damit kann man dann wenn man will , testen ob Nebenläufigkeit soweit funktioniert. d.h das 2 Instanzen von einer Projekt sich so verhält wie angenommen
