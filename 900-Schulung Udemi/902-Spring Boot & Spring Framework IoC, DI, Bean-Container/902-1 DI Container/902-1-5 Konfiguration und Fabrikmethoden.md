@@ -55,8 +55,21 @@ Type:
 	- [[#Externe Konfigurationen  / Application Properties / Property Sources#PropertyResolver|PropertyResolver]]
 	- [[#Externe Konfigurationen  / Application Properties / Property Sources#Statische Werte über @Value injizieren|Statische Werte über @Value injizieren]]
 	- [[#Externe Konfigurationen  / Application Properties / Property Sources#Dynamische Werte über @Value injizieren|Dynamische Werte über @Value injizieren]]
-
-
+	- [[#Externe Konfigurationen  / Application Properties / Property Sources#Configuration-Properties|Configuration-Properties]]
+	- [[#Externe Konfigurationen  / Application Properties / Property Sources#Relaxed Binding (Namenskonvertierungen der Properties)|Relaxed Binding (Namenskonvertierungen der Properties)]]
+	- [[#Externe Konfigurationen  / Application Properties / Property Sources#Profile|Profile]]
+- [[#Events|Events]]
+	- [[#Events#Spring events|Spring events]]
+		- [[#Spring events#ApplicationListener:|ApplicationListener:]]
+		- [[#Spring events#EventListener:|EventListener:]]
+		- [[#Spring events#Publishing Events|Publishing Events]]
+		- [[#Spring events#Subscribe to events|Subscribe to events]]
+		- [[#Spring events#Generische Events|Generische Events]]
+	- [[#Events#Resource|Resource]]
+		- [[#Resource#Laden|Laden]]
+- [[#Konverter (Typ-)|Konverter (Typ-)]]
+	- [[#Konverter (Typ-)#Beispielkonvertierungen|Beispielkonvertierungen]]
+	- [[#Konverter (Typ-)#Lokalisierte Übersetzung|Lokalisierte Übersetzung]]
 
 
 ## Was '@Component' nicht kann
@@ -597,3 +610,209 @@ String or Default Null =`@Value("${xxx:#{null}}");`
 SpEL = `#{SpEL}`
 
 Wenn Java > 11 verwendet wird ist es möglich an einem "Record" ein DefaultValue zu setzen = `@DefaultValue`
+
+### Configuration-Properties
+
+Mit `@EnableConfigurationProperts({xxxx.class})` kann man Konfigurationsklassen bereitstellen. Aber wenn viele vorhanden sind, ist das aufwendig.
+Daher kann man `@ConfigurationPropertiesScan` oder `@ConfigurationProperties("com.tutego")` / `@PropertySource("classpath:email.properties"` nutzen.
+
+```ad-seealso
+title: Location gernerated property metadata json
+Die findet man unter /target/classes/META-INF/spring-configuration-metadata.json
+
+```
+
+### Relaxed Binding (Namenskonvertierungen der Properties)
+
+Darunter versteht man eine gewisse Flexibilität beim Mappen der Strings auf die Object-Properties
+
+| Property                     | Type / Format                                         | 
+| ---------------------------- | ----------------------------------------------------- |
+| com.tutego.numerOfSeminars   | Standard Camel-Case-Syntax                            |
+| com.tutego.numer-of-seminars | Kebak-case, empfohlen für properties / yaml FileSytem |
+| com.tutego.numer_of_seminars | Snake-case, eine alternative für die Dateien          |
+| COM_TUTEGO_NUMEROFSEMINARS   | Großschreibeformat, empfohlen für Umgebungsvariablen  |
+
+Präfix muss immer in Kebab-case sein!
+
+maven use properties = `mvn sprinb-boot:run -Dspring-boot.run.arguments="--arg1=value --arg2=value"`
+
+### Profile 
+`dev`,  `test`... sie wie bekannt == application-local.yaml
+
+
+> [!Wichtig] Default Profile
+> 	Das standard Profile ist `default` und wird immer geladen. d.h. application.yaml stellt alles zu verfügung  und die custom profile yaml überschreiben das dann.
+
+
+Aktivieren = --spring.profiles.active=xxx oder in yaml mit 
+```yaml
+spring:
+	profiles:
+		active: "xxx"
+```
+
+## Events
+
+Publish subscribe bzw EventBus
+
+Geht auch mit @Async und SpEl
+
+Für mögliche von Spring Events siehe `org.springframework.boot.context.event`
+
+### Spring events 
+| Event                                                       | Beschreibung                                                              |
+| ----------------------------------------------------------- | ------------------------------------------------------------------------- |
+| ContextRefreshedEvent                                       | Initialisieren oder Aktualisieren des ApplicationContexts (ctx.refresh()) |
+| ContextStartedEvent                                         | Start des AppContext durch ctx.start()                                    |
+| ContextStoppedEvent                                         | Stopp des AppContext durch ctx.stop()                                     |
+| ContextClosedEvent                                          | Close des AppContext durch ctx.close()                                    |
+| org.springframework.web.context.support.RequestHandledEvent | MVC wenn Request abgeschlossen wurde                                      |
+
+
+#### ApplicationListener:
+
+```java
+@Component
+public class MyListener implements ApplicationListener<ContextStartedEvent>
+```
+
+#### EventListener:
+
+Ein EventListener kann auch mehrere Events handlen, dazu master Class aufnehmen.
+z.b. ApplicationEvent event
+
+```java
+@Component
+public class MyListener() {
+	@EventListener
+		public void onContextStartedEvent (ContextStartedEvent e) {
+		....
+		}
+}
+```
+
+#### Publishing Events 
+Events werden über `ApplicationEventPublisher` gesendet.
+Dazu einfach den ApplicationEventPublisher  als Ctor Bean wiren.
+
+```java
+// Hier wird nun ein Event gesendet 
+NewPhotoEvent newPhotoEvent = new NewPhotoEvent(1,"hallo");
+publisher.publishEvent( newPhotoEvent);
+```
+
+#### Subscribe to events 
+
+```java
+@Service
+public class MyService {
+
+	@EventListener
+	void onNewPhotoEvent( NewPhotoEvent event) {
+	.....
+	}
+
+}
+```
+
+#### Generische Events 
+d.h. nicht immer einen besonderen DatenTyp für die Meldung erzeugen 
+
+
+### Resource 
+
+nutzt Ant-Style patterns, wie 
+z.B. /WEB-INF/*-context*  oder classpath:com/mycomp/**/application.xml (recursiv suchen)
+
+#### Laden
+
+- new ClassPathResource("xxx.csv");
+- new DefaultResourceLoader().getResource("classpath:xxx.csv");
+- @Autowired ResourceLoader resourceloader;
+- @Value... -> @Value ("classpath:"folder/file.txt")
+
+## Konverter (Typ-)
+
+Es gibt automatische Konverter aber man kann auch eigene Konverter einbinden.
+
+
+> [!Wichtig] Zeiten
+> Dazu dann Duration nutzen..
+
+Type von Properties oder Params in MVC [[Invalid date]]
+
+siehe Interface `ConversionService` == org.springframework.core.convert
+
+Standard ist `DefaultConversionService`.
+
+### Beispielkonvertierungen
+
+```java
+var converter = new DefaultConversionService();
+
+// {user=chris}
+Properties p = converter.convert("user=chris", Properties.class);
+
+// 2022-06-05
+LocalDate ld = converter.convert(LocalDateTime.now(), LocalDate.class);
+
+//[1,2,3]
+int[] ia = converter.convert("1,2,3", int[].class);
+
+// EUR
+Currency c = converter.convert("EUR", Currency.class);
+
+// germany
+Locale l = converter.convert("GERMANY", Locale.class);
+
+// DOES NOT WORK
+List<Integer> input = List.of(1,2,3);
+converter.convert(input, List<String>.class) (1)
+```
+
+
+
+ (1) `List<String>.class` führt zu einem Compilerfehler. Korrekt wäre List.class aber dann fehlt die Typinformation String.
+
+Lösung = TypeDesriptor
+
+
+```java
+List<String> listOfStrings = (List<String>) converter.convert(input,
+TypeDescriptor.forObject(input),
+	TypeDescriptior.collection(List.class, TypeDescriptor.valueOf(String.class)));
+```
+
+
+
+![[Resources/902-1-5 ConverterRegistry.png]]
+
+siehe  [Spring java api](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/convert/converter/Converter.html)
+und [Example Implementation](https://github.com/spring-projects/spring-framework/blob/main/spring-core/src/main/java/org/springframework/core/convert/support/StringToUUIDConverter.java)
+
+ConverterFactory = 1:N Konvertierung (Hirachie von Typen)
+
+code:
+
+```java
+// Usage .. Input wird ein "c:\xxx\ooo\" sein, den wir in ein Path umwandeln wollen
+@ShellMethod(.....)
+public boolean exists(Path path)
+
+
+// Custom Converter 
+class StringToPathConverter implements Converter<String, Path> {
+
+	@Override
+	public Path convert(String source){
+		return Path.of(source);
+	}
+}
+```
+
+### Lokalisierte Übersetzung
+Printer: für das formatieren (Object -> String)
+Parser: für das parsen (String -> Object)
+
+d.h. Converter betrachtet keine Locale... Nur typen
