@@ -70,6 +70,10 @@ Type:
 - [[#Konverter (Typ-)|Konverter (Typ-)]]
 	- [[#Konverter (Typ-)#Beispielkonvertierungen|Beispielkonvertierungen]]
 	- [[#Konverter (Typ-)#Lokalisierte Übersetzung|Lokalisierte Übersetzung]]
+- [[#Hilfsklassen|Hilfsklassen]]
+	- [[#Hilfsklassen#Packet: `org.springframework.util`|Packet: `org.springframework.util`]]
+	- [[#Hilfsklassen#Paket:  `org.springframework.data.util`|Paket:  `org.springframework.data.util`]]
+
 
 
 ## Was '@Component' nicht kann
@@ -816,3 +820,36 @@ Printer: für das formatieren (Object -> String)
 Parser: für das parsen (String -> Object)
 
 d.h. Converter betrachtet keine Locale... Nur typen
+
+## Hilfsklassen
+
+- NonNull 
+- NonNullApi
+- NonNullFields
+- Nullable
+- usw
+
+### Packet: `org.springframework.util`
+- `MultiValueMap<K,V>` (Schnittstelle). Assoziiert einen Schlüssel mit einer Liste von Werten 
+- `Assert`. Überprüft Methodenparameter auf Ihre Gültigkiet
+- `FileCopyUtils` + `StreamUtils`
+- `StringUtils's`
+
+### Paket:  `org.springframework.data.util` 
+
+- `Optionals`
+- `Streamable<T>` -  Method return value :-)
+- `StreamUtils`
+- `Lazy<T>`
+
+Beispiel Streamable 
+```java
+Iterable<Path> directories = FileSystems.getDefault().getRootDirectories();
+Set<String> strings = 
+	Streamable.of(directories)
+		.map( String::valueOf )
+		.and("cloud")
+		.toSet();
+System.out.println(strings); // [cloud, P:\, C:\]
+```
+

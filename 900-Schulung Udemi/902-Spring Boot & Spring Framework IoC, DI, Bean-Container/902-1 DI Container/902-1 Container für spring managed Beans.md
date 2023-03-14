@@ -26,9 +26,13 @@ Id:
 - [[#Spring Shell|Spring Shell]]
 - [[#Optionale Tätigkeiten|Optionale Tätigkeiten]]
 - [[#Konfigurationsklassen und Fabrikmethoden|Konfigurationsklassen und Fabrikmethoden]]
+- [[#Scheduling|Scheduling]]
+- [[#Proxys|Proxys]]
+- [[#Caching|Caching]]
 - [[#Tips und Tricks|Tips und Tricks]]
 	- [[#Tips und Tricks#[[Test]]|[[Test]]]]
 		- [[#[[Test]]#Start von 2 ApplicationContext|Start von 2 ApplicationContext]]
+
 
 
 
@@ -107,6 +111,18 @@ Drei übliche Wege zum Starten eigener Anwendungen sind:
 ### Konfigurationsklassen und Fabrikmethoden
 
 [[900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-5 Konfiguration und Fabrikmethoden|  Konfiguration und Fabrikmethoden]]
+
+### Scheduling
+
+[[900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-6 Scheduling|Scheduling]]
+
+### Proxys
+
+[[900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-7 Proxys|Proxys]]
+
+### Caching
+
+[[900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-8 Caching|Caching]]
 
 ### Tips und Tricks
 
