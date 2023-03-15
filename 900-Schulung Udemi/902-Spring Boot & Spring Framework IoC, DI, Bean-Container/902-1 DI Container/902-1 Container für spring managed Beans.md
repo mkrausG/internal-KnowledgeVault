@@ -29,6 +29,8 @@ Id:
 - [[#Scheduling|Scheduling]]
 - [[#Proxys|Proxys]]
 - [[#Caching|Caching]]
+- [[#Async|Async]]
+- [[#Retry|Retry]]
 - [[#Tips und Tricks|Tips und Tricks]]
 	- [[#Tips und Tricks#[[Test]]|[[Test]]]]
 		- [[#[[Test]]#Start von 2 ApplicationContext|Start von 2 ApplicationContext]]
@@ -123,6 +125,14 @@ Drei übliche Wege zum Starten eigener Anwendungen sind:
 ### Caching
 
 [[900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-8 Caching|Caching]]
+
+### Async
+
+[[900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-9 Async|Async]]
+
+### Retry
+
+[[900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-10 Retry|Retry]]
 
 ### Tips und Tricks
 
