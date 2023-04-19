@@ -112,6 +112,12 @@ class HotProfileToYamlConverter {
 (3) = Annotationsattribut `value` und `cacheNames` sind `Alias`
 (4) = Die Methoden müssen (standardmäßig) `public` sein, das gilt auch für andere `Proxys`
 
+
+> [!Hint] Cachable vs Cacheput
+> Bei Cacheput wird die  Methode immer aufgerufen und der Returnwert in den Cache gelegt.
+> Bei Cachable wird die Methode nur aufgerufen wenn kein Wert im Cache ist.
+
+
 ### Weitere SpEL Variablen
 
 - `#root.method`, `#root.target`,  `#root.caches`
