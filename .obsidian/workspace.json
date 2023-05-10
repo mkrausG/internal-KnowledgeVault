@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-5 Konfiguration und Fabrikmethoden.md",
+                "file": "Inbox/20211215-2-Football-Tackling.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "footb",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -82,7 +82,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -102,7 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-5 Konfiguration und Fabrikmethoden.md",
+                "file": "Inbox/20211215-2-Football-Tackling.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-5 Konfiguration und Fabrikmethoden.md",
+                "file": "Inbox/20211215-2-Football-Tackling.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -142,7 +142,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-5 Konfiguration und Fabrikmethoden.md"
+                "file": "Inbox/20211215-2-Football-Tackling.md"
               }
             }
           },
@@ -221,12 +221,27 @@
   },
   "active": "4ded2bdd3a6ee49d",
   "lastOpenFiles": [
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-6 Scheduling.md",
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-4 Exit von Programmen.md",
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-2 JShell.md",
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-0-Spring Boot & Spring Framework IoC, DI, Bean-Container-MOC.md",
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/Spring Boot.canvas",
+    "001-Web/001.0.5-SignalR.md",
+    "001-Web/001-Web-MOC.md",
+    "001-Web/001.0-AspNetSchulung/001.0-1-AspNetFeatures/001.0-1-1ASP Web Form Features.md",
+    "001-Web/001.0-AspNetSchulung/001.0-1-AspNetFeatures/001.0-1-AspNetFeaturesMoc.md",
+    "Resources/Pasted image 20211213113905.png",
+    "Resources/Pasted image 20211210105829.png",
+    "Resources/InjectionPoint PackageOverview.png",
+    "Resources/Overview_Docker_Container.png",
+    "Resources/Pasted image 20211210104737.png",
+    "assets/images/2023-02-06-21-41-38.png.md",
+    "assets/images/2023-02-06-22-02-37.png.md",
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-5 Konfiguration und Fabrikmethoden.md",
     "001-Web/Untitled Diagram.svg",
     "001-Web/001.0.7-Image_Handling.md",
-    "001-Web/001.0.5-SignalR.md",
     "001-Web/001.0-2-Vergleich_JSF_ASP.md",
     "001-Web/001.0-1-WebAnatomy_and_MVC_Explained.md",
-    "001-Web/001-Web-MOC.md",
     "001-Web/001.0-AspNetSchulung/001.0-AspNetSchulung-MOC.md",
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/ToDele Migrate to Spring Boot 3.md",
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-10 Retry.md",
@@ -235,18 +250,10 @@
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-8 Caching.md",
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-7 Proxys.md",
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-1 Optionale Abhängigkeiten.md",
-    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-5 Konfiguration und Fabrikmethoden.md",
-    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-6 Scheduling.md",
-    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-0-Spring Boot & Spring Framework IoC, DI, Bean-Container-MOC.md",
-    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/Spring Boot.canvas",
     "002-Spring/002-1 Links and TODO.md",
     "100-BD/100.0-2-ToDo.md",
     "001-Web/001.0-3-JSON.md",
     "001-Web/001.0.4-WebApi.md",
-    "001-Web/001.0-AspNetSchulung/001.0-1-AspNetFeatures/001.0-1-1ASP Web Form Features.md",
-    "001-Web/001.0-AspNetSchulung/001.0-1-AspNetFeatures/001.0-1-AspNetFeaturesMoc.md",
-    "Templates/TestTemplate.md",
-    "Templates/SampleSNippet.md",
-    "Templates/Lecture.md"
+    "Templates/TestTemplate.md"
   ]
 }
