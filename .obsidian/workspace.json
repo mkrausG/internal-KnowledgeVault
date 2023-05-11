@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Inbox/20211215-2-Football-Tackling.md",
+                "file": "Inbox/20211215-1-Review.md",
                 "mode": "source",
                 "source": false
               }
@@ -66,23 +66,23 @@
             }
           },
           {
-            "id": "c787f179ecd583bf",
-            "type": "leaf",
-            "state": {
-              "type": "file-tree-view",
-              "state": {}
-            }
-          },
-          {
             "id": "e9f77fbc6a920664",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
               "state": {}
             }
+          },
+          {
+            "id": "408d877992eb7ad5",
+            "type": "leaf",
+            "state": {
+              "type": "file-tree-view",
+              "state": {}
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -102,7 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Inbox/20211215-2-Football-Tackling.md",
+                "file": "Inbox/20211215-1-Review.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Inbox/20211215-2-Football-Tackling.md",
+                "file": "Inbox/20211215-1-Review.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -142,7 +142,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Inbox/20211215-2-Football-Tackling.md"
+                "file": "Inbox/20211215-1-Review.md"
               }
             }
           },
@@ -179,7 +179,7 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 3
       },
       {
         "id": "d750c9603ef15352",
@@ -197,13 +197,12 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 356.5
   },
   "left-ribbon": {
     "hiddenItems": {
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "templater-obsidian:Templater": false,
-      "file-tree-alternative:File Tree Alternative Plugin": false,
       "card-board:CardBoard": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
@@ -214,13 +213,18 @@
       "markdown-importer:Open format converter": false,
       "audio-recorder:Start/stop recording": false,
       "workspaces:Manage workspace layouts": false,
+      "fantasy-calendar:Open Large Fantasy Calendar": false,
       "darlal-switcher-plus:Open in Headings Mode": false,
       "darlal-switcher-plus:Open Symbols for the active editor": false,
-      "fantasy-calendar:Open Large Fantasy Calendar": false
+      "file-tree-alternative:File Tree Alternative Plugin": false
     }
   },
   "active": "4ded2bdd3a6ee49d",
   "lastOpenFiles": [
+    "Inbox/20211215-2-Football-Tackling.md",
+    "Inbox/20211217-1-Net6-Stuff.md",
+    "Inbox/20211218-1-ToReview.md",
+    "Inbox/20211220-ToReview.md",
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-6 Scheduling.md",
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-4 Exit von Programmen.md",
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-2 JShell.md",
@@ -250,10 +254,6 @@
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-8 Caching.md",
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-7 Proxys.md",
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-1 Optionale Abhängigkeiten.md",
-    "002-Spring/002-1 Links and TODO.md",
-    "100-BD/100.0-2-ToDo.md",
-    "001-Web/001.0-3-JSON.md",
-    "001-Web/001.0.4-WebApi.md",
-    "Templates/TestTemplate.md"
+    "002-Spring/002-1 Links and TODO.md"
   ]
 }
