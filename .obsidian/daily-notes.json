@@ -1,1 +1,6 @@
-{"folder":"Timestamps"}
+{
+  "folder": "Daily-Notes",
+  "template": "Templates/DailyNote",
+  "autorun": true,
+  "format": "YYYY/MMMM/YYYY-MM-DD"
+}

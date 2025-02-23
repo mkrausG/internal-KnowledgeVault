@@ -5,7 +5,11 @@
   "enabledCssSnippets": [
     "checkbox",
     "notation-colour-blocks",
-    "realistic-highlight"
+    "realistic-highlight",
+    "image-adjustments-by-SIRvb",
+    "kanban-css-by-SIRvb",
+    "S - Checkboxes",
+    "sliding-panes-No-Gradient"
   ],
   "translucency": false,
   "accentColor": ""

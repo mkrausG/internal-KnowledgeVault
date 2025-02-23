@@ -1,54 +1,68 @@
 {
-  "version": "0.10.0",
+  "version": "0.13.0",
   "data": {
     "boardConfigs": [
       {
-        "tag": "tagBoardConfig",
-        "data": {
-          "columns": [
-            {
-              "tag": "schulung",
-              "displayTitle": "Schulung"
-            },
-            {
-              "tag": "spring",
-              "displayTitle": "Spring"
+        "columns": [
+          {
+            "tag": "namedTag",
+            "data": {
+              "collapsed": false,
+              "name": "Schulung",
+              "tag": "schulung"
             }
-          ],
-          "showColumnTags": true,
-          "completedCount": 10,
-          "filters": [
-            {
-              "tag": "tagFilter",
-              "data": "schulung"
-            },
-            {
-              "tag": "tagFilter",
-              "data": "spring"
+          },
+          {
+            "tag": "namedTag",
+            "data": {
+              "collapsed": false,
+              "name": "Spring",
+              "tag": "spring"
             }
-          ],
-          "filterPolarity": "Allow",
-          "filterScope": "Both",
-          "showFilteredTags": true,
-          "includeOthers": false,
-          "includeUntagged": false,
-          "title": "TestCardboard",
-          "collapsedColumns": []
-        }
+          },
+          {
+            "tag": "completed",
+            "data": {
+              "collapsed": false,
+              "index": 2,
+              "limit": 10,
+              "name": "Completed"
+            }
+          }
+        ],
+        "filters": [
+          {
+            "tag": "tagFilter",
+            "data": "spring"
+          },
+          {
+            "tag": "tagFilter",
+            "data": "schulung"
+          }
+        ],
+        "filterPolarity": "Allow",
+        "filterScope": "Both",
+        "name": "TestCardboard",
+        "showColumnTags": true,
+        "showFilteredTags": true
       }
     ],
     "globalSettings": {
-      "taskCompletionFormat": "ObsidianCardBoard",
-      "columnNames": {
+      "defaultColumnNames": {
         "today": "",
         "tomorrow": "",
         "future": "",
         "undated": "",
-        "others": "",
+        "otherTags": "",
         "untagged": "",
         "completed": ""
       },
-      "ignoreFileNameDates": false
+      "filters": [],
+      "firstDayOfWeek": "FromLocale",
+      "ignoreFileNameDates": false,
+      "taskCompletionFormat": "ObsidianCardBoard",
+      "taskCompletionInLocalTime": false,
+      "taskCompletionShowUtcOffset": false
     }
   }
 }

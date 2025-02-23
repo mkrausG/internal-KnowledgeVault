@@ -15,7 +15,7 @@ Id:
 # 20211215-2-Football-Tackling
 Hier wird von USA Football ein Kurs angeboten der nicht so teuer ist, der ist dann auch mit Zertifizierung. Das gute daran ist, das es ein System ist das von einem Rugby Spieler / Coach gemacht wurde.
 
-Davon hatte ich schon mal gehört. Das scheint sehr interressant zu sein. Das wäre auch was für Lukasz .
+Davon hatte ich schon mal gehört. Das scheint sehr interessant zu sein. Das wäre auch was für Lukasz .
 
 - [x] Lukasz Bescheid geben ⏰ 2021-12-20 15:52  📅 2021-12-16 ✅ 2021-12-21
 

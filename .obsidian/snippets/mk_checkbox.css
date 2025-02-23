@@ -1,0 +1,5 @@
+/* Status Waiting*/
+.tasks-list-text[data-task="W"]::before {
+    content: "🕰️";
+    font-family: "Your Custom Font", sans-serif;
+  }

@@ -4,19 +4,55 @@
     "type": "split",
     "children": [
       {
-        "id": "5bb6e3e9a68e6427",
+        "id": "95d732b85ab2ac8d",
         "type": "tabs",
         "children": [
           {
-            "id": "4ded2bdd3a6ee49d",
+            "id": "20fe75d6895653f7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Inbox/20211215-1-Review.md",
+                "file": "Daily-Notes/2025/February/2025-02-23.md",
                 "mode": "source",
-                "source": false
-              }
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "2025-02-23"
+            }
+          },
+          {
+            "id": "2e8dfcfc5c5beceb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Daily-Notes/2021-12-15.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "2021-12-15"
             }
           }
         ]
@@ -38,8 +74,11 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
-              }
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -48,13 +87,15 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "footb",
+                "query": "alias",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -62,7 +103,9 @@
             "type": "leaf",
             "state": {
               "type": "starred",
-              "state": {}
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           },
           {
@@ -70,19 +113,22 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           },
           {
-            "id": "408d877992eb7ad5",
+            "id": "44846e5b7c0d6b89",
             "type": "leaf",
             "state": {
               "type": "file-tree-view",
-              "state": {}
+              "state": {},
+              "icon": "sheets-in-box",
+              "title": "File Tree"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
@@ -102,7 +148,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Inbox/20211215-1-Review.md",
+                "file": "Inbox/todel.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +156,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": false
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for todel"
             }
           },
           {
@@ -119,10 +167,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Inbox/20211215-1-Review.md",
+                "file": "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-2 JShell.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 902-1-2 JShell"
             }
           },
           {
@@ -131,9 +181,13 @@
             "state": {
               "type": "tag",
               "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
-              }
+                "sortOrder": "alphabetical",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -142,16 +196,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Inbox/20211215-1-Review.md"
-              }
-            }
-          },
-          {
-            "id": "0f6097b7c5e06acb",
-            "type": "leaf",
-            "state": {
-              "type": "calendar",
-              "state": {}
+                "file": "Inbox/todel.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of todel"
             }
           },
           {
@@ -159,101 +210,127 @@
             "type": "leaf",
             "state": {
               "type": "advanced-tables-toolbar",
-              "state": {}
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
             }
           },
           {
-            "id": "b8104f6435502672",
+            "id": "c2719b5cecae8e77",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          },
+          {
+            "id": "4bb74215b99d0392",
+            "type": "leaf",
+            "state": {
+              "type": "planner-timeline",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Timeline"
+            }
+          },
+          {
+            "id": "a93de1d196c328fb",
             "type": "leaf",
             "state": {
               "type": "reminder-list",
-              "state": {}
+              "state": {},
+              "icon": "clock",
+              "title": "Reminders"
             }
           },
           {
-            "id": "8c5e74572d59ce00",
+            "id": "7d3b8b895ddd5a9a",
             "type": "leaf",
             "state": {
-              "type": "FANTASY_CALENDAR",
-              "state": {}
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
             }
           }
         ],
-        "currentTab": 3
-      },
-      {
-        "id": "d750c9603ef15352",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "c0854afeeac33e96",
-            "type": "leaf",
-            "state": {
-              "type": "timeline",
-              "state": {}
-            }
-          }
-        ]
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 356.5
+    "width": 448.5
   },
   "left-ribbon": {
     "hiddenItems": {
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "templater-obsidian:Templater": false,
-      "card-board:CardBoard": false,
+      "obsidian-day-planner:Open Timeline": false,
+      "obsidian-day-planner:Open Multi-Day View": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "markdown-importer:Open format converter": false,
       "audio-recorder:Start/stop recording": false,
       "workspaces:Manage workspace layouts": false,
-      "fantasy-calendar:Open Large Fantasy Calendar": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "templater-obsidian:Templater": false,
       "darlal-switcher-plus:Open in Headings Mode": false,
       "darlal-switcher-plus:Open Symbols for the active editor": false,
-      "file-tree-alternative:File Tree Alternative Plugin": false
+      "file-tree-alternative:File Tree Alternative Plugin": false,
+      "media-extended:Open media": false,
+      "card-board:CardBoard": false
     }
   },
-  "active": "4ded2bdd3a6ee49d",
+  "active": "01acea2b32d0f36b",
   "lastOpenFiles": [
-    "Inbox/20211215-2-Football-Tackling.md",
-    "Inbox/20211217-1-Net6-Stuff.md",
-    "Inbox/20211218-1-ToReview.md",
-    "Inbox/20211220-ToReview.md",
-    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-6 Scheduling.md",
-    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-4 Exit von Programmen.md",
-    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-2 JShell.md",
-    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-0-Spring Boot & Spring Framework IoC, DI, Bean-Container-MOC.md",
+    "Tasks Plugin - Review and check your Statuses 2025-02-23 12-48-34.md",
+    "Daily-Notes/2025/February/2025-02-23.md",
+    "Inbox/todel.md",
+    "Templates/TestTemplate.md",
+    "Test.md",
+    "Daily-Notes/2025/February/2025-02-22.md",
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/Spring Boot.canvas",
-    "001-Web/001.0.5-SignalR.md",
-    "001-Web/001-Web-MOC.md",
-    "001-Web/001.0-AspNetSchulung/001.0-1-AspNetFeatures/001.0-1-1ASP Web Form Features.md",
-    "001-Web/001.0-AspNetSchulung/001.0-1-AspNetFeatures/001.0-1-AspNetFeaturesMoc.md",
-    "Resources/Pasted image 20211213113905.png",
-    "Resources/Pasted image 20211210105829.png",
-    "Resources/InjectionPoint PackageOverview.png",
-    "Resources/Overview_Docker_Container.png",
-    "Resources/Pasted image 20211210104737.png",
-    "assets/images/2023-02-06-21-41-38.png.md",
-    "assets/images/2023-02-06-22-02-37.png.md",
-    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-5 Konfiguration und Fabrikmethoden.md",
-    "001-Web/Untitled Diagram.svg",
-    "001-Web/001.0.7-Image_Handling.md",
-    "001-Web/001.0-2-Vergleich_JSF_ASP.md",
-    "001-Web/001.0-1-WebAnatomy_and_MVC_Explained.md",
-    "001-Web/001.0-AspNetSchulung/001.0-AspNetSchulung-MOC.md",
-    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/ToDele Migrate to Spring Boot 3.md",
-    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-10 Retry.md",
-    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/Name Steps Diagram.svg",
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-6 Scheduling.md",
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-3 ComponentScan mit base packages.md",
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1 Container für spring managed Beans.md",
+    "Daily-Notes/2021-12-15.md",
+    "Daily-Notes/2025-02-02.md",
+    "Daily-Notes/2024-12-01.md",
+    "Daily-Notes/2024-11-29.md",
+    "Daily-Notes/2024-11-12.md",
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/ToDele Migrate to Spring Boot 3.md",
+    "Templates/BlogPost.md",
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-4 Exit von Programmen.md",
     "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-8 Caching.md",
-    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-7 Proxys.md",
-    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-1 Optionale Abhängigkeiten.md",
-    "002-Spring/002-1 Links and TODO.md"
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/902-1-5 Konfiguration und Fabrikmethoden.md",
+    "assets/images/2023-02-06-22-02-37.png.md",
+    "assets/images/2023-02-06-21-41-38.png.md",
+    "Daily-Notes/2025/February",
+    "Daily-Notes/2025",
+    "Templates/twitter-iframe.md",
+    "Templates/ToManyTasks.md",
+    "Templates/StandartNote.md",
+    "002-Spring/002-Spring-MOC.md",
+    "002-Spring/002-2 Autoconfiguration.md",
+    "Resources/Pasted image 20211217190857.png",
+    "Resources/Pasted image 20211217190700.png",
+    "Resources/Pasted image 20211217164906.png",
+    "Resources/Pasted image 20211210105829.png",
+    "Inbox/Untitled 1.canvas",
+    "Untitled 2.canvas",
+    "001-Web/Untitled Diagram.svg",
+    "Untitled 1.canvas",
+    "Resources/Udemy/springDIIco/2023-02-06-22-03-42.png",
+    "Resources/Udemy/springDIIco/2023-02-06-22-02-37.png",
+    "Resources/Udemy/springDIIco/2023-02-06-21-41-38.png",
+    "Resources/Udemy/springDIIco/2023-02-06-22-16-20.png",
+    "Untitled.canvas",
+    "900-Schulung Udemi/902-Spring Boot & Spring Framework IoC, DI, Bean-Container/902-1 DI Container/Name Steps Diagram.svg"
   ]
 }

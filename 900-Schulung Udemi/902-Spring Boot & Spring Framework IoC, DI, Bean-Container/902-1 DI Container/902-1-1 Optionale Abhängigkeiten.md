@@ -3,13 +3,13 @@ Topic: Optionale Abhängigkeiten
 Creation date: 2023-02-12 19:03
 Modification date: Thursday 9th February 2023 18:29:08
 Course: Udemy
-Class:
+Class: 
 Author: MKraus
-Tags: 
-- spring
-- moc 
-- schulung 
-- dependencies
+tags:
+  - spring
+  - moc
+  - schulung
+  - dependencies
 Id:
 ---
 

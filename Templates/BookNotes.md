@@ -4,7 +4,7 @@ Creation date: <% tp.file.creation_date("DD.MM.YYYY HH:mm") %>
 Modification date: <% tp.file.last_modified_date("dddd Do MMMM YYYY HH:mm:ss") %>
 Date Finished:
 Author: MKraus
-Tags: 🟡, ebook
+Tags: ebook
 Id:
 ---
 
@@ -13,6 +13,7 @@ Id:
 # 🎨 Impressions
 
 ## How I Discovered It
+	
 
 ## Who Should Read It?
 

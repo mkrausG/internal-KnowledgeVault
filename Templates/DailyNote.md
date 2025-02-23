@@ -27,6 +27,25 @@ and
 [Dataview Queries](https://blacksmithgu.github.io/obsidian-dataview/query/queries/)
 %%
 
+#### 🔥 All In Progress
+
+```tasks
+not done
+path does not include Templates
+path does not include Daily-Notes
+```
+
+#### 🔨 Blocks tagged #research
+
+TODO: Collapsable ?
+
+```tasks
+not done
+tags include #research
+path does not include Templates
+path does not include Daily-Notes
+```
+
 #### Over Due
 
 ```tasks

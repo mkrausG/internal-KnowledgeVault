@@ -3,11 +3,11 @@ Title: 902-1-5 Konfiguration und Fabrikmethoden
 Creation date: 14.02.2023 18:29
 Modification date: Tuesday 14th February 2023 18:29:38
 Author: MKraus
-Tags: 
-- spring
-- moc 
-- schulung
-- configuration
+tags:
+  - spring
+  - moc
+  - schulung
+  - configuration
 Type:
 ---
 
@@ -563,7 +563,7 @@ bleiben nur ein paar wenige vorhanden
 
 ### Component Index 
 
-Eine Datei die die Komponenten aufzählt die benötgt werden.
+Eine Datei die die Komponenten aufzählt die benötigt werden.
 
 *META-INF/spring.components* mit voll qualifizierten Klassennamen
 Spring erkennt diese Datei und erstellt dann kein Classpath scan !!
